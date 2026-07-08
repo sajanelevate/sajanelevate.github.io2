@@ -20,25 +20,24 @@
   letter-spacing: 1px !important;
 }
 
-/* ── Body text ── */
+/* ── Catch-all: force all text white, then restore button text ── */
+#CybotCookiebotDialog,
+#CybotCookiebotDialog * {
+  color: #ffffff !important;
+}
+#CybotCookiebotDialog .CybotCookiebotDialogBodyButton {
+  color: #1a1a1a !important;
+}
+
+/* ── Body text sizing ── */
 #CybotCookiebotDialogBodyContentText,
-#CybotCookiebotDialogBodyContentText *,
-.CybotCookiebotDialogBodyContentTextWrapper * {
-  color: rgba(255,255,255,0.7) !important;
+#CybotCookiebotDialogBodyContentText * {
   font-size: 13px !important;
   line-height: 1.7 !important;
 }
 #CybotCookiebotDialogBodyContentText a {
   color: #C8A951 !important;
   text-decoration: underline !important;
-}
-
-/* ── Category label text ── */
-#CybotCookiebotDialogBodyLevelButtonsSelectPane,
-#CybotCookiebotDialogBodyLevelButtonCustomize,
-.CybotCookiebotDialogBodyLevelButtonDescription,
-.CybotCookiebotDialogBodyLevelButtonHandler {
-  color: rgba(255,255,255,0.7) !important;
 }
 
 /* ── Button wrapper backgrounds ── */
@@ -112,20 +111,6 @@
 }
 #CybotCookiebotDialogBodyContentControlsWrapper * {
   color: rgba(255,255,255,0.6) !important;
-}
-
-/* ── Details tab & About tab body text ── */
-/* Matches the same rgba(255,255,255,0.7) already on .CybotCookiebotDialogBodyContentText */
-.CybotCookiebotDialogDetailBodyContentText,
-.CybotCookiebotDialogDetailBodyContentText p,
-.CybotCookiebotDialogDetailBodyContentCookieContainerTypeIntro,
-.CybotCookiebotDialogDetailBodyContentCookieContainerTypeDescription,
-#CybotCookiebotDialogDetailBodyContentTextAbout,
-#CybotCookiebotDialogDetailBodyContentTextAbout p,
-#CybotCookiebotDialogDetailBodyContentTextAbout a,
-.CybotCookiebotDialogDetailBody .CybotCookiebotDialogBodyContentText,
-.CybotCookiebotDialogDetailBody .CybotCookiebotDialogBodyContentText * {
-  color: rgba(255,255,255,0.7) !important;
 }
 
 /* ── Toggle switches — "on" / checked state ── */
