@@ -114,6 +114,20 @@
   color: rgba(255,255,255,0.6) !important;
 }
 
+/* ── Details tab & About tab body text ── */
+/* Matches the same rgba(255,255,255,0.7) already on .CybotCookiebotDialogBodyContentText */
+.CybotCookiebotDialogDetailBodyContentText,
+.CybotCookiebotDialogDetailBodyContentText p,
+.CybotCookiebotDialogDetailBodyContentCookieContainerTypeIntro,
+.CybotCookiebotDialogDetailBodyContentCookieContainerTypeDescription,
+#CybotCookiebotDialogDetailBodyContentTextAbout,
+#CybotCookiebotDialogDetailBodyContentTextAbout p,
+#CybotCookiebotDialogDetailBodyContentTextAbout a,
+.CybotCookiebotDialogDetailBody .CybotCookiebotDialogBodyContentText,
+.CybotCookiebotDialogDetailBody .CybotCookiebotDialogBodyContentText * {
+  color: rgba(255,255,255,0.7) !important;
+}
+
 /* ── Toggle switches — "on" / checked state ── */
 #CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
   background-color: #C8A951 !important;
