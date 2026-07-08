@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="77ed98fd-f260-496c-9f99-dc88c68d2dcf" type="text/javascript" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tutor — Elevate Maths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C8A951;--gold-light:#E2C97E;--gold-dark:#A8892F;--white:#FFFFFF;--off-white:#FAFAF8;--black:#0A0A0A;--charcoal:#1A1A1A;--grey:#6B6B6B;--border:#E0D5B8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+
+  /* GLOBAL PARTICLES */
+  #bg-pts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .hp{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:sp-up linear infinite;}
+  @keyframes sp-up{0%{opacity:0;transform:translateY(0) translateX(0);}8%{opacity:0.7;}85%{opacity:0.06;}100%{opacity:0;transform:translateY(-700px) translateX(var(--dx));}}
+
+  /* SCROLL BAR */
+  .scroll-bar{position:fixed;top:0;left:0;height:6px;background:var(--gold);z-index:2000;width:0;transition:width 0.1s linear;}
+
+  /* BACK TOP */
+  .back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--gold);color:var(--black);border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity 0.3s,transform 0.3s;z-index:500;}
+  .back-top.vis{opacity:1;transform:translateY(0);}
+  .back-top:hover{background:var(--gold-dark);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.95);border-bottom:1px solid rgba(200,169,81,0.2);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(12px);transition:box-shadow 0.3s;}
+  .nav-logo{display:flex;align-items:center;gap:26px;text-decoration:none;cursor:pointer;}
+  .nav-logo img{width:38px;height:38px;object-fit:contain;border-radius:3px;}
+  .nav-logo-text{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:400;letter-spacing:4px;text-transform:uppercase;}
+  .nav-elevate{color:var(--gold);}
+  .nav-maths{color:var(--white);}
+  .nav-links{display:flex;gap:22px;list-style:none;align-items:center;}
+  .nav-links a{text-decoration:none;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);transition:color 0.3s;position:relative;padding-bottom:2px;}
+  .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+  .nav-links a:hover,.nav-links a.act{color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.act::after{width:100%;}
+  .nav-pg{font-family:'Cormorant Garamond',serif!important;font-style:italic!important;font-size:16px!important;font-weight:700!important;letter-spacing:0.5px!important;text-transform:none!important;color:var(--gold)!important;border:1px solid rgba(200,169,81,0.45)!important;padding:5px 13px!important;}
+  .nav-pg::after{display:none!important;}
+  .nav-pg:hover{background:rgba(200,169,81,0.07)!important;border-color:var(--gold)!important;}
+  .nav-pg.act{background:var(--gold)!important;color:var(--black)!important;border-color:var(--gold)!important;}
+  .nav-divider{width:1px;height:14px;background:rgba(200,169,81,0.3);align-self:center;flex-shrink:0;}
+  .nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:10px 24px!important;transition:background 0.3s,transform 0.2s!important;white-space:nowrap;}
+  .nav-cta::after{display:none!important;}
+  .nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;}
+
+  /* GOLD RULE */
+  .gold-rule{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative;z-index:1;}
+
+  /* SECTION BASE */
+  section{padding:100px 60px;position:relative;z-index:1;}
+  .section-tag{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.1;color:var(--white);margin-bottom:20px;}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .section-subtitle{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.45);max-width:520px;}
+  .container{max-width:1100px;margin:0 auto;}
+
+  /* ANIMATIONS */
+  .au{opacity:0;transform:translateY(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .al{opacity:0;transform:translateX(-50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .ar{opacity:0;transform:translateX(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .av{opacity:1!important;transform:none!important;}
+  .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+  @keyframes hero-blur-in{from{opacity:0;filter:blur(12px);transform:translateY(12px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
+  .hero-in{animation:hero-blur-in 2.0s cubic-bezier(0.34,1.4,0.64,1) both;}
+
+  /* HERO */
+  .hero{min-height:100vh;background:var(--black);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 60px 80px;overflow:hidden;}
+  .hero-inner{position:relative;z-index:1;max-width:760px;}
+  .hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,169,81,0.4);padding:8px 20px;margin-bottom:36px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:1.05;color:var(--white);margin-bottom:28px;letter-spacing:-1px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero-sub{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.5);margin-bottom:48px;max-width:540px;margin-left:auto;margin-right:auto;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .btn-primary{background:var(--gold);color:var(--black);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;}
+  .btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,169,81,0.35);}
+  .btn-secondary{background:transparent;color:var(--white);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.25);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.3s,color 0.3s;}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* STORY SECTION */
+  .story{background:#0D0D0D;padding:100px 60px;}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .story-photo{aspect-ratio:3/4;background:#1a1a1a;border:1px solid rgba(200,169,81,0.2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .story-photo-placeholder{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:rgba(200,169,81,0.3);letter-spacing:3px;text-transform:uppercase;}
+  .story-photo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .story-text .section-subtitle{max-width:100%;margin-bottom:28px;}
+  .story-stat-row{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(200,169,81,0.15);}
+  .story-stat{display:flex;flex-direction:column;gap:4px;}
+  .story-stat-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--gold);line-height:1;}
+  .story-stat-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+
+  /* CREDENTIALS SECTION */
+  .credentials{background:var(--black);padding:100px 60px;}
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+  .cred-item{background:#111;border:1px solid rgba(200,169,81,0.1);padding:40px 32px;transition:border-color 0.3s,background 0.3s;}
+  .cred-item:hover{border-color:rgba(200,169,81,0.4);background:#151515;}
+  .cred-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:16px;}
+  .cred-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:12px;}
+  .cred-body{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.4);}
+
+  /* PHILOSOPHY SECTION */
+  .philosophy{background:#0D0D0D;padding:100px 60px;}
+  .philosophy-inner{max-width:820px;margin:0 auto;}
+  .philosophy-quote{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;line-height:1.5;color:var(--white);font-style:italic;margin:48px 0;padding-left:32px;border-left:3px solid var(--gold);}
+  .philosophy-body{display:flex;flex-direction:column;gap:24px;}
+  .philosophy-p{font-size:14px;line-height:2;color:rgba(255,255,255,0.45);}
+
+  /* CTA */
+  .cta{background:var(--black);padding:120px 60px;text-align:center;border-top:1px solid rgba(200,169,81,0.12);}
+  .cta .section-title{font-size:58px;margin-bottom:20px;}
+  .cta .section-subtitle{margin:0 auto 44px;text-align:center;}
+  .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{background:var(--black);padding:60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,169,81,0.15);position:relative;z-index:1;}
+  .footer-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .footer-logo img{width:32px;height:32px;object-fit:contain;border-radius:3px;}
+  .footer-logo-text{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:400;letter-spacing:3px;text-transform:uppercase;}
+  .footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap;justify-content:center;}
+  .footer-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px;}
+
+  /* SCROLL OFFSET */
+  section{scroll-margin-top:80px;}
+
+  @media(max-width:960px){
+    .nav-divider{display:none;}
+    nav{padding:0 20px;}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,10,0.98);border-bottom:1px solid rgba(200,169,81,0.2);padding:12px 20px 20px;gap:0;backdrop-filter:blur(12px);z-index:999;}
+    .nav-links.mob-open{display:flex;}
+    .nav-links li{border-bottom:1px solid rgba(200,169,81,0.1);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{padding:14px 0;display:block;font-size:11px;}
+    .nav-links .nav-cta{margin-top:8px;text-align:center;padding:14px 24px!important;display:block;}
+    .nav-hamburger{display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:22px;color:var(--white);cursor:pointer;width:40px;height:40px;}
+    .hero h1{font-size:44px;}
+    .story-grid{grid-template-columns:1fr;gap:40px;}
+    .cred-grid{grid-template-columns:1fr;}
+    .philosophy-quote{font-size:24px;}
+    section{padding:60px 24px;}
+    footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center;}
+    .footer-links{justify-content:center;gap:14px;}
+  }
+  @media(max-width:480px){
+    nav{padding:0 16px;}
+    .hero{padding:90px 20px 50px;}
+    .hero h1{font-size:36px;}
+    .cta .section-title{font-size:38px;}
+    footer{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="bg-pts"></div>
+<div class="scroll-bar" id="sb"></div>
+<button class="back-top" id="bt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html.html">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="nav-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="nav-links" id="nl">
+    <li><a href="index.html.html" class="nav-pg">Home</a></li>
+    <li><a href="about.html" class="nav-pg">More Info</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="about.html#mission">About</a></li>
+    <li><a href="about.html#how-we-teach">How We Teach</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="tutor.html" class="act">Tutor</a></li>
+    <li><a href="index.html.html#how">The Process</a></li>
+    <li><a href="index.html.html#programme">The Programme</a></li>
+    <li><a href="about.html#important-dates">Important Dates</a></li>
+    <li><a href="index.html.html#enquiry" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Behind Elevate Maths</div>
+    <h1>Meet <em>Your Tutor.</em></h1>
+    <p class="hero-sub">A first-class mathematician, Oxford finalist, and dedicated teacher whose entire approach is built around one goal — your child's results.</p>
+    <div class="hero-btns">
+      <a href="index.html.html#enquiry" class="btn-primary">Book a Discovery Session</a>
+      <a href="about.html" class="btn-secondary">More Info</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- THE STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="al">
+        <div class="story-photo">
+          <span class="story-photo-placeholder">Photo</span>
+        </div>
+      </div>
+      <div class="ar">
+        <span class="section-tag">The Story</span>
+        <h2 class="section-title">Who Is <em>Behind This?</em></h2>
+        <p class="section-subtitle">Placeholder — replace with your background, qualifications, and what drives your approach to teaching. Describe your journey into tutoring, what you studied, and why you started Elevate Maths.</p>
+        <p class="section-subtitle" style="margin-top:20px;">Add a second paragraph here about your teaching style, values, or a defining moment in your career that shaped the way you work with students today.</p>
+        <div class="story-stat-row">
+          <div class="story-stat au d1">
+            <span class="story-stat-num">—</span>
+            <span class="story-stat-label">Years Experience</span>
+          </div>
+          <div class="story-stat au d2">
+            <span class="story-stat-num">—</span>
+            <span class="story-stat-label">Students Taught</span>
+          </div>
+          <div class="story-stat au d3">
+            <span class="story-stat-num">—</span>
+            <span class="story-stat-label">Grade 8–9 Results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="container">
+    <div class="au">
+      <span class="section-tag">Qualifications &amp; Expertise</span>
+      <h2 class="section-title">Built on <em>Solid Foundations.</em></h2>
+      <p class="section-subtitle">Placeholder — describe what makes your academic and professional background stand out.</p>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-item au d1">
+        <div class="cred-num">01</div>
+        <div class="cred-title">Academic Background</div>
+        <p class="cred-body">Placeholder — describe your degree, university, and any academic distinctions. e.g., "First-class BSc Mathematics, University of..."</p>
+      </div>
+      <div class="cred-item au d2">
+        <div class="cred-num">02</div>
+        <div class="cred-title">Teaching Credentials</div>
+        <p class="cred-body">Placeholder — any formal teaching qualifications, training programmes, or certifications relevant to your practice.</p>
+      </div>
+      <div class="cred-item au d3">
+        <div class="cred-num">03</div>
+        <div class="cred-title">Specialist Knowledge</div>
+        <p class="cred-body">Placeholder — areas of particular depth, e.g., specific GCSE exam boards, higher-tier problem solving, or mathematical olympiad preparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="philosophy-inner">
+      <div class="au">
+        <span class="section-tag">Teaching Philosophy</span>
+        <h2 class="section-title">How I <em>Think About Teaching.</em></h2>
+      </div>
+      <blockquote class="philosophy-quote au">"Placeholder — insert a defining quote or principle that captures your teaching philosophy. Make it personal and specific to how you work."</blockquote>
+      <div class="philosophy-body">
+        <p class="philosophy-p au">Placeholder — first paragraph of your teaching philosophy. Describe the core belief that underpins everything you do in the classroom. What do you think most tutors get wrong? What do you do differently?</p>
+        <p class="philosophy-p au d1">Placeholder — second paragraph. Expand on how that philosophy translates into practice. Describe what a typical session looks like and why it's structured that way.</p>
+        <p class="philosophy-p au d2">Placeholder — third paragraph. Talk about what you measure success by — not just grades, but the habits, confidence, and understanding students develop over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CTA -->
+<section class="cta" id="enquiry">
+  <div class="container">
+    <span class="section-tag au">Get Started</span>
+    <h2 class="section-title au">Ready to <em>Elevate?</em></h2>
+    <p class="section-subtitle au" style="text-align:center;">Book a Discovery Session and see firsthand what sets this programme apart. Places are limited.</p>
+    <div class="cta-btns au">
+      <a href="index.html.html#enquiry" class="btn-primary">Book a Discovery Session</a>
+      <a href="about.html" class="btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="index.html.html">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="footer-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="index.html.html" class="nav-pg">Home</a></li>
+    <li><a href="about.html" class="nav-pg">More Info</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="about.html#mission">About</a></li>
+    <li><a href="about.html#how-we-teach">How We Teach</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="tutor.html" class="act">Tutor</a></li>
+    <li><a href="index.html.html#how">The Process</a></li>
+    <li><a href="index.html.html#programme">The Programme</a></li>
+    <li><a href="about.html#important-dates">Important Dates</a></li>
+    <li><a href="index.html.html#enquiry">Book a Call</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Elevate Maths Ltd. All rights reserved.</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var nl = document.getElementById('nl');
+    var hb = document.getElementById('nav-hamburger');
+    nl.classList.toggle('mob-open');
+    hb.textContent = nl.classList.contains('mob-open') ? '✕' : '☰';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#nl a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('nl').classList.remove('mob-open');
+        document.getElementById('nav-hamburger').textContent = '☰';
+      });
+    });
+  });
+
+  // Scroll bar + back-to-top
+  window.addEventListener('scroll', function() {
+    const y = window.scrollY, tot = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('sb').style.width = (y / tot * 100) + '%';
+    document.getElementById('bt').classList.toggle('vis', y > 400);
+    document.getElementById('nav').style.boxShadow = y > 50 ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
+  }, { passive: true });
+
+  // Intersection observer for scroll animations
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('av'); else e.target.classList.remove('av'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.au,.al,.ar').forEach(el => obs.observe(el));
+
+  // Hero animations on load
+  (function() {
+    var delays = { '.hero-tag': 0, '.hero h1': 80, '.hero-sub': 160, '.hero-btns': 240 };
+    Object.keys(delays).forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      setTimeout(function() { el.classList.add('hero-in'); }, delays[sel]);
+    });
+  })();
+
+  // Global gold particles
+  (function() {
+    var c = document.getElementById('bg-pts');
+    var goldCols = ['#C8A951','#E2C97E','#A8892F','#d4af5a','#FFE88A'];
+    for (var i = 0; i < 180; i++) {
+      var d = document.createElement('div');
+      d.className = 'hp';
+      var sz = Math.random() < 0.08 ? 4 : Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
+      d.style.left = Math.random() * 100 + '%';
+      d.style.top = (5 + Math.random() * 90) + '%';
+      d.style.setProperty('--dx', (Math.random() - 0.5) * 120 + 'px');
+      d.style.animationDuration = (6 + Math.random() * 14) + 's';
+      d.style.animationDelay = (Math.random() * 12) + 's';
+      d.style.width = sz + 'px';
+      d.style.height = sz + 'px';
+      d.style.background = goldCols[Math.floor(Math.random() * goldCols.length)];
+      c.appendChild(d);
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="77ed98fd-f260-496c-9f99-dc88c68d2dcf" type="text/javascript" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — Elevate Maths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#C8A951;--gold-light:#E2C97E;--gold-dark:#A8892F;--white:#FFFFFF;--off-white:#FAFAF8;--black:#0A0A0A;--charcoal:#1A1A1A;--grey:#6B6B6B;--border:#E0D5B8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
+
+  /* SCROLL BAR */
+  .scroll-bar{position:fixed;top:0;left:0;height:6px;background:var(--gold);z-index:2000;width:0;transition:width 0.1s linear;}
+
+  /* BACK TOP */
+  .back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--gold);color:white;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity 0.3s,transform 0.3s;z-index:500;}
+  .back-top.vis{opacity:1;transform:translateY(0);}
+  .back-top:hover{background:var(--gold-dark);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(12px);transition:box-shadow 0.3s;}
+  .nav-logo{display:flex;align-items:center;gap:26px;text-decoration:none;cursor:pointer;}
+  .nav-logo img{width:38px;height:38px;object-fit:contain;border-radius:3px;}
+  .nav-logo-text{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:400;letter-spacing:4px;text-transform:uppercase;}
+  .nav-elevate{color:var(--gold);}
+  .nav-maths{color:var(--black);}
+  .nav-links{display:flex;gap:22px;list-style:none;align-items:center;}
+  .nav-links a{text-decoration:none;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--charcoal);transition:color 0.3s;position:relative;padding-bottom:2px;}
+  .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+  .nav-links a:hover,.nav-links a.act{color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.act::after{width:100%;}
+  .nav-pg{font-family:'Cormorant Garamond',serif!important;font-style:italic!important;font-size:16px!important;font-weight:700!important;letter-spacing:0.5px!important;text-transform:none!important;color:var(--gold)!important;border:1px solid rgba(200,169,81,0.45)!important;padding:5px 13px!important;}
+  .nav-pg::after{display:none!important;}
+  .nav-pg:hover{background:rgba(200,169,81,0.07)!important;border-color:var(--gold)!important;}
+  .nav-pg.act{background:var(--gold)!important;color:var(--charcoal)!important;border-color:var(--gold)!important;}
+  .nav-divider{width:1px;height:14px;background:rgba(200,169,81,0.3);align-self:center;flex-shrink:0;}
+  .footer-links .nav-divider{background:rgba(255,255,255,0.15);}
+  .footer-links .nav-pg{font-family:'Cormorant Garamond',serif!important;font-style:italic!important;font-size:16px!important;font-weight:700!important;letter-spacing:0.5px!important;text-transform:none!important;color:var(--gold)!important;border:1px solid rgba(200,169,81,0.3)!important;padding:3px 10px!important;}
+  .footer-links .nav-pg:hover{background:rgba(200,169,81,0.08)!important;border-color:var(--gold)!important;}
+  .footer-links .nav-pg.act{background:var(--gold)!important;color:var(--charcoal)!important;border-color:var(--gold)!important;}
+  .nav-cta{background:var(--gold)!important;color:var(--white)!important;padding:10px 24px!important;transition:background 0.3s,transform 0.2s!important;white-space:nowrap;}
+  .nav-cta::after{display:none!important;}
+  .nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;}
+
+  /* GOLD RULE */
+  .gold-rule{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+  /* SECTION BASE */
+  section{padding:100px 60px;scroll-margin-top:80px;}
+  .section-tag{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:20px;}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .section-subtitle{font-size:14px;line-height:1.8;color:var(--grey);max-width:520px;}
+  .container{max-width:1100px;margin:0 auto;}
+
+  /* ANIMATIONS */
+  .au{opacity:0;transform:translateY(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .al{opacity:0;transform:translateX(-50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .ar{opacity:0;transform:translateX(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .av{opacity:1!important;transform:none!important;}
+  .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+  @keyframes hero-blur-in{from{opacity:0;filter:blur(12px);transform:translateY(12px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
+  .hero-in{animation:hero-blur-in 2.0s cubic-bezier(0.34,1.4,0.64,1) both;}
+
+  /* HERO */
+  .hero{min-height:60vh;background:var(--off-white);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:140px 60px 80px;text-align:center;border-bottom:1px solid var(--border);}
+  .hero-inner{position:relative;z-index:1;max-width:720px;}
+  .hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,169,81,0.4);padding:8px 20px;margin-bottom:36px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.05;color:var(--charcoal);margin-bottom:28px;letter-spacing:-1px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero-sub{font-size:14px;line-height:1.8;color:var(--grey);max-width:520px;margin:0 auto;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;}
+  .btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,169,81,0.35);}
+  .btn-secondary{background:transparent;color:var(--charcoal);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:1px solid rgba(26,26,26,0.25);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.3s,color 0.3s;}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* FEATURED TESTIMONIAL */
+  .featured{background:var(--charcoal);padding:100px 60px;}
+  .featured-inner{max-width:860px;margin:0 auto;text-align:center;}
+  .featured-stars{display:flex;justify-content:center;gap:6px;margin-bottom:36px;}
+  .star{width:16px;height:16px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+  .featured-quote{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;line-height:1.55;color:var(--white);font-style:italic;margin-bottom:44px;}
+  .featured-author{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+  .featured-detail{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-top:6px;}
+
+  /* TESTIMONIALS GRID */
+  .testimonials{background:var(--white);padding:100px 60px;}
+  .testimonials-header{margin-bottom:60px;}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+  /* T-CARD */
+  .t-card{background:var(--off-white);border:1px solid var(--border);padding:36px 28px;display:flex;flex-direction:column;gap:20px;transition:border-color 0.3s,box-shadow 0.3s;cursor:pointer;}
+  .t-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(200,169,81,0.1);}
+  .t-card:hover .t-btn{border-color:var(--gold);color:var(--gold);}
+  .t-stars{display:flex;gap:4px;}
+  .t-star{width:12px;height:12px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+  .t-quote{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.65;color:var(--charcoal);font-style:italic;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+  .t-divider{height:1px;background:var(--border);}
+  .t-footer{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;}
+  .t-author{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--charcoal);}
+  .t-detail{font-size:10px;color:var(--grey);letter-spacing:1px;margin-top:3px;}
+  .t-btn{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--off-white);color:var(--charcoal);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.3s,color 0.3s,background 0.3s;padding:0;}
+  .t-btn svg{transition:transform 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+
+  /* RESULTS STRIP */
+  .results{background:var(--off-white);padding:80px 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;}
+  .result-item{background:var(--white);padding:44px 32px;text-align:center;border:1px solid var(--border);}
+  .result-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:10px;}
+  .result-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--grey);}
+
+  /* CTA */
+  .cta{background:var(--charcoal);padding:120px 60px;text-align:center;position:relative;overflow:hidden;}
+  .cta .section-title{color:var(--white);font-size:52px;margin-bottom:20px;}
+  .cta .section-subtitle{color:rgba(255,255,255,0.45);margin:0 auto 44px;text-align:center;}
+  .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{background:var(--black);padding:60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,169,81,0.2);}
+  .footer-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .footer-logo img{width:32px;height:32px;object-fit:contain;border-radius:3px;}
+  .footer-logo-text{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:400;letter-spacing:3px;text-transform:uppercase;}
+  .footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap;justify-content:center;}
+  .footer-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px;}
+
+  /* EXPANDABLE CARD OVERLAY */
+  .exp-backdrop{position:fixed;inset:0;background:rgba(250,250,248,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:200;opacity:0;pointer-events:none;transition:opacity 0.35s;}
+  .exp-backdrop.open{opacity:1;pointer-events:all;}
+  .exp-wrap{position:fixed;inset:0;display:grid;place-items:center;z-index:201;padding:80px 20px 24px;pointer-events:none;}
+  .exp-wrap.open{pointer-events:all;}
+  .exp-panel{width:100%;max-width:780px;max-height:85vh;background:var(--off-white);box-shadow:0 24px 80px rgba(0,0,0,0.14);overflow-y:auto;scrollbar-width:none;opacity:0;transform:scale(0.94) translateY(28px);transition:opacity 0.4s cubic-bezier(0.16,1,0.3,1),transform 0.45s cubic-bezier(0.34,1.2,0.64,1);position:relative;}
+  .exp-panel::-webkit-scrollbar{display:none;}
+  .exp-panel.open{opacity:1;transform:none;}
+  .exp-header{background:var(--charcoal);padding:52px 56px 40px;position:relative;overflow:hidden;}
+  .exp-header-deco{position:absolute;top:-28px;left:36px;font-family:'Cormorant Garamond',serif;font-size:220px;line-height:1;color:rgba(200,169,81,0.07);pointer-events:none;user-select:none;}
+  .exp-header-stars{display:flex;gap:6px;margin-bottom:28px;position:relative;z-index:1;}
+  .exp-header-star{width:14px;height:14px;background:var(--gold);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+  .exp-body{padding:44px 56px 56px;}
+  .exp-quote-text{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1.65;color:var(--charcoal);font-style:italic;margin-bottom:36px;}
+  .exp-divider{height:1px;background:var(--border);margin-bottom:24px;}
+  .exp-author-name{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--charcoal);}
+  .exp-author-detail{font-size:10px;color:var(--grey);letter-spacing:1px;margin-top:4px;}
+  .exp-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(200,169,81,0.4);background:transparent;color:rgba(255,255,255,0.65);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.3s,color 0.3s,background 0.3s;padding:0;z-index:10;}
+  .exp-close:hover{border-color:var(--gold);color:var(--white);background:rgba(200,169,81,0.08);}
+  .exp-close svg{transform:rotate(45deg);}
+
+  @media(max-width:960px){
+    .nav-divider{display:none;}
+    nav{padding:0 20px;}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(255,255,255,0.98);border-bottom:1px solid var(--border);padding:12px 20px 20px;gap:0;backdrop-filter:blur(12px);z-index:999;}
+    .nav-links.mob-open{display:flex;}
+    .nav-links li{border-bottom:1px solid rgba(224,213,184,0.3);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{padding:14px 0;display:block;font-size:11px;}
+    .nav-links .nav-cta{margin-top:8px;text-align:center;padding:14px 24px!important;display:block;}
+    .nav-hamburger{display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:22px;color:var(--charcoal);cursor:pointer;width:40px;height:40px;}
+    .hero h1{font-size:44px;}
+    .featured-quote{font-size:24px;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .results-grid{grid-template-columns:repeat(2,1fr);}
+    section{padding:60px 24px;}
+    footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center;}
+    .footer-links{justify-content:center;gap:14px;}
+    .exp-header{padding:44px 28px 32px;}
+    .exp-body{padding:32px 28px 44px;}
+    .exp-quote-text{font-size:22px;}
+  }
+  @media(max-width:480px){
+    nav{padding:0 16px;}
+    .hero{padding:110px 20px 60px;}
+    .hero h1{font-size:36px;}
+    .results-grid{grid-template-columns:1fr 1fr;}
+    .cta .section-title{font-size:36px;}
+    footer{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" id="sb"></div>
+<button class="back-top" id="bt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html.html">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="nav-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="nav-links" id="nl">
+    <li><a href="index.html.html" class="nav-pg">Home</a></li>
+    <li><a href="about.html" class="nav-pg">More Info</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="about.html#mission">About</a></li>
+    <li><a href="about.html#how-we-teach">How We Teach</a></li>
+    <li><a href="testimonials.html" class="act">Testimonials</a></li>
+    <li><a href="tutor.html">Tutor</a></li>
+    <li><a href="index.html.html#how">The Process</a></li>
+    <li><a href="index.html.html#programme">The Programme</a></li>
+    <li><a href="about.html#important-dates">Important Dates</a></li>
+    <li><a href="index.html.html#enquiry" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Student &amp; Parent Reviews</div>
+    <h1>What They <em>Say.</em></h1>
+    <p class="hero-sub">Real feedback from the parents and students who have experienced the Elevate Maths programme first-hand.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- FEATURED -->
+<section class="featured" id="featured">
+  <div class="featured-inner">
+    <div class="featured-stars au">
+      <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
+    <p class="featured-quote au">"Placeholder — add your most powerful testimonial here. This is the one that best captures the transformation a student experienced. Make it specific and results-focused."</p>
+    <p class="featured-author au">Parent Name — Student Name</p>
+    <p class="featured-detail au">Year 11 · Grade X to Grade 9</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- RESULTS -->
+<section class="results" id="results">
+  <div class="container">
+    <div class="au" style="text-align:center;">
+      <span class="section-tag">By the Numbers</span>
+      <h2 class="section-title">The <em>Results Speak.</em></h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-item au d1">
+        <div class="result-num">—</div>
+        <div class="result-label">Students Taught</div>
+      </div>
+      <div class="result-item au d2">
+        <div class="result-num">—%</div>
+        <div class="result-label">Achieved Grade 7 or Above</div>
+      </div>
+      <div class="result-item au d3">
+        <div class="result-num">—</div>
+        <div class="result-label">Grade 9s Awarded</div>
+      </div>
+      <div class="result-item au d4">
+        <div class="result-num">—%</div>
+        <div class="result-label">Parent Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- TESTIMONIALS GRID -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header au">
+      <span class="section-tag">Reviews</span>
+      <h2 class="section-title">Every <em>Voice Matters.</em></h2>
+      <p class="section-subtitle">Placeholder — brief intro line about the review collection. e.g., "All testimonials are provided voluntarily by parents and students at the end of each academic year."</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="t-card au d1"
+           data-quote="Placeholder — add a testimonial quote here. Keep it genuine and specific. What changed for this student? What did the parent notice?"
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a testimonial quote here. Keep it genuine and specific. What changed for this student? What did the parent notice?"</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Parent Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card au d2"
+           data-quote="Placeholder — add a testimonial quote here. Different tone or focus than the one above — perhaps this one is about confidence, habits, or understanding rather than grades."
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a testimonial quote here. Different tone or focus than the one above — perhaps this one is about confidence, habits, or understanding rather than grades."</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Parent Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card au d3"
+           data-quote="Placeholder — add a testimonial quote here. This one could focus on the programme structure, accountability, or the resources provided."
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a testimonial quote here. This one could focus on the programme structure, accountability, or the resources provided."</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Parent Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card au"
+           data-quote="Placeholder — add a testimonial quote here. Consider including a student voice rather than just parents — what did the student feel changed for them?"
+           data-author="Student Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a testimonial quote here. Consider including a student voice rather than just parents — what did the student feel changed for them?"</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Student Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card au d1"
+           data-quote="Placeholder — add a testimonial quote here. This could address a common objection — e.g., cost, time commitment, or scepticism about tutoring — and how it was overcome."
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a testimonial quote here. This could address a common objection — e.g., cost, time commitment, or scepticism about tutoring — and how it was overcome."</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Parent Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="t-card au d2"
+           data-quote="Placeholder — add a final testimonial quote here. End on something that speaks to long-term impact or what the family would say to someone considering the programme."
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —">
+        <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+        <p class="t-quote">"Placeholder — add a final testimonial quote here. End on something that speaks to long-term impact or what the family would say to someone considering the programme."</p>
+        <div class="t-divider"></div>
+        <div class="t-footer">
+          <div>
+            <div class="t-author">Parent Name</div>
+            <div class="t-detail">Year — · Grade — to Grade —</div>
+          </div>
+          <button class="t-btn" aria-label="Read full testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- CTA -->
+<section class="cta" id="enquiry">
+  <div class="container">
+    <span class="section-tag au">Your Turn</span>
+    <h2 class="section-title au">Ready to Write <em>Your Story?</em></h2>
+    <p class="section-subtitle au" style="text-align:center;">Join the students who chose to invest in their future. Places are limited — early enquiries are prioritised.</p>
+    <div class="cta-btns au">
+      <a href="index.html.html#enquiry" class="btn-primary">Book a Discovery Session</a>
+      <a href="tutor.html" class="btn-secondary" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.25);">Meet the Tutor</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="index.html.html">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="footer-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="index.html.html" class="nav-pg">Home</a></li>
+    <li><a href="about.html" class="nav-pg">More Info</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="about.html#mission">About</a></li>
+    <li><a href="about.html#how-we-teach">How We Teach</a></li>
+    <li><a href="testimonials.html" class="act">Testimonials</a></li>
+    <li><a href="tutor.html">Tutor</a></li>
+    <li><a href="index.html.html#how">The Process</a></li>
+    <li><a href="index.html.html#programme">The Programme</a></li>
+    <li><a href="about.html#important-dates">Important Dates</a></li>
+    <li><a href="index.html.html#enquiry">Book a Call</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Elevate Maths Ltd. All rights reserved.</div>
+</footer>
+
+<!-- EXPANDABLE CARD OVERLAY -->
+<div class="exp-backdrop" id="expBackdrop"></div>
+<div class="exp-wrap" id="expWrap">
+  <div class="exp-panel" id="expPanel">
+    <div class="exp-header">
+      <div class="exp-header-deco">"</div>
+      <div class="exp-header-stars">
+        <div class="exp-header-star"></div>
+        <div class="exp-header-star"></div>
+        <div class="exp-header-star"></div>
+        <div class="exp-header-star"></div>
+        <div class="exp-header-star"></div>
+      </div>
+    </div>
+    <div class="exp-body">
+      <p class="exp-quote-text" id="expQuoteText"></p>
+      <div class="exp-divider"></div>
+      <div class="exp-author-name" id="expAuthorName"></div>
+      <div class="exp-author-detail" id="expAuthorDetail"></div>
+    </div>
+    <button class="exp-close" id="expClose" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    var nl = document.getElementById('nl');
+    var hb = document.getElementById('nav-hamburger');
+    nl.classList.toggle('mob-open');
+    hb.textContent = nl.classList.contains('mob-open') ? '✕' : '☰';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#nl a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('nl').classList.remove('mob-open');
+        document.getElementById('nav-hamburger').textContent = '☰';
+      });
+    });
+  });
+
+  window.addEventListener('scroll', function() {
+    const y = window.scrollY, tot = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('sb').style.width = (y / tot * 100) + '%';
+    document.getElementById('bt').classList.toggle('vis', y > 400);
+    document.getElementById('nav').style.boxShadow = y > 50 ? '0 4px 30px rgba(0,0,0,0.1)' : 'none';
+  }, { passive: true });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('av'); else e.target.classList.remove('av'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.au,.al,.ar').forEach(el => obs.observe(el));
+
+  (function() {
+    var delays = { '.hero-tag': 0, '.hero h1': 80, '.hero-sub': 160 };
+    Object.keys(delays).forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      setTimeout(function() { el.classList.add('hero-in'); }, delays[sel]);
+    });
+  })();
+
+  // EXPANDABLE TESTIMONIAL CARDS
+  (function() {
+    var backdrop = document.getElementById('expBackdrop');
+    var wrap = document.getElementById('expWrap');
+    var panel = document.getElementById('expPanel');
+    var closeBtn = document.getElementById('expClose');
+    var quoteEl = document.getElementById('expQuoteText');
+    var authorEl = document.getElementById('expAuthorName');
+    var detailEl = document.getElementById('expAuthorDetail');
+
+    function openCard(card) {
+      quoteEl.textContent = '“' + card.dataset.quote + '”';
+      authorEl.textContent = card.dataset.author;
+      detailEl.textContent = card.dataset.detail;
+      backdrop.classList.add('open');
+      wrap.classList.add('open');
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          panel.classList.add('open');
+        });
+      });
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCard() {
+      panel.classList.remove('open');
+      setTimeout(function() {
+        backdrop.classList.remove('open');
+        wrap.classList.remove('open');
+        document.body.style.overflow = '';
+      }, 50);
+    }
+
+    document.querySelectorAll('.t-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        openCard(card);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeCard);
+    backdrop.addEventListener('click', closeCard);
+    wrap.addEventListener('click', closeCard);
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeCard();
+    });
+  })();
+</script>
+</body>
+</html>

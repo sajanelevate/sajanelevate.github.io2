@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="77ed98fd-f260-496c-9f99-dc88c68d2dcf" type="text/javascript" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>More Info — Elevate Maths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:#C8A951; --gold-light:#E2C97E; --gold-dark:#A8892F; --gold-subtle:#F5EDD6;
+    --gold-bright:#C8A951; --gold-dim:#7A6230; --card-bg:#111111; --text-muted:#8f8f8f; --text-label:#a8a8a8;
+    --white:#FFFFFF; --off-white:#FAFAF8; --black:#0A0A0A; --charcoal:#1A1A1A;
+    --grey:#6B6B6B; --border:#E0D5B8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
+
+  /* SCROLL BAR */
+  .scroll-bar{position:fixed;top:0;left:0;height:6px;background:var(--gold);z-index:2000;width:0;transition:width 0.1s linear;}
+
+  /* BACK TOP */
+  .back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--gold);color:white;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity 0.3s,transform 0.3s;z-index:500;}
+  .back-top.vis{opacity:1;transform:translateY(0);}
+  .back-top:hover{background:var(--gold-dark);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:72px;backdrop-filter:blur(12px);transition:box-shadow 0.3s,transform 0.4s;}
+  nav.hide{transform:translateY(-100%);}
+  .nav-logo{display:flex;align-items:center;gap:26px;text-decoration:none;cursor:pointer;}
+  .nav-logo img{width:38px;height:38px;object-fit:contain;border-radius:3px;}
+  .nav-logo-text{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:400;letter-spacing:4px;text-transform:uppercase;}
+  .nav-elevate{color:var(--gold);}
+  .nav-maths{color:var(--black);}
+  .nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+  .nav-links a{text-decoration:none;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--charcoal);transition:color 0.3s;position:relative;padding-bottom:2px;}
+  .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+  .nav-links a:hover,.nav-links a.act{color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.act::after{width:100%;}
+  .nav-pg{font-size:11px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;font-style:normal!important;font-family:'Montserrat',sans-serif!important;color:var(--charcoal)!important;border:1px solid rgba(200,169,81,0.5)!important;padding:7px 14px!important;}
+  .nav-pg::after{display:none!important;}
+  .nav-pg:hover{background:transparent!important;border-color:var(--gold)!important;color:var(--gold)!important;}
+  .nav-pg.act{background:transparent!important;color:var(--gold)!important;border-color:rgba(200,169,81,0.5)!important;}
+  .nav-divider{width:3px;height:44px;background:rgba(200,169,81,0.6);align-self:center;flex-shrink:0;}
+  .footer-links .nav-divider{background:rgba(255,255,255,0.15);}
+  .footer-links .nav-pg{font-size:10px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;font-style:normal!important;font-family:'Montserrat',sans-serif!important;color:rgba(255,255,255,0.4)!important;border:1px solid rgba(200,169,81,0.3)!important;padding:5px 12px!important;}
+  .footer-links .nav-pg:hover{background:transparent!important;border-color:var(--gold)!important;color:var(--gold)!important;}
+  .footer-links .nav-pg.act{background:transparent!important;color:var(--gold)!important;border-color:rgba(200,169,81,0.4)!important;}
+  .nav-cta{background:var(--gold)!important;color:var(--white)!important;padding:10px 24px!important;transition:background 0.3s,transform 0.2s!important;white-space:nowrap;}
+  .nav-dd{position:relative;}
+  .dd-menu{display:none;position:absolute;top:100%;left:0;list-style:none;padding:10px 0 8px;min-width:220px;background:#fff;border:1px solid var(--border);border-top:2px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,0.1);z-index:1002;margin-top:0;}
+  .nav-dd:hover .dd-menu,.nav-dd.open .dd-menu{display:block;}
+  .dd-menu li{border:none;}
+  .dd-menu a{display:block!important;padding:13px 24px!important;font-size:11px!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;color:var(--charcoal)!important;white-space:nowrap;}
+  .dd-menu a::after{display:none!important;}
+  .dd-menu a:hover{color:var(--gold)!important;background:rgba(200,169,81,0.06);}
+
+  .nav-cta::after{display:none!important;}
+  .nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;}
+
+  /* HERO */
+  .hero{min-height:100vh;background:var(--charcoal);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 60px 80px;text-align:center;}
+  .orb{position:absolute;border-radius:50%;pointer-events:none;}
+  .orb1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(200,169,81,0.12) 0%,transparent 70%);animation:orb-a 10s ease-in-out infinite alternate;}
+  .orb2{width:500px;height:500px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(200,169,81,0.06) 0%,transparent 70%);animation:orb-a 13s ease-in-out infinite alternate-reverse;}
+  @keyframes orb-a{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,30px) scale(1.1);}}
+  .hero-pts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .hp{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:sp-up linear infinite;}
+  @keyframes sp-up{0%{opacity:0;transform:translateY(0) translateX(0);}8%{opacity:0.85;}85%{opacity:0.08;}100%{opacity:0;transform:translateY(-600px) translateX(var(--dx));}}
+  .hero-inner{position:relative;z-index:1;max-width:720px;}
+  .hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,169,81,0.4);padding:8px 20px;margin-bottom:36px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.05;color:var(--white);margin-bottom:28px;letter-spacing:-1px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero-sub{font-size:17px;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:48px;margin-left:auto;margin-right:auto;max-width:520px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  @keyframes hero-blur-in{from{opacity:0;filter:blur(12px);transform:translateY(12px);}to{opacity:1;filter:blur(0px);transform:translateY(0);}}
+  .hero-in{animation:hero-blur-in 2.0s cubic-bezier(0.34,1.4,0.64,1) both;}
+
+  .btn-primary{background:var(--gold);color:var(--white);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.3s,transform 0.2s,box-shadow 0.3s;}
+  .btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,169,81,0.35);}
+  .btn-secondary{background:transparent;color:var(--white);padding:16px 36px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.3s,color 0.3s;}
+  .btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* GOLD RULE */
+  .gold-rule{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+  /* SECTION BASE */
+  section{padding:100px 60px;}
+  .section-tag{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:20px;}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .section-subtitle{font-size:14px;line-height:1.8;color:var(--grey);max-width:520px;}
+  .container{max-width:1200px;margin:0 auto;}
+
+  /* ANIMATIONS */
+  .au{opacity:0;transform:translateY(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .al{opacity:0;transform:translateX(-50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .ar{opacity:0;transform:translateX(50px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1);}
+  .av{opacity:1!important;transform:none!important;}
+  .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}.d5{transition-delay:0.5s;}
+
+  /* MISSION */
+  .mission{background:var(--off-white);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 60px;}
+  .mission .container{max-width:1200px;}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+  .mission-right{display:flex;flex-direction:column;gap:18px;justify-content:flex-start;}
+  .mission-point{display:flex;gap:24px;align-items:flex-start;transition:transform 0.3s;}
+  .mission-point:hover{transform:translateX(6px);}
+  .mission-icon{width:39px;height:39px;background:#e8e8e8;border:1px solid #b8b8b8;color:var(--charcoal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;transition:background 0.3s,border-color 0.3s,color 0.3s,transform 0.3s;}
+  .mission-point:hover .mission-icon{background:var(--gold);border-color:var(--gold);transform:rotate(15deg);}
+  .mission-point h4{font-size:15px;font-weight:600;letter-spacing:1px;color:var(--charcoal);margin-bottom:6px;text-transform:uppercase;}
+  .mission-point p{font-size:13px;line-height:1.7;color:var(--grey);}
+  .mission .section-tag{font-size:13px;letter-spacing:3px;margin-bottom:9px;}
+  .mission .section-title{font-size:56px;margin-bottom:12px;}
+  .mission .section-subtitle{font-size:15px;line-height:2.2;margin-bottom:1.2em;}
+
+  /* HOW WE TEACH */
+  .how-we-teach{background:var(--charcoal);padding:100px 60px;position:relative;overflow:hidden;}
+  .how-we-teach .container{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+  .how-we-teach .section-title{color:var(--white);}
+  .hwt-intro{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);line-height:1.45;font-style:italic;margin-bottom:52px;}
+  .hwt-body{display:flex;flex-direction:column;gap:28px;}
+  .hwt-p{font-size:14px;line-height:1.95;color:rgba(255,255,255,0.5);}
+  .hwt-emphasis{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);font-style:italic;border-left:2px solid var(--gold);padding-left:20px;margin:8px 0;}
+
+  /* HOW / STEPS */
+  .how{background:var(--white);min-height:100vh;display:flex;align-items:flex-start;padding:100px 60px;position:relative;}
+  .how .container{max-width:1500px;}
+  .how-header{text-align:left;margin-bottom:0;position:relative;top:80px;}
+  .how-header .section-subtitle{margin:0;}
+  .how-header .section-tag::after{content:'';display:block;height:1px;background:var(--gold);width:220px;margin:10px 0 0;}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:end;}
+  .step{background:var(--off-white);padding:28px 32px 66px;position:relative;transition:background 0.4s,transform 0.4s,border-color 0.4s,box-shadow 0.4s;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;}
+  .step::before{content:'';position:absolute;bottom:0;left:0;width:0;height:9px;background:var(--gold);transition:width 0.4s;}
+  .step:hover{background:var(--charcoal);transform:translateY(-6px);border-color:var(--gold);}
+  .step:hover::before{width:100%;}
+  .step-number{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:300;color:var(--border);line-height:1;margin-bottom:20px;display:block;transition:color 0.4s,border-color 0.4s;align-self:stretch;padding-bottom:32px;border-bottom:1px solid rgba(200,169,81,0.45);}
+  .step:hover .step-number{color:var(--gold);border-bottom-color:var(--gold);}
+  .step:hover h3{color:var(--gold);}
+  .step:hover p{color:rgba(255,255,255,0.6);}
+  .step h3{font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--charcoal);margin-bottom:12px;transition:color 0.4s;}
+  .step p{font-size:14px;line-height:1.8;color:var(--grey);transition:color 0.4s;}
+  .steps .step:nth-child(1){min-height:320px;}
+  .steps .step:nth-child(2){min-height:400px;}
+  .steps .step:nth-child(3){min-height:480px;}
+  .steps .step:nth-child(4){min-height:560px;}
+  .steps .step:nth-child(5){min-height:640px;}
+  .how .section-tag{font-size:16px;letter-spacing:6px;margin-bottom:20px;display:inline-block;width:220px;text-align:center;}
+  .how .section-title{font-size:72px;line-height:1;}
+
+  /* CTA SECTION */
+  .enquiry{background:var(--charcoal);min-height:100vh;display:flex;align-items:center;padding:53px 45px;position:relative;overflow:hidden;}
+  .enquiry-inner{max-width:600px;margin:0 auto;text-align:center;}
+  .enquiry .section-title{color:var(--white);font-size:39px;}
+  .enquiry .section-subtitle{color:rgba(255,255,255,0.5);margin:0 auto 39px;}
+  .enquiry .section-tag{font-size:11px;letter-spacing:4px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;text-align:left;}
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-full{grid-column:1/-1;}
+  .form-field label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+  .form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:var(--white);padding:11px 14px;font-family:'Montserrat',sans-serif;font-size:11px;outline:none;transition:border-color 0.3s,background 0.3s;width:100%;}
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);background:rgba(200,169,81,0.05);}
+  .form-field select option{background:var(--charcoal);}
+  .form-field textarea{resize:vertical;min-height:79px;}
+  .phone-input{display:flex;gap:6px;}
+  .phone-input select{width:83px;flex-shrink:0;}
+  .phone-input input{flex:1;}
+  .form-submit{margin-top:19px;text-align:center;}
+  .form-note{font-size:9px;color:rgba(255,255,255,0.3);margin-top:13px;letter-spacing:0.5px;}
+  .field-error{display:none;font-size:11px;color:var(--gold);letter-spacing:0.5px;margin-top:5px;font-family:'Montserrat',sans-serif;font-weight:500;}
+  .form-field.has-error .field-error{display:block;}
+  .form-field.has-error input,.form-field.has-error select,.form-field.has-error textarea{border-color:var(--gold)!important;background:rgba(200,169,81,0.06)!important;}
+  .form-field.has-error .phone-input select,.form-field.has-error .phone-input input{border-color:var(--gold)!important;background:rgba(200,169,81,0.06)!important;}
+  #ty-page{display:flex;position:fixed;inset:0;z-index:200000;background:#0a0a0a;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px;padding-top:30px;opacity:0;visibility:hidden;transform:scale(1.03);transition:opacity 0.7s ease,visibility 0.7s ease,transform 0.7s ease;}
+  #ty-page.ty-active{opacity:1;visibility:visible;transform:scale(1);}
+  .ty-rule{width:60px;height:2px;background:var(--gold);margin:0 auto 48px;opacity:0.8;}
+  .ty-title{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:400;color:var(--white);margin-bottom:28px;line-height:1.15;}
+  .ty-sub{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.9;max-width:540px;margin:0 auto 52px;font-family:'Montserrat',sans-serif;}
+  .ty-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:16px 52px;cursor:pointer;transition:background 0.3s,color 0.3s;}
+  .ty-btn:hover{background:var(--gold);color:var(--charcoal);}
+  #ty-effects{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+  #ty-page > *:not(#ty-effects){position:relative;z-index:1;}
+
+  /* FOOTER */
+  footer{background:var(--black);padding:60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,169,81,0.2);}
+  .footer-logo{display:flex;align-items:center;gap:10px;}
+  .footer-logo img{width:32px;height:32px;object-fit:contain;border-radius:3px;}
+  .footer-logo-text{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:400;letter-spacing:4px;text-transform:uppercase;}
+  .footer-logo-text .nav-elevate{color:var(--gold);}
+  .footer-logo-text .nav-maths{color:var(--white);}
+  .footer-links{display:flex;gap:32px;list-style:none;flex-wrap:wrap;justify-content:center;}
+  .footer-links a{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.5px;}
+
+  /* COOKIEBOT */
+  #CybotCookiebotDialog{font-family:'Montserrat',sans-serif!important;background:#1A1A1A!important;border-top:1px solid rgba(200,169,81,0.3)!important;box-shadow:0 -8px 30px rgba(0,0,0,0.4)!important;}
+  #CybotCookiebotDialogBodyContentTitle,#CybotCookiebotDialogBodyContentTitle *{font-family:'Cormorant Garamond',serif!important;color:var(--gold)!important;font-weight:600!important;letter-spacing:1px!important;}
+  #CybotCookiebotDialogBodyContentText,#CybotCookiebotDialogBodyContentText *,.CybotCookiebotDialogBodyContentTextWrapper *{color:rgba(255,255,255,0.7)!important;font-size:13px!important;line-height:1.7!important;}
+  #CybotCookiebotDialogBodyButtonAccept,#CybotCookiebotDialogBodyLevelButtonAccept{background:var(--gold)!important;border:1px solid var(--gold)!important;color:var(--black)!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;border-radius:2px!important;transition:all 0.3s!important;}
+  #CybotCookiebotDialogBodyButtonDecline,#CybotCookiebotDialogBodyButtonDetails,#CybotCookiebotDialogBodyLevelButtonDecline{background:transparent!important;border:1px solid rgba(200,169,81,0.5)!important;color:var(--gold)!important;font-weight:600!important;letter-spacing:2px!important;text-transform:uppercase!important;border-radius:2px!important;transition:all 0.3s!important;}
+
+  /* MOBILE */
+  @media(max-width:1200px){
+    nav{padding:0 32px;}
+    .nav-logo{gap:14px;}
+    .nav-logo-text{font-size:20px;letter-spacing:2px;}
+    .nav-links{gap:16px;}
+    .nav-links a{font-size:10px;letter-spacing:1px;}
+    .nav-cta{padding:9px 14px!important;}
+  }
+  @media(max-width:960px){
+    .nav-divider{display:none;}
+    nav{padding:0 20px;}
+    .nav-logo img{width:28px;height:28px;}
+    .nav-logo-text{font-size:18px;letter-spacing:2px;}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(255,255,255,0.98);border-bottom:1px solid var(--border);padding:12px 20px 20px;gap:0;backdrop-filter:blur(12px);z-index:999;}
+    .nav-links.mob-open{display:flex;}
+    .nav-links li{border-bottom:1px solid rgba(224,213,184,0.3);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{padding:14px 0;display:block;font-size:11px;letter-spacing:2px;}
+    .nav-links .nav-cta{margin-top:8px;text-align:center;padding:14px 24px!important;display:block;}
+    .nav-hamburger{display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:22px;color:var(--charcoal);cursor:pointer;width:40px;height:40px;line-height:1;}
+    .dd-menu{position:static;display:block;border:none;border-top:1px solid rgba(224,213,184,0.25);box-shadow:none;background:transparent;padding:0;}
+    .dd-menu a{padding:10px 0 10px 18px!important;font-size:10px!important;color:rgba(26,26,26,0.4)!important;}
+  }
+  @media(max-width:768px){
+    nav{padding:0 20px;}
+    .nav-logo img{width:28px;height:28px;}
+    .nav-logo-text{font-size:18px;letter-spacing:2px;}
+    .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(255,255,255,0.98);border-bottom:1px solid var(--border);padding:12px 20px 20px;gap:0;backdrop-filter:blur(12px);z-index:999;}
+    .nav-links.mob-open{display:flex;}
+    .nav-links li{border-bottom:1px solid rgba(224,213,184,0.3);}
+    .nav-links li:last-child{border-bottom:none;}
+    .nav-links a{padding:14px 0;display:block;font-size:11px;}
+    .nav-links .nav-cta{margin-top:8px;text-align:center;padding:14px 24px!important;display:block;}
+    .nav-hamburger{display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:22px;color:var(--charcoal);cursor:pointer;width:40px;height:40px;line-height:1;}
+    .hero{padding:100px 24px 60px;}
+    .hero h1{font-size:42px;}
+    .hero-sub{font-size:16px;}
+    .hero-btns{flex-direction:column;align-items:center;}
+    .btn-primary,.btn-secondary{width:100%;text-align:center;box-sizing:border-box;}
+    .mission{padding:60px 24px!important;}
+    .mission .container{max-width:100%;}
+    .mission-grid{grid-template-columns:1fr!important;gap:32px;}
+    .mission .section-title{font-size:32px!important;}
+    .mission .section-subtitle{font-size:13px;line-height:1.7;}
+    .how-we-teach{padding:60px 24px!important;}
+    .how{padding:60px 24px!important;}
+    .how .container{display:block!important;max-width:100%;}
+    .how-header{position:static!important;top:auto!important;margin-bottom:28px!important;}
+    .how .section-title{font-size:32px!important;line-height:1.15!important;}
+    .how .section-tag{font-size:11px!important;display:block!important;width:auto!important;text-align:left!important;}
+    .steps{display:flex!important;flex-direction:column;gap:12px!important;align-items:stretch!important;}
+    .steps .step:nth-child(1),.steps .step:nth-child(2),.steps .step:nth-child(3),.steps .step:nth-child(4),.steps .step:nth-child(5){min-height:auto!important;}
+    .step{padding:24px 20px 32px!important;}
+    .step-number{font-size:48px!important;margin-bottom:16px!important;padding-bottom:16px!important;}
+    .step h3{font-size:12px!important;}
+    .step p{font-size:12px!important;}
+    .enquiry{padding:60px 24px!important;}
+    .enquiry-inner{max-width:100%!important;}
+    .enquiry .section-title{font-size:32px!important;}
+    .form-grid{grid-template-columns:1fr!important;gap:10px!important;}
+    .form-full{grid-column:1!important;}
+    #enquiry-submit{width:100%;padding:16px 24px!important;}
+    footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center;}
+    .footer-links{flex-wrap:wrap;justify-content:center;gap:14px;}
+    .footer-logo{justify-content:center;}
+    section{padding:60px 24px;}
+    .section-title{font-size:32px;}
+    .container{max-width:100%;padding:0;}
+  }
+  /* MISSION TICKER */
+  @keyframes ms-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .mission-ticker{overflow:hidden;position:relative;margin-top:52px;padding-top:16px;border-top:1px solid rgba(200,169,81,0.25);}
+  .mission-ticker::before,.mission-ticker::after{content:'';position:absolute;top:0;height:100%;width:100px;z-index:2;pointer-events:none;}
+  .mission-ticker::before{left:0;background:linear-gradient(to right,var(--off-white),transparent);}
+  .mission-ticker::after{right:0;background:linear-gradient(to left,var(--off-white),transparent);}
+  .mission-ticker-track{display:flex;align-items:center;width:max-content;animation:ms-scroll 90s linear infinite;}
+  .mission-ticker-track:hover{animation-play-state:paused;}
+  .ms-item{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:rgba(26,26,26,0.4);padding:0 28px;white-space:nowrap;}
+  .ms-sep{color:var(--gold);font-size:10px;opacity:0.65;flex-shrink:0;}
+
+  /* IMPORTANT DATES */
+  .important-dates{background:var(--white);min-height:100vh;display:flex;align-items:center;padding:60px 45px;position:relative;overflow:hidden;}
+  .important-dates .container{text-align:center;}
+  .important-dates .section-title{font-size:56px;margin-bottom:0;}
+  .important-dates .section-tag{display:inline-block;}
+  .important-dates .section-tag::after{content:'';display:block;height:1px;background:var(--gold);width:220px;margin:10px auto 0;}
+  .dates-grid{display:flex;flex-direction:column;align-items:center;gap:52px;margin-top:48px;}
+  .enrolment-block{display:flex;flex-direction:column;align-items:center;width:100%;}
+  .enrolment-tag{font-size:16px;font-weight:600;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:inline-block;text-align:center;}
+  .enrolment-tag::after{content:'';display:block;height:1px;background:var(--gold);width:100%;margin:10px 0 0;transform:scaleX(1.2);}
+  .deadline-list{display:grid;grid-template-columns:1.391fr 1.12fr 1.391fr;gap:28px;max-width:900px;width:100%;}
+  .deadline-item{display:grid;grid-template-rows:1fr auto auto;justify-items:center;text-align:center;padding:6px 16px 40px;border:1px solid var(--border);background:var(--off-white);gap:12px;min-height:230px;}
+  .deadline-month{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;font-style:italic;color:var(--gold);line-height:1;letter-spacing:1px;align-self:center;}
+  .deadline-label{font-size:10px;font-weight:600;letter-spacing:1.5px;color:var(--grey);text-transform:uppercase;white-space:nowrap;}
+  .deadline-date{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold-dark);font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;}
+  .deadline-date.pending{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:32px;color:var(--gold-dark);font-weight:400;letter-spacing:0;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;}
+  .deadline-date.is-closed{color:var(--grey);letter-spacing:3px;}
+  .countdown-panel{background:var(--charcoal);border:2px solid var(--gold);padding:44px;text-align:center;max-width:680px;width:100%;}
+  .countdown-panel h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--white);margin-bottom:8px;}
+  .countdown-meta{font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-bottom:36px;}
+  .countdown-units{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .countdown-unit{display:flex;flex-direction:column;align-items:center;padding:0 12px;}
+  .countdown-unit+.countdown-unit{border-left:1px solid rgba(200,169,81,0.2);}
+  .countdown-num{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:var(--gold);line-height:1;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;}
+  .countdown-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:8px;}
+  .countdown-note{font-size:9px;color:rgba(255,255,255,0.25);margin-top:20px;letter-spacing:1px;}
+
+  /* SCROLL OFFSET FOR FIXED NAV */
+  section{scroll-margin-top:80px;}
+
+  @media(max-width:768px){
+    .important-dates{padding:60px 24px!important;}
+    .dates-grid{gap:32px!important;margin-top:20px!important;}
+    .deadline-list{grid-template-columns:1fr!important;gap:16px!important;max-width:100%!important;}
+    .important-dates .section-title{font-size:32px!important;}
+    .countdown-panel{padding:24px!important;}
+    .countdown-panel h3{font-size:18px!important;}
+    .countdown-num{font-size:32px!important;}
+  }
+
+  @media(max-width:480px){
+    nav{padding:0 16px;}
+    .nav-logo-text{font-size:16px;letter-spacing:1.5px;}
+    .hero{padding:90px 20px 50px;}
+    .hero h1{font-size:34px;}
+    .mission{padding:50px 20px!important;}
+    .mission .section-title{font-size:28px!important;}
+    .how-we-teach{padding:50px 20px!important;}
+    .how{padding:50px 20px!important;}
+    .how .section-title{font-size:28px!important;}
+    .important-dates{padding:50px 20px!important;}
+    .important-dates .section-title{font-size:28px!important;}
+    .enquiry{padding:50px 20px!important;}
+    .enquiry .section-title{font-size:28px!important;}
+    footer{padding:32px 20px;}
+    .section-title{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-bar" id="sb"></div>
+<button class="back-top" id="bt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html.html">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="nav-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="nav-links" id="nl">
+    <li class="nav-dd">
+      <a href="index.html.html" class="nav-pg" data-dd="dd-home">Home ▾</a>
+      <ul class="dd-menu" id="dd-home">
+        <li><a href="index.html.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html.html#tutor">Tutor</a></li>
+        <li><a href="index.html.html#how">The Process</a></li>
+        <li><a href="index.html.html#programme">The Programme</a></li>
+        <li><a href="index.html.html#syllabus">Syllabus</a></li>
+      </ul>
+    </li>
+    <li class="nav-dd">
+      <a href="about.html" class="nav-pg act" data-dd="dd-more">More Info ▾</a>
+      <ul class="dd-menu" id="dd-more">
+        <li><a href="#mission">About</a></li>
+        <li><a href="#how-we-teach">Teaching Style</a></li>
+        <li><a href="#important-dates">Important Dates</a></li>
+      </ul>
+    </li>
+    <li><a href="#enquiry" class="nav-cta">Book a Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="hero-pts" id="hpts"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">More Information</div>
+    <h1>Everything You<br>Need to <em>Know.</em></h1>
+    <p class="hero-sub">An in-depth look at what Elevate Maths is to ensure our values align with yours.</p>
+    <div class="hero-btns">
+      <a href="#enquiry" class="btn-primary">Book a Discovery Session</a>
+      <a href="index.html.html" class="btn-secondary">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- MISSION -->
+<section class="mission" id="mission">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="al">
+        <span class="section-tag">Why Choose Elevate Maths?</span>
+        <h2 class="section-title">We do Things<br><em>Differently.</em></h2>
+        <p class="section-subtitle">Elevate Maths is more than tutoring. It's a philosophy grounded in structure, discipline and progression.</p>
+        <p class="section-subtitle" style="margin-top:12px;">I go above and beyond to ensure complete transparency, measurable development, and the formation of habits that create lasting academic confidence.</p>
+        <p class="section-subtitle" style="margin-top:12px;">With extensive resources and rigorous accountability — I don't just teach maths. I build the foundations for whatever comes next.</p>
+        <p class="section-subtitle" style="margin-top:12px;">I founded Elevate Maths after nearly a decade of tutoring, having begun within months of completing my own GCSEs. That firsthand perspective, combined with years of refining what works, is the foundation Elevate Maths is built on.</p>
+      </div>
+      <div class="mission-right ar">
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Selective Enrolment</h4><p>Every student completes a Discovery Session before joining. I only accept students who are genuinely ready to excel.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Tailored Placement</h4><p>Following the Discovery Session, students are grouped into year-group cohorts of a similar level.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Rigorous Accountability</h4><p>Homework checked throughout the week, attendance tracked and quarterly progress reports issued to every parent.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Process Over Answers</h4><p>Students submit workings, not just answers. I identify where thinking breaks down and fix it at the root.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Premium Resources</h4><p>Notes, spreadsheets, cheat sheets, mark schemes and recorded lessons — all in a handmade digital library.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Open Study Sessions</h4><p>Additional free open study sessions to keep knowledge fresh, address gaps and ensure no student falls behind between lessons.</p></div></div>
+        <div class="mission-point"><div class="mission-icon">❖</div><div><h4>Exam Preparation</h4><p>Dedicated lessons focused on perfecting exam technique, managing time pressure and tackling exam-style questions.</p></div></div>
+      </div>
+    </div>
+    <div class="mission-ticker">
+      <div class="mission-ticker-track">
+        <span class="ms-item">Fractions</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Decimals &amp; Percentages</span><span class="ms-sep">◆</span>
+        <span class="ms-item">BODMAS</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Estimating &amp; Rounding</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Standard Form</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Bounds</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Algebra Basics</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Powers &amp; Roots</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Straight Line Graphs</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Ratio</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Direct &amp; Inverse Proportion</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Compound Interest</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Speed, Density &amp; Pressure</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Geometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Angles</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Transformations</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Pythagoras' Theorem</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Trigonometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">3D Trigonometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Simultaneous Equations</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Quadratic Graphs</span><span class="ms-sep">◆</span>
+        <span class="ms-item">The Quadratic Formula</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Completing the Square</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Surds</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Inequalities</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Functions</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Iteration</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Circle Theorems</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Vectors</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Probability</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Sampling &amp; Data</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Averages</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Box Plots</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Time Series</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Fractions</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Decimals &amp; Percentages</span><span class="ms-sep">◆</span>
+        <span class="ms-item">BODMAS</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Estimating &amp; Rounding</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Standard Form</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Bounds</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Algebra Basics</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Powers &amp; Roots</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Straight Line Graphs</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Ratio</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Direct &amp; Inverse Proportion</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Compound Interest</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Speed, Density &amp; Pressure</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Geometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Angles</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Transformations</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Pythagoras' Theorem</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Trigonometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">3D Trigonometry</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Simultaneous Equations</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Quadratic Graphs</span><span class="ms-sep">◆</span>
+        <span class="ms-item">The Quadratic Formula</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Completing the Square</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Surds</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Inequalities</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Functions</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Iteration</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Circle Theorems</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Vectors</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Probability</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Sampling &amp; Data</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Averages</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Box Plots</span><span class="ms-sep">◆</span>
+        <span class="ms-item">Time Series</span><span class="ms-sep">◆</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- HOW WE TEACH -->
+<section class="how-we-teach" id="how-we-teach">
+  <div id="hwtpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div class="container">
+    <span class="section-tag au">Our Approach</span>
+    <h2 class="section-title au">Teaching Style</h2>
+    <div class="hwt-body">
+      <p class="hwt-emphasis au">Every lesson is part of a plan, curated around your child's progress and the road ahead.</p>
+      <p class="hwt-p au">Your child's GCSE years are mapped out from day one — every chapter, in order, with enough runway that nothing is ever rushed. Exam practice begins months before the exam, not the final fortnight, because real exam technique takes repetition to build. With extensive past paper practice, students arrive at their exam confident, prepared and ready to perform.</p>
+      <p class="hwt-emphasis au">Preparation is part of the standard.</p>
+      <p class="hwt-p au">Students are expected to arrive having read through the topic beforehand and with homework sent in before the lesson. Homework should be spread across the week, not crammed in the night before — the difference is always visible. A little practice each day keeps the technique fresh; doing it all in one sitting does not. Support doesn't wait for the next session either: students get feedback throughout the week, so a mistake or a misunderstanding gets caught and corrected in days, not left to repeat for a week.</p>
+      <p class="hwt-p au">Asking a question is never a problem. Asking it without having opened the material first, is. There's a difference between not understanding something and not having tried — and we hold that line clearly.</p>
+      <p class="hwt-emphasis au">The details add up.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- IMPORTANT DATES -->
+<section class="important-dates" id="important-dates">
+  <div class="container">
+    <span class="section-tag">Enrolment</span>
+    <h2 class="section-title">Important <em>Dates.</em></h2>
+    <div class="dates-grid">
+      <div class="enrolment-block">
+        <div class="deadline-list">
+          <div class="deadline-item au d1">
+            <div class="deadline-month">January</div>
+            <div class="deadline-label">Closing Date</div>
+            <div class="deadline-date pending" id="dl-jan">30 Nov 2026</div>
+          </div>
+          <div class="deadline-item au d2">
+            <div class="deadline-month">April</div>
+            <div class="deadline-label">Closing Date</div>
+            <div class="deadline-date pending" id="dl-apr">28 Feb 2027</div>
+          </div>
+          <div class="deadline-item au d3">
+            <div class="deadline-month">September</div>
+            <div class="deadline-label">Closing Date</div>
+            <div class="deadline-date" id="dl-sep">Pending</div>
+          </div>
+        </div>
+      </div>
+      <div class="countdown-panel au">
+        <h3>January Cohort Registration Closes</h3>
+        <div class="countdown-meta">30 November 2026</div>
+        <div class="countdown-units">
+          <div class="countdown-unit"><span class="countdown-num" id="cd-days">000</span><span class="countdown-lbl">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-lbl">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-lbl">Mins</span></div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-lbl">Secs</span></div>
+        </div>
+        <div class="countdown-note">Countdown to next registration deadline</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- ENQUIRY -->
+<section class="enquiry" id="enquiry">
+  <div id="eqpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div class="enquiry-inner au">
+    <span class="section-tag">Get Started</span>
+    <h2 class="section-title">Open the Door to <em>More Opportunities.</em></h2>
+    <p class="section-subtitle">Complete the form below and we will be in touch within 24 hours to arrange a call. Places are limited — early enquiries are prioritised.</p>
+    <form id="enquiry-form" novalidate autocomplete="on">
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Parent / Guardian First Name</label>
+        <input id="f-parent-name" type="text" placeholder="First name" name="given-name" autocomplete="given-name">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Parent / Guardian Surname</label>
+        <input id="f-parent-surname" type="text" placeholder="Surname" name="family-name" autocomplete="family-name">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Phone Number</label>
+        <div class="phone-input">
+          <select id="f-area-code" name="tel-country-code" autocomplete="tel-country-code"><option value="+44">🇬🇧 +44</option><option value="+1">🇺🇸 +1</option><option value="+353">🇮🇪 +353</option><option value="+33">🇫🇷 +33</option><option value="+49">🇩🇪 +49</option><option value="+34">🇪🇸 +34</option><option value="+39">🇮🇹 +39</option><option value="+31">🇳🇱 +31</option><option value="+32">🇧🇪 +32</option><option value="+41">🇨🇭 +41</option><option value="+61">🇦🇺 +61</option><option value="+64">🇳🇿 +64</option><option value="+91">🇮🇳 +91</option><option value="+92">🇵🇰 +92</option><option value="+971">🇦🇪 +971</option><option value="+966">🇸🇦 +966</option><option value="+27">🇿🇦 +27</option></select>
+          <input id="f-phone" type="tel" placeholder="Phone number" name="tel-national" autocomplete="tel-national">
+        </div>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input id="f-email" type="email" placeholder="your@email.com" name="email" autocomplete="email">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Student's First Name</label>
+        <input id="f-student-name" type="text" placeholder="First name" name="student-given-name" autocomplete="off">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Student's Surname</label>
+        <input id="f-student-surname" type="text" placeholder="Surname" name="student-family-name" autocomplete="off">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Relation to Student</label>
+        <select id="f-relation"><option value="">Select relation</option><option>Parent</option><option>Guardian</option><option>Grandparent</option><option>Sibling</option><option>Other</option></select>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Student's Current Year Group</label>
+        <select id="f-year-group"><option value="">Select year group</option><option>Year 8</option><option>Year 9</option><option>Year 10</option><option>Year 11</option></select>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field">
+        <label>Student's Current Grade</label>
+        <select id="f-current-grade"><option value="">Select current grade</option><option>N/A</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option></select>
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field form-full">
+        <label>Additional Information</label>
+        <textarea id="f-message" placeholder="Tell us about the student's maths journey, any specific areas of difficulty, or questions you have about the programme..." autocomplete="off"></textarea>
+        <span class="field-error"></span>
+      </div>
+    </div>
+    <div class="form-submit">
+      <button type="submit" id="enquiry-submit" class="btn-primary" style="padding:18px 52px;font-size:11px;">Submit Enquiry</button>
+      <p id="form-send-error" style="display:none;color:var(--gold);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.5px;margin-top:16px;line-height:1.7;">Something went wrong. Please try again or contact us directly at info@elevatemaths.co.uk</p>
+      <p class="form-note">We respond to all enquiries within 24 hours. Your data is handled in accordance with our privacy policy.</p>
+    </div>
+    </form>
+  </div>
+</section>
+
+<!-- THANK YOU PAGE -->
+<div id="ty-page">
+  <div id="ty-effects"></div>
+  <div class="ty-rule"></div>
+  <h1 class="ty-title">Thank You for Your Enquiry!</h1>
+  <p class="ty-sub">We have received your details and will be in touch within 24 hours to arrange your Discovery Call. We look forward to speaking with you.</p>
+  <button class="ty-btn" onclick="(function(){var p=document.getElementById('ty-page');p.classList.remove('ty-active');setTimeout(function(){document.body.style.overflow='';},700);})()">Return to Page</button>
+  <img src="logo.jpg" alt="Elevate Maths" style="width:450px;height:450px;object-fit:contain;margin-top:40px;border-radius:8px;">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="index.html.html" style="text-decoration:none;cursor:pointer;">
+    <img src="logo.jpg" alt="Elevate Maths">
+    <span class="footer-logo-text"><span class="nav-elevate">Elevate</span> <span class="nav-maths">Maths</span></span>
+  </a>
+  <ul class="footer-links">
+    <li><a href="index.html.html#testimonials">Testimonials</a></li>
+    <li><a href="index.html.html#tutor">Tutor</a></li>
+    <li><a href="index.html.html#how">The Process</a></li>
+    <li><a href="index.html.html#programme">The Programme</a></li>
+    <li><a href="index.html.html#syllabus">Syllabus</a></li>
+    <li><a href="#mission">About</a></li>
+    <li><a href="#how-we-teach">Teaching Style</a></li>
+    <li><a href="#important-dates">Important Dates</a></li>
+    <li><a href="#enquiry">Book a Call</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Elevate Maths Ltd. All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init('5mSNXor63QZUC2e_W');</script>
+
+<script>
+  function toggleMenu() {
+    var nl = document.getElementById('nl');
+    var hb = document.getElementById('nav-hamburger');
+    nl.classList.toggle('mob-open');
+    hb.textContent = nl.classList.contains('mob-open') ? '✕' : '☰';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#nl a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('nl').classList.remove('mob-open');
+        document.getElementById('nav-hamburger').textContent = '☰';
+      });
+    });
+  });
+
+  // Scroll events
+  window.addEventListener('scroll', function() {
+    const y = window.scrollY, tot = document.body.scrollHeight - window.innerHeight;
+    document.getElementById('sb').style.width = (y / tot * 100) + '%';
+    document.getElementById('bt').classList.toggle('vis', y > 400);
+    const nav = document.getElementById('nav');
+    nav.style.boxShadow = y > 50 ? '0 4px 30px rgba(0,0,0,0.1)' : 'none';
+    // Active nav highlight by most-visible section
+    const secs = ['mission','how-we-teach','important-dates','enquiry'];
+    const navH = nav.offsetHeight, vpH = window.innerHeight;
+    let cur = '', maxVis = 0;
+    secs.forEach(function(id) {
+      const el = document.getElementById(id); if (!el) return;
+      const r = el.getBoundingClientRect();
+      const vis = Math.max(0, Math.min(r.bottom, vpH) - Math.max(r.top, navH));
+      if (vis > maxVis) { maxVis = vis; cur = id; }
+    });
+    document.querySelectorAll('#nl a:not(.nav-pg)').forEach(function(a) {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        a.classList.toggle('act', href.replace('#', '') === cur);
+      }
+    });
+  }, { passive: true });
+
+  // Intersection observer for scroll animations
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('av');
+      else e.target.classList.remove('av');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.au,.al,.ar').forEach(el => obs.observe(el));
+
+  // Fire hero animations immediately (no splash on this page)
+  (function() {
+    var delays = { '.hero-tag': 0, '.hero h1': 80, '.hero-sub': 160, '.hero-btns': 240 };
+    Object.keys(delays).forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (!el) return;
+      setTimeout(function() { el.classList.add('hero-in'); }, delays[sel]);
+    });
+  })();
+
+  // Hero particles
+  (function() {
+    const c = document.getElementById('hpts');
+    if (!c) return;
+    for (let i = 0; i < 100; i++) {
+      const d = document.createElement('div');
+      d.className = 'hp';
+      const sz = Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
+      d.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (5 + Math.random() * 90) + '%;--dx:' + (Math.random() - .5) * 100 + 'px;animation-duration:' + (5 + Math.random() * 12) + 's;animation-delay:' + Math.random() * 10 + 's;width:' + sz + 'px;height:' + sz + 'px;';
+      c.appendChild(d);
+    }
+  })();
+
+  // Teaching Style particles
+  (function() {
+    const c = document.getElementById('hwtpts');
+    if (!c) return;
+    for (let i = 0; i < 100; i++) {
+      const d = document.createElement('div');
+      d.className = 'hp';
+      const sz = Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
+      d.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (5 + Math.random() * 90) + '%;--dx:' + (Math.random() - .5) * 100 + 'px;animation-duration:' + (5 + Math.random() * 12) + 's;animation-delay:' + Math.random() * 10 + 's;width:' + sz + 'px;height:' + sz + 'px;';
+      c.appendChild(d);
+    }
+  })();
+
+  // Cohort deadline countdown
+  (function(){
+    var deadlines = [
+      {date:new Date('2026-11-30T00:00:00'), label:'January Cohort Registration Closes', sub:'30 November 2026', elId:'dl-jan'},
+      {date:new Date('2027-02-28T00:00:00'), label:'April Cohort Registration Closes',   sub:'28 February 2027', elId:'dl-apr'},
+    ];
+    function pad(n,l){return String(n).padStart(l||2,'0');}
+    function tick(){
+      var now=new Date();
+      deadlines.forEach(function(d){
+        var el=document.getElementById(d.elId);
+        if(el && now>=d.date && !el.classList.contains('is-closed')){
+          el.textContent='CLOSED'; el.classList.add('is-closed');
+        }
+      });
+      var next=null;
+      for(var i=0;i<deadlines.length;i++){if(deadlines[i].date>now){next=deadlines[i];break;}}
+      var h3=document.querySelector('.countdown-panel h3');
+      var meta=document.querySelector('.countdown-meta');
+      if(!next){
+        if(h3)h3.textContent='All Registrations Closed';
+        if(meta)meta.textContent='';
+        document.getElementById('cd-days').textContent='000';
+        document.getElementById('cd-hours').textContent='00';
+        document.getElementById('cd-mins').textContent='00';
+        document.getElementById('cd-secs').textContent='00';
+        return;
+      }
+      if(h3)h3.textContent=next.label;
+      if(meta)meta.textContent=next.sub;
+      var diff=next.date-now;
+      document.getElementById('cd-days').textContent=pad(Math.floor(diff/86400000),3);
+      document.getElementById('cd-hours').textContent=pad(Math.floor(diff%86400000/3600000));
+      document.getElementById('cd-mins').textContent=pad(Math.floor(diff%3600000/60000));
+      document.getElementById('cd-secs').textContent=pad(Math.floor(diff%60000/1000));
+    }
+    tick();
+    setInterval(tick,1000);
+  })();
+
+  // Enquiry section particles
+  (function() {
+    const c = document.getElementById('eqpts');
+    if (!c) return;
+    for (let i = 0; i < 100; i++) {
+      const d = document.createElement('div');
+      d.className = 'hp';
+      const sz = Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
+      d.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (5 + Math.random() * 90) + '%;--dx:' + (Math.random() - .5) * 100 + 'px;animation-duration:' + (5 + Math.random() * 12) + 's;animation-delay:' + Math.random() * 10 + 's;width:' + sz + 'px;height:' + sz + 'px;';
+      c.appendChild(d);
+    }
+  })();
+
+  // Enquiry form validation + submission
+  (function(){
+    var form = document.getElementById('enquiry-form');
+    if (!form) return;
+    function err(field, msg) { field.classList.add('has-error'); field.querySelector('.field-error').textContent = msg; return false; }
+    function ok(field) { field.classList.remove('has-error'); field.querySelector('.field-error').textContent = ''; return true; }
+    function fieldOf(el) { return el.closest('.form-field'); }
+    function validate() {
+      var pass = true;
+      var pn = document.getElementById('f-parent-name');
+      pass = (pn.value.trim().length >= 2 ? ok(fieldOf(pn)) : err(fieldOf(pn), 'Please enter a first name of at least 2 characters.')) && pass;
+      var ps = document.getElementById('f-parent-surname');
+      pass = (ps.value.trim().length >= 2 ? ok(fieldOf(ps)) : err(fieldOf(ps), 'Please enter a surname of at least 2 characters.')) && pass;
+      var ph = document.getElementById('f-phone');
+      var ac = document.getElementById('f-area-code').value;
+      var digits = ph.value.trim().replace(/[\s\-\(\)\.]/g, '');
+      var phoneOk = ac === '+44' ? (/^0[127]\d{9}$/.test(digits) || /^[127]\d{9}$/.test(digits)) : /^\d{7,15}$/.test(digits);
+      pass = (phoneOk ? ok(fieldOf(ph)) : err(fieldOf(ph), ac === '+44' ? 'Please enter a valid UK number (e.g. 07123 456789).' : 'Please enter a valid phone number.')) && pass;
+      var em = document.getElementById('f-email');
+      pass = (/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(em.value.trim()) ? ok(fieldOf(em)) : err(fieldOf(em), 'Please enter a valid email address (e.g. name@example.com).')) && pass;
+      var sn = document.getElementById('f-student-name');
+      pass = (sn.value.trim().length >= 2 ? ok(fieldOf(sn)) : err(fieldOf(sn), 'Please enter a first name of at least 2 characters.')) && pass;
+      var ss = document.getElementById('f-student-surname');
+      pass = (ss.value.trim().length >= 2 ? ok(fieldOf(ss)) : err(fieldOf(ss), 'Please enter a surname of at least 2 characters.')) && pass;
+      var rel = document.getElementById('f-relation');
+      pass = (rel.value ? ok(fieldOf(rel)) : err(fieldOf(rel), 'Please select your relation to the student.')) && pass;
+      var yg = document.getElementById('f-year-group');
+      pass = (yg.value ? ok(fieldOf(yg)) : err(fieldOf(yg), 'Please select a year group.')) && pass;
+      var cg = document.getElementById('f-current-grade');
+      pass = (cg.value ? ok(fieldOf(cg)) : err(fieldOf(cg), 'Please select the student\'s current grade.')) && pass;
+      return pass;
+    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('form-send-error').style.display = 'none';
+      if (!validate()) { var firstErr = form.querySelector('.has-error'); if (firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+      var btn = document.getElementById('enquiry-submit');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      var params = {
+        parent_first_name: document.getElementById('f-parent-name').value.trim(),
+        parent_surname:     document.getElementById('f-parent-surname').value.trim(),
+        email:              document.getElementById('f-email').value.trim(),
+        phone:              document.getElementById('f-area-code').value + ' ' + document.getElementById('f-phone').value.trim(),
+        relation:           document.getElementById('f-relation').value,
+        student_first_name: document.getElementById('f-student-name').value.trim(),
+        student_surname:    document.getElementById('f-student-surname').value.trim(),
+        year_group:         document.getElementById('f-year-group').value,
+        current_grade:      document.getElementById('f-current-grade').value,
+        message:            document.getElementById('f-message').value.trim()
+      };
+      emailjs.send('service_k53n7gf', 'template_wxekec3', params)
+        .then(function() {
+          document.getElementById('ty-page').classList.add('ty-active');
+          document.body.style.overflow = 'hidden';
+          btn.disabled = false; btn.textContent = 'Submit Enquiry';
+        }, function() {
+          document.getElementById('form-send-error').style.display = 'block';
+          btn.disabled = false; btn.textContent = 'Submit Enquiry';
+        });
+    });
+    form.addEventListener('input', function(e) { var f = e.target.closest('.form-field'); if (f && f.classList.contains('has-error')) { f.classList.remove('has-error'); f.querySelector('.field-error').textContent = ''; } });
+    form.addEventListener('change', function(e) { var f = e.target.closest('.form-field'); if (f && f.classList.contains('has-error')) { f.classList.remove('has-error'); f.querySelector('.field-error').textContent = ''; } });
+  })();
+
+  // Thank-you page sparkles
+  (function(){
+    var ready = false;
+    function launch() { if (ready) return; ready = true; buildSparkles(); }
+    function buildSparkles() {
+      var fx = document.getElementById('ty-effects');
+      var goldCols = ['#C8A951','#E2C97E','#A8892F','#FFE88A','#d4af5a'];
+      for (var i = 0; i < 150; i++) {
+        var d = document.createElement('div');
+        d.className = 'hp';
+        var sz = Math.random() < 0.1 ? 5 : Math.random() < 0.25 ? 4 : Math.random() < 0.5 ? 3 : Math.random() < 0.75 ? 2 : 1;
+        var col = goldCols[Math.floor(Math.random()*goldCols.length)];
+        d.style.left = Math.random()*100 + '%'; d.style.top = Math.random()*100 + '%';
+        d.style.setProperty('--dx', (Math.random()-0.5)*150 + 'px');
+        d.style.animationDuration = (3 + Math.random()*12) + 's';
+        d.style.animationDelay = (Math.random()*10) + 's';
+        d.style.width = sz + 'px'; d.style.height = sz + 'px'; d.style.background = col;
+        fx.appendChild(d);
+      }
+    }
+    var page = document.getElementById('ty-page');
+    new MutationObserver(function() { if (page.classList.contains('ty-active')) launch(); }).observe(page, {attributes:true, attributeFilter:['class']});
+  })();
+</script>
+
+</body>
+</html>
