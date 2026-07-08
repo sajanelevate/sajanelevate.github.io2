@@ -115,6 +115,9 @@
 }
 
 /* ── Toggle switches — "on" / checked state ── */
+#CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #C8A951 !important;
+}
 #CybotCookiebotDialogBodyContentControlSwitch:checked
   + .CybotCookiebotDialogBodyContentControlSliderWrapper
   .CybotCookiebotDialogBodyContentControlSliderRound,
