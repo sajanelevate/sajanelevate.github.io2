@@ -1,56 +1,68 @@
 /* ─── Elevate Maths · Cookiebot consent banner – brand theme ───────────────
-   Gold: #C8A951  |  Gold-light: #E2C97E  |  Black: #0a0a0a
+   Gold: #C8A951  |  Gold-light: #E2C97E  |  Black: #1A1A1A
    All rules use !important to override Cookiebot's own specificity.
 ──────────────────────────────────────────────────────────────────────────── */
 
-/* ── Backdrop & container ── */
-#CybotCookiebotDialog {
-  font-family: 'Montserrat', sans-serif !important;
-  background: #1A1A1A !important;
-  border-top: 1px solid rgba(200,169,81,0.3) !important;
-  box-shadow: 0 -8px 30px rgba(0,0,0,0.4) !important;
+/* ── 1. CATCH-ALL: every element in the dialog → dark background, white text ── */
+#CybotCookiebotDialog,
+#CybotCookiebotDialog * {
+  color: #ffffff !important;
+  background-color: #1A1A1A !important;
+  border-color: rgba(200,169,81,0.2) !important;
+  box-shadow: none !important;
+  outline-color: #C8A951 !important;
 }
 
-/* ── Title ── */
+/* ── 2. CONTAINER: outer wrapper border & shadow ── */
+#CybotCookiebotDialog {
+  font-family: 'Montserrat', sans-serif !important;
+  border-top: 2px solid #C8A951 !important;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.6) !important;
+}
+
+/* ── 3. TITLE: gold ── */
 #CybotCookiebotDialogBodyContentTitle,
 #CybotCookiebotDialogBodyContentTitle * {
   font-family: 'Cormorant Garamond', serif !important;
   color: #C8A951 !important;
+  background-color: transparent !important;
   font-weight: 600 !important;
   letter-spacing: 1px !important;
 }
 
-/* ── Catch-all: force all text white, then restore button text ── */
-#CybotCookiebotDialog,
-#CybotCookiebotDialog * {
-  color: #ffffff !important;
-}
-#CybotCookiebotDialog .CybotCookiebotDialogBodyButton {
-  color: #1a1a1a !important;
-}
-
-/* ── Body text sizing ── */
+/* ── 4. BODY TEXT: sizing ── */
 #CybotCookiebotDialogBodyContentText,
 #CybotCookiebotDialogBodyContentText * {
+  background-color: transparent !important;
   font-size: 13px !important;
   line-height: 1.7 !important;
 }
 #CybotCookiebotDialogBodyContentText a {
   color: #C8A951 !important;
+  background-color: transparent !important;
   text-decoration: underline !important;
 }
 
-/* ── Button wrapper backgrounds ── */
+/* ── 5. BUTTON WRAPPER BACKGROUNDS ── */
 #CybotCookiebotDialogBodyButtons,
 #CybotCookiebotDialogBodyLevelButtonsLevelOptinAllowAll,
 #CybotCookiebotDialogBodyLevelButtonsLevelOptinAllowallSelector {
-  background: transparent !important;
+  background-color: transparent !important;
 }
 
-/* ── "Allow all" button ── */
+/* ── 6. CATCH-ALL BUTTONS: transparent with gold outline ── */
+#CybotCookiebotDialog button,
+#CybotCookiebotDialog a[class*="Button"],
+#CybotCookiebotDialog a[id*="Button"] {
+  background-color: transparent !important;
+  border: 1px solid rgba(200,169,81,0.5) !important;
+  color: #C8A951 !important;
+}
+
+/* ── 7. "ALLOW ALL" button → filled gold ── */
 #CybotCookiebotDialogBodyButtonAccept,
 #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll {
-  background: #C8A951 !important;
+  background-color: #C8A951 !important;
   border: 1px solid #C8A951 !important;
   color: #0a0a0a !important;
   font-weight: 600 !important;
@@ -61,15 +73,15 @@
 }
 #CybotCookiebotDialogBodyButtonAccept:hover,
 #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover {
-  background: #E2C97E !important;
+  background-color: #E2C97E !important;
   border-color: #E2C97E !important;
 }
 
-/* ── "Allow selection" button ── */
+/* ── 8. "ALLOW SELECTION" button → filled gold ── */
 #CybotCookiebotDialogBodyLevelButtonAccept,
 #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
 .CybotCookiebotDialogBodyButton#CybotCookiebotDialogBodyLevelButtonAccept {
-  background: #C8A951 !important;
+  background-color: #C8A951 !important;
   border: 1px solid #C8A951 !important;
   color: #0a0a0a !important;
   font-weight: 600 !important;
@@ -80,15 +92,15 @@
 }
 #CybotCookiebotDialogBodyLevelButtonAccept:hover,
 #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover {
-  background: #E2C97E !important;
+  background-color: #E2C97E !important;
   border-color: #E2C97E !important;
 }
 
-/* ── "Decline" / "Details" buttons — outlined gold ── */
+/* ── 9. "DECLINE" / "DETAILS" buttons → outlined gold ── */
 #CybotCookiebotDialogBodyButtonDecline,
 #CybotCookiebotDialogBodyButtonDetails,
 #CybotCookiebotDialogBodyLevelButtonDecline {
-  background: transparent !important;
+  background-color: transparent !important;
   border: 1px solid rgba(200,169,81,0.5) !important;
   color: #C8A951 !important;
   font-weight: 600 !important;
@@ -100,47 +112,57 @@
 #CybotCookiebotDialogBodyButtonDecline:hover,
 #CybotCookiebotDialogBodyButtonDetails:hover,
 #CybotCookiebotDialogBodyLevelButtonDecline:hover {
-  background: rgba(200,169,81,0.1) !important;
+  background-color: rgba(200,169,81,0.1) !important;
   border-color: #C8A951 !important;
 }
 
-/* ── Controls section border ── */
-#CybotCookiebotDialogBodyContentControls,
-.CybotCookiebotDialogBodyContentControls {
-  border-color: rgba(200,169,81,0.2) !important;
+/* ── 10. TOGGLE SWITCHES — "on" state ── */
+/* accent-color covers the native checkbox colour in all modern browsers */
+#CybotCookiebotDialog input[type="checkbox"] {
+  accent-color: #C8A951 !important;
 }
-#CybotCookiebotDialogBodyContentControlsWrapper * {
-  color: rgba(255,255,255,0.6) !important;
-}
-
-/* ── Toggle switches — "on" / checked state ── */
+/* Cookiebot custom slider approach */
 #CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
   background-color: #C8A951 !important;
 }
 #CybotCookiebotDialogBodyContentControlSwitch:checked
   + .CybotCookiebotDialogBodyContentControlSliderWrapper
   .CybotCookiebotDialogBodyContentControlSliderRound,
-.CybotCookiebotDialogBodyContentControlSliderWrapper.CybotCookiebotDialogBodyContentControlsCheckboxOn {
-  background: #C8A951 !important;
+.CybotCookiebotDialogBodyContentControlSliderWrapper.CybotCookiebotDialogBodyContentControlsCheckboxOn,
+.CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: rgba(200,169,81,0.25) !important;
+}
+#CybotCookiebotDialog input:checked ~ .CybotCookiebotDialogBodyLevelButtonSlider,
+#CybotCookiebotDialog input:checked + label .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: #C8A951 !important;
 }
 
-/* ── Active "Consent" / tab underline ── */
+/* ── 11. ACTIVE TAB underline → gold ── */
 #CybotCookiebotDialogDetailBodyContentCookieContainerButton[aria-selected="true"],
 #CybotCookiebotDialogDetailBodyContentCookieContainerLink[aria-selected="true"],
-.CybotCookiebotDialogNavItemSelected,
-.CybotCookiebotDialogBodyLevelButtonIABHeaderToggleLabel.selected {
+.CybotCookiebotDialogNavItemSelected {
   color: #C8A951 !important;
+  background-color: transparent !important;
   border-bottom: 2px solid #C8A951 !important;
 }
 
-/* ── Inactive tab links ── */
+/* ── 12. INACTIVE TABS ── */
 #CybotCookiebotDialogDetailBodyContentCookieContainerButton,
 #CybotCookiebotDialogDetailBodyContentCookieContainerLink {
   color: rgba(255,255,255,0.6) !important;
+  background-color: transparent !important;
   border-bottom: 2px solid transparent !important;
 }
 
-/* ── Any remaining blue accents / focus rings ── */
-#CybotCookiebotDialog a:not([class*="Button"]) {
+/* ── 13. LINKS (non-button) → gold ── */
+#CybotCookiebotDialog a:not([class*="Button"]):not([id*="Button"]) {
   color: #C8A951 !important;
+  background-color: transparent !important;
+}
+
+/* ── 14. FOCUS RINGS → gold, not blue ── */
+#CybotCookiebotDialog *:focus,
+#CybotCookiebotDialog *:focus-visible {
+  outline-color: #C8A951 !important;
+  box-shadow: 0 0 0 2px rgba(200,169,81,0.4) !important;
 }
