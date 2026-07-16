@@ -166,3 +166,82 @@
   outline-color: #C8A951 !important;
   box-shadow: 0 0 0 2px rgba(200,169,81,0.4) !important;
 }
+
+/* ─── Cookie settings widget (post-consent "Change/Withdraw" panel) ────────
+   This is a separate Cookiebot element (#CookiebotWidget), not the initial
+   dialog above. Styled to match. A generic fallback also covers the case
+   where these actions render inside #CybotCookiebotDialog instead.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* ── 15. CATCH-ALL: widget → dark background, white text ── */
+#CookiebotWidget,
+#CookiebotWidget * {
+  color: #ffffff !important;
+  background-color: #1A1A1A !important;
+  border-color: rgba(200,169,81,0.2) !important;
+  box-shadow: none !important;
+  outline-color: #C8A951 !important;
+}
+#CookiebotWidget {
+  font-family: 'Montserrat', sans-serif !important;
+  border: 1px solid rgba(200,169,81,0.3) !important;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6) !important;
+}
+
+/* ── 16. CONSENT CATEGORY CHECKMARKS/TOGGLES → gold accent ── */
+#CookiebotWidget input[type="checkbox"] {
+  accent-color: #C8A951 !important;
+}
+#CookiebotWidget svg,
+#CookiebotWidget [class*="icon"],
+#CookiebotWidget [class*="Icon"] {
+  fill: #C8A951 !important;
+  color: #C8A951 !important;
+}
+
+/* ── 17. "CHANGE YOUR CONSENT" → primary gold filled button ── */
+#CookiebotWidget-btn-change,
+#CybotCookiebotDialog [id*="Change" i],
+#CybotCookiebotDialog [id*="change" i] {
+  background-color: #C8A951 !important;
+  border: 1px solid #C8A951 !important;
+  color: #0a0a0a !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  border-radius: 2px !important;
+  transition: all 0.3s !important;
+}
+#CookiebotWidget-btn-change:hover,
+#CybotCookiebotDialog [id*="Change" i]:hover,
+#CybotCookiebotDialog [id*="change" i]:hover {
+  background-color: #E2C97E !important;
+  border-color: #E2C97E !important;
+}
+
+/* ── 18. "WITHDRAW YOUR CONSENT" → gold outline on black ── */
+#CookiebotWidget-btn-withdraw,
+#CybotCookiebotDialog [id*="Withdraw" i],
+#CybotCookiebotDialog [id*="withdraw" i] {
+  background-color: transparent !important;
+  border: 1px solid #C8A951 !important;
+  color: #C8A951 !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  border-radius: 2px !important;
+  transition: all 0.3s !important;
+}
+#CookiebotWidget-btn-withdraw:hover,
+#CybotCookiebotDialog [id*="Withdraw" i]:hover,
+#CybotCookiebotDialog [id*="withdraw" i]:hover {
+  background-color: rgba(200,169,81,0.1) !important;
+  border-color: #E2C97E !important;
+}
+
+/* ── 19. FOCUS RINGS → gold, not blue ── */
+#CookiebotWidget *:focus,
+#CookiebotWidget *:focus-visible {
+  outline-color: #C8A951 !important;
+  box-shadow: 0 0 0 2px rgba(200,169,81,0.4) !important;
+}
