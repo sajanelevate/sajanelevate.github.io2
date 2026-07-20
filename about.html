@@ -619,6 +619,11 @@
         <span class="field-error"></span>
       </div>
       <div class="form-field form-full">
+        <label>Recommended By <span style="opacity:0.5;font-weight:400;">(optional)</span></label>
+        <input id="f-recommended-by" type="text" placeholder="Name of the person who recommended us" autocomplete="off">
+        <span class="field-error"></span>
+      </div>
+      <div class="form-field form-full">
         <label>Additional Information</label>
         <textarea id="f-message" placeholder="Tell us about the student's maths journey, any specific areas of difficulty, or questions you have about the programme..." autocomplete="off"></textarea>
         <span class="field-error"></span>
@@ -854,6 +859,7 @@
         student_surname:    document.getElementById('f-student-surname').value.trim(),
         year_group:         document.getElementById('f-year-group').value,
         current_grade:      document.getElementById('f-current-grade').value,
+        recommended_by:     document.getElementById('f-recommended-by').value.trim(),
         message:            document.getElementById('f-message').value.trim()
       };
       emailjs.send('service_k53n7gf', 'template_wxekec3', params)
