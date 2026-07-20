@@ -474,6 +474,11 @@
   .outer-card{background:var(--card-bg);border:1px solid var(--gold-dim);border-radius:2px;padding:44px 48px;}
   .outer-title{font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:36px;font-weight:600;}
   .cs-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:172px;gap:1px;background:#262218;}
+  @media(min-width:769px){
+    .programme{padding:53px 6%;}
+    .outer-card{max-width:1400px;margin:0 auto;}
+    .cs-grid{grid-template-columns:repeat(4,1fr);}
+  }
   .cell{background:var(--card-bg);padding:18px 24px;display:flex;flex-direction:column;}
   .cell-label{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-label);margin-bottom:12px;}
   .cell-visual{flex:1;display:flex;align-items:center;min-height:44px;}
