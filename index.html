@@ -198,6 +198,7 @@
   .programme{background:var(--charcoal);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:53px 32%;}
   .programme .section-title{color:var(--white);font-size:90px;text-align:center;margin-top:-50px;position:relative;z-index:1;}
   .programme .container{max-width:100%;width:100%;position:relative;z-index:1;}
+  .programme-title-wrap{position:relative;display:flex;align-items:center;justify-content:center;}
   .programme-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cinzel',serif;font-weight:600;font-size:280px;letter-spacing:0.05em;text-transform:uppercase;color:var(--gold);opacity:0.05;white-space:nowrap;pointer-events:none;z-index:0;}
   .programme-grid{display:flex;justify-content:center;margin-top:30px;}
   .programme-right{max-width:100%;width:100%;}
@@ -821,11 +822,13 @@
 
 <!-- PROGRAMME -->
 <section class="programme" id="programme">
-  <div class="programme-watermark" aria-hidden="true">Programme</div>
   <div id="ppts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
   <div class="container">
 
-    <h2 class="section-title">The <em>Programme</em></h2>
+    <div class="programme-title-wrap">
+      <div class="programme-watermark" aria-hidden="true">Programme</div>
+      <h2 class="section-title">The <em>Programme</em></h2>
+    </div>
 
     <div class="programme-grid">
       <div class="outer-card ar">
