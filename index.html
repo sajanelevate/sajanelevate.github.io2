@@ -154,7 +154,7 @@
   section{padding:100px 60px;}
   .section-tag{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
   .section-title{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.1;color:var(--charcoal);margin-bottom:20px;}
-  .testimonials-sec .section-title{font-size:70px;}
+  .testimonials-sec .section-title{font-size:70px;color:var(--white);}
   .testimonials-sec .section-title::after{content:'';display:block;width:560px;height:5px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);clip-path:ellipse(50% 50% at 50% 50%);}
   .section-title em{font-style:italic;color:var(--gold);}
   .section-subtitle{font-size:14px;line-height:1.8;color:var(--grey);max-width:520px;}
@@ -537,16 +537,17 @@
   @media(max-width:680px){.cs-grid{grid-template-columns:1fr;}.outer-card{padding:30px 22px;}}
 
   /* TESTIMONIALS SECTION */
-  .testimonials-sec{background:var(--white);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 60px;scroll-margin-top:80px;position:relative;}
-  .testimonials-sec .section-header{text-align:center;margin-bottom:56px;}
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1300px;margin:0 auto;width:100%;}
+  .testimonials-sec{background:var(--black);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 60px;scroll-margin-top:80px;position:relative;overflow:hidden;}
+  .testimonials-sec-pts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .testimonials-sec .section-header{text-align:center;margin-bottom:56px;position:relative;z-index:1;}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1300px;margin:0 auto;width:100%;position:relative;z-index:1;}
   /* PLAQUE CARDS */
   .t-wrap{position:relative;display:flex;transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);}
   .t-wrap:hover{transform:translateY(-10px);}
   .t-wrap:hover .t-card{box-shadow:0 24px 64px rgba(0,0,0,0.28),0 0 0 1px rgba(200,169,81,0.4);}
   .t-wrap:hover .t-btn{border-color:var(--gold);color:var(--gold);}
-  .t-card{background:var(--black);border:none;padding:0;display:flex;flex-direction:column;gap:0;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.2);transition:box-shadow 0.45s;overflow:hidden;flex:1;border-radius:8px;}
-  .t-dark{padding:32px 28px 28px;position:relative;overflow:hidden;flex:1;background:var(--black);}
+  .t-card{background:var(--charcoal);border:none;padding:0;display:flex;flex-direction:column;gap:0;cursor:pointer;box-shadow:0 4px 24px rgba(0,0,0,0.4);transition:box-shadow 0.45s;overflow:hidden;flex:1;border-radius:8px;}
+  .t-dark{padding:32px 28px 28px;position:relative;overflow:hidden;flex:1;background:var(--charcoal);}
   /* inner gold frame */
   .t-dark::after{content:'';position:absolute;inset:12px 12px 0 12px;border:1px solid rgba(200,169,81,0.18);border-bottom:none;pointer-events:none;z-index:0;}
   .t-dark::before{content:'\201C';position:absolute;top:-20px;left:18px;font-family:'Cormorant Garamond',serif;font-size:240px;line-height:1;color:rgba(200,169,81,0.18);pointer-events:none;user-select:none;z-index:0;}
@@ -590,17 +591,16 @@
   @media(max-width:960px){.t-grid{grid-template-columns:1fr;}.testimonials-sec{padding:60px 24px;min-height:unset;}.t-wrap{transform:none!important;}.exp-header{padding:44px 28px 32px;}.exp-body{padding:32px 28px 44px;}.exp-quote-text{font-size:22px;}}
 
   /* TUTOR SECTION */
-  .tutor-sec{background:var(--black);min-height:100vh;display:flex;align-items:center;padding:90px 60px 80px;scroll-margin-top:80px;position:relative;overflow:hidden;}
-  .tutor-sec-pts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .tutor-sec{background:var(--white);min-height:100vh;display:flex;align-items:center;padding:90px 60px 80px;scroll-margin-top:80px;position:relative;overflow:hidden;}
   .tutor-sec .container{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
   .tutor-grid{display:grid;grid-template-columns:0.6fr 1fr;gap:80px;align-items:start;}
   .tutor-photo{aspect-ratio:3/4;max-height:470px;background:#1a1a1a;border:1px solid rgba(200,169,81,0.2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .tutor-photo::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
   .tutor-photo-placeholder{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(200,169,81,0.3);letter-spacing:3px;text-transform:uppercase;}
-  .tutor-text.section-subtitle{max-width:100%;color:rgba(255,255,255,0.45);margin-bottom:44px;font-size:18px;line-height:2;}
+  .tutor-text.section-subtitle{max-width:100%;color:rgba(26,26,26,0.55);margin-bottom:44px;font-size:18px;line-height:2;}
   .tutor-stats{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid rgba(200,169,81,0.15);}
   .tutor-stat-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--gold);line-height:1;}
-  .tutor-stat-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;}
+  .tutor-stat-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(26,26,26,0.4);margin-top:4px;}
   @media(max-width:960px){.tutor-grid{grid-template-columns:1fr;gap:40px;}.tutor-sec{padding:60px 24px;}}
 
   /* SYLLABUS */
@@ -713,7 +713,6 @@
 
 <!-- TUTOR -->
 <section class="tutor-sec" id="tutor">
-  <div class="tutor-sec-pts" id="tutor-pts"></div>
   <div class="container">
     <div class="tutor-grid">
       <div class="al" style="align-self:end;margin-bottom:96px;">
@@ -723,7 +722,7 @@
       </div>
       <div class="ar">
         <span class="section-tag">Behind Elevate Maths</span>
-        <h2 class="section-title" style="color:var(--white);">Meet <em>Your Tutor.</em></h2>
+        <h2 class="section-title">Meet <em>Your Tutor.</em></h2>
         <p class="tutor-text section-subtitle">My name is Sajan. I created Elevate Maths because I believe the traditional approach to GCSE maths limits what students can achieve. Most people see it as a daunting, exhausting subject — but a top grade isn't mysterious. It comes down to three things: a structured plan, consistent practice and the right guidance.</p>
         <p class="tutor-text section-subtitle">I'll handle the full journey with your child from start to finish. We break every topic into small, manageable chapters and build through repetition — the method that actually works. I've proven this works on myself. Over the last three years, I passed 13 ACCA exams through self-study using these exact techniques. That's not theory. That's a system I've refined and implemented throughout Elevate.</p>
         <p class="tutor-text section-subtitle">Your child won't just learn the content. They'll develop the mindset and discipline needed to solve hard problems independently — something that matters far beyond maths.</p>
@@ -736,8 +735,9 @@
 
 <!-- TESTIMONIALS -->
 <section class="testimonials-sec" id="testimonials">
+  <div class="testimonials-sec-pts" id="testimonials-pts"></div>
   <div class="section-header au">
-    <span class="section-tag" style="text-align:center;display:block;color:var(--black);">Student &amp; Parent Reviews</span>
+    <span class="section-tag" style="text-align:center;display:block;">Student &amp; Parent Reviews</span>
     <h2 class="section-title" style="text-align:center;"><em>Testimonials</em></h2>
   </div>
 
@@ -1178,9 +1178,9 @@
     }
   })();
 
-  // Tutor section gold sparkles
+  // Testimonials section gold sparkles
   (function(){
-    const c=document.getElementById('tutor-pts');
+    const c=document.getElementById('testimonials-pts');
     if(!c)return;
     for(let i=0;i<120;i++){
       const d=document.createElement('div');
