@@ -80,19 +80,17 @@
   .nav-hamburger{display:none;}
 
   /* HERO */
-  .hero{min-height:100vh;background:var(--charcoal);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 60px 80px;text-align:center;}
-  .orb{position:absolute;border-radius:50%;pointer-events:none;}
-  .orb1{width:700px;height:700px;top:-200px;right:-200px;background:radial-gradient(circle,rgba(200,169,81,0.12) 0%,transparent 70%);animation:orb-a 10s ease-in-out infinite alternate;}
-  .orb2{width:500px;height:500px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(200,169,81,0.06) 0%,transparent 70%);animation:orb-a 13s ease-in-out infinite alternate-reverse;}
-  @keyframes orb-a{from{transform:translate(0,0) scale(1);}to{transform:translate(40px,30px) scale(1.1);}}
+  .hero{min-height:100vh;background:linear-gradient(180deg,rgba(10,10,10,0.55) 0%,rgba(10,10,10,0.72) 55%,rgba(10,10,10,0.88) 100%),url('about-hero-bg.jpg') center 35%/cover no-repeat,var(--charcoal);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 60px 80px;text-align:center;}
   .hero-pts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
   .hp{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:sp-up linear infinite;}
   @keyframes sp-up{0%{opacity:0;transform:translateY(0) translateX(0);}8%{opacity:0.85;}85%{opacity:0.08;}100%{opacity:0;transform:translateY(-600px) translateX(var(--dx));}}
+  .hero-back{position:absolute;top:104px;left:40px;z-index:2;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.8);text-decoration:none;padding:10px 18px;border:1px solid rgba(255,255,255,0.28);background:rgba(10,10,10,0.35);backdrop-filter:blur(6px);transition:border-color 0.3s,color 0.3s,background 0.3s;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero-back:hover{border-color:var(--gold);color:var(--gold);background:rgba(10,10,10,0.55);}
   .hero-inner{position:relative;z-index:1;max-width:720px;}
   .hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,169,81,0.4);padding:8px 20px;margin-bottom:36px;opacity:0;filter:blur(12px);transform:translateY(12px);}
-  .hero h1{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.05;color:var(--white);margin-bottom:28px;letter-spacing:-1px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;line-height:1.05;color:var(--white);margin-bottom:28px;letter-spacing:-1px;opacity:0;filter:blur(12px);transform:translateY(12px);text-shadow:0 2px 24px rgba(0,0,0,0.4);}
   .hero h1 em{font-style:italic;color:var(--gold);}
-  .hero-sub{font-size:17px;line-height:1.8;color:rgba(255,255,255,0.6);margin-bottom:48px;margin-left:auto;margin-right:auto;max-width:520px;opacity:0;filter:blur(12px);transform:translateY(12px);}
+  .hero-sub{font-size:17px;line-height:1.8;color:rgba(255,255,255,0.7);margin-bottom:48px;margin-left:auto;margin-right:auto;max-width:520px;opacity:0;filter:blur(12px);transform:translateY(12px);}
   .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;opacity:0;filter:blur(12px);transform:translateY(12px);}
   @keyframes hero-blur-in{from{opacity:0;filter:blur(12px);transform:translateY(12px);}to{opacity:1;filter:blur(0px);transform:translateY(0);}}
   .hero-in{animation:hero-blur-in 2.0s cubic-bezier(0.34,1.4,0.64,1) both;}
@@ -261,6 +259,7 @@
     .nav-links .nav-cta{margin-top:8px;text-align:center;padding:14px 24px!important;display:block;}
     .nav-hamburger{display:flex;align-items:center;justify-content:center;background:none;border:none;font-size:22px;color:var(--charcoal);cursor:pointer;width:40px;height:40px;line-height:1;}
     .hero{padding:100px 24px 60px;}
+    .hero-back{top:88px;left:16px;padding:8px 14px;font-size:10px;}
     .hero h1{font-size:42px;}
     .hero-sub{font-size:16px;}
     .hero-btns{flex-direction:column;align-items:center;}
@@ -402,16 +401,14 @@
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
   <div class="hero-pts" id="hpts"></div>
+  <a href="index.html" class="hero-back">← Back to Home</a>
   <div class="hero-inner">
     <div class="hero-tag">More Information</div>
     <h1>Everything You<br>Need to <em>Know.</em></h1>
     <p class="hero-sub">An in-depth look at what Elevate Maths is to ensure our values align with yours.</p>
     <div class="hero-btns">
       <a href="#enquiry" class="btn-primary">Book a Discovery Session</a>
-      <a href="index.html" class="btn-secondary">Back to Home</a>
     </div>
   </div>
 </section>
@@ -741,7 +738,7 @@
 
   // Fire hero animations immediately (no splash on this page)
   (function() {
-    var delays = { '.hero-tag': 0, '.hero h1': 80, '.hero-sub': 160, '.hero-btns': 240 };
+    var delays = { '.hero-back': 0, '.hero-tag': 0, '.hero h1': 80, '.hero-sub': 160, '.hero-btns': 240 };
     Object.keys(delays).forEach(function(sel) {
       var el = document.querySelector(sel);
       if (!el) return;
