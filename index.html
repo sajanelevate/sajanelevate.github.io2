@@ -553,9 +553,9 @@
   .testimonials-sec{background:var(--black);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 60px;scroll-margin-top:80px;position:relative;overflow:hidden;}
   .testimonials-sec-pts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
   .testimonials-sec .section-header{text-align:center;margin-bottom:56px;position:relative;z-index:1;}
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1300px;margin:0 auto;width:100%;position:relative;z-index:1;}
+  .t-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;max-width:1300px;margin:0 auto;width:100%;position:relative;z-index:1;}
   /* PLAQUE CARDS */
-  .t-wrap{position:relative;display:flex;transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);}
+  .t-wrap{position:relative;display:flex;flex:1 1 340px;max-width:380px;transition:transform 0.45s cubic-bezier(0.16,1,0.3,1);}
   .t-wrap:hover{transform:translateY(-10px);}
   .t-wrap:hover .t-card{box-shadow:0 24px 64px rgba(0,0,0,0.28),0 0 0 1px rgba(200,169,81,0.4);}
   .t-wrap:hover .t-btn{border-color:var(--gold);color:var(--gold);}
@@ -621,7 +621,7 @@
   .exp-media-placeholder-title{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
   .exp-media-placeholder-text{font-size:12px;line-height:1.85;max-width:320px;color:rgba(255,255,255,0.45);}
   .exp-media-placeholder code{color:var(--gold-light);font-family:monospace;font-size:11px;background:rgba(200,169,81,0.12);padding:2px 7px;border-radius:2px;}
-  @media(max-width:960px){.t-grid{grid-template-columns:1fr;}.testimonials-sec{padding:60px 24px;min-height:unset;}.t-wrap{transform:none!important;}.exp-header{padding:44px 28px 32px;}.exp-body{padding:32px 28px 44px;}.exp-quote-text{font-size:22px;}.exp-media-frame{min-height:280px;}.exp-arrow{width:32px;height:32px;}.exp-dots{top:14px;}}
+  @media(max-width:960px){.t-grid{flex-direction:column;align-items:center;}.t-wrap{max-width:420px;width:100%;}.testimonials-sec{padding:60px 24px;min-height:unset;}.t-wrap{transform:none!important;}.exp-header{padding:44px 28px 32px;}.exp-body{padding:32px 28px 44px;}.exp-quote-text{font-size:22px;}.exp-media-frame{min-height:280px;}.exp-arrow{width:32px;height:32px;}.exp-dots{top:14px;}}
 
   /* TUTOR SECTION */
   .tutor-sec{background:var(--white);min-height:100vh;display:flex;align-items:center;padding:90px 60px 80px;scroll-margin-top:80px;position:relative;overflow:hidden;}
@@ -839,6 +839,46 @@
         <div class="t-dark">
           <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
           <p class="t-quote">"Placeholder — add a third testimonial here. Consider including a student voice rather than just a parent perspective."</p>
+        </div>
+        <div class="t-sep"></div>
+        <div class="t-light">
+          <div class="t-footer">
+            <div><div class="t-author">Student Name</div><div class="t-detail">Year — · Grade — to Grade —</div></div>
+            <button class="t-btn" aria-label="Read full testimonial"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-wrap">
+      <div class="t-card au d4"
+           data-quote="Placeholder — add a fourth testimonial here. Maybe focus on the exam results themselves — the grade jump, or a specific paper score."
+           data-author="Parent Name"
+           data-detail="Year — · Grade — to Grade —"
+           data-photo="testimonial-4-photo.jpg"
+           data-video="testimonial-4-video.mp4">
+        <div class="t-dark">
+          <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+          <p class="t-quote">"Placeholder — add a fourth testimonial here. Maybe focus on the exam results themselves — the grade jump, or a specific paper score."</p>
+        </div>
+        <div class="t-sep"></div>
+        <div class="t-light">
+          <div class="t-footer">
+            <div><div class="t-author">Parent Name</div><div class="t-detail">Year — · Grade — to Grade —</div></div>
+            <button class="t-btn" aria-label="Read full testimonial"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="t-wrap">
+      <div class="t-card au d5"
+           data-quote="Placeholder — add a fifth testimonial here. Consider a longer-term perspective — how the student changed over a full year or more."
+           data-author="Student Name"
+           data-detail="Year — · Grade — to Grade —"
+           data-photo="testimonial-5-photo.jpg"
+           data-video="testimonial-5-video.mp4">
+        <div class="t-dark">
+          <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
+          <p class="t-quote">"Placeholder — add a fifth testimonial here. Consider a longer-term perspective — how the student changed over a full year or more."</p>
         </div>
         <div class="t-sep"></div>
         <div class="t-light">
