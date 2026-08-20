@@ -601,7 +601,27 @@
   .exp-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(200,169,81,0.4);background:transparent;color:rgba(255,255,255,0.65);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.3s,color 0.3s;padding:0;z-index:10;}
   .exp-close:hover{border-color:var(--gold);color:var(--white);}
   .exp-close svg{transform:rotate(45deg);}
-  @media(max-width:960px){.t-grid{grid-template-columns:1fr;}.testimonials-sec{padding:60px 24px;min-height:unset;}.t-wrap{transform:none!important;}.exp-header{padding:44px 28px 32px;}.exp-body{padding:32px 28px 44px;}.exp-quote-text{font-size:22px;}}
+  /* EXPANDABLE OVERLAY — SLIDES (Quote / Photo / Video) */
+  .exp-slide{display:none;}
+  .exp-slide.active{display:block;animation:exp-slide-in 0.4s cubic-bezier(0.16,1,0.3,1);}
+  @keyframes exp-slide-in{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .exp-dots{position:absolute;top:20px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:15;}
+  .exp-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.3);border:none;padding:0;cursor:pointer;transition:background 0.3s,transform 0.3s;}
+  .exp-dot:hover{background:rgba(255,255,255,0.55);}
+  .exp-dot.active{background:var(--gold);transform:scale(1.35);}
+  .exp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(200,169,81,0.4);background:rgba(10,10,10,0.35);backdrop-filter:blur(6px);color:rgba(255,255,255,0.75);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.3s,color 0.3s,background 0.3s;z-index:15;padding:0;}
+  .exp-arrow:hover{border-color:var(--gold);color:var(--white);background:rgba(10,10,10,0.55);}
+  .exp-arrow-prev{left:14px;}
+  .exp-arrow-next{right:14px;}
+  .exp-arrow svg{width:16px;height:16px;}
+  .exp-media-frame{position:relative;min-height:420px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;}
+  .exp-photo,.exp-video{width:100%;height:100%;max-height:560px;object-fit:contain;display:none;cursor:default;}
+  .exp-media-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:60px 40px;text-align:center;}
+  .exp-media-placeholder svg{width:38px;height:38px;stroke:var(--gold);opacity:0.75;}
+  .exp-media-placeholder-title{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
+  .exp-media-placeholder-text{font-size:12px;line-height:1.85;max-width:320px;color:rgba(255,255,255,0.45);}
+  .exp-media-placeholder code{color:var(--gold-light);font-family:monospace;font-size:11px;background:rgba(200,169,81,0.12);padding:2px 7px;border-radius:2px;}
+  @media(max-width:960px){.t-grid{grid-template-columns:1fr;}.testimonials-sec{padding:60px 24px;min-height:unset;}.t-wrap{transform:none!important;}.exp-header{padding:44px 28px 32px;}.exp-body{padding:32px 28px 44px;}.exp-quote-text{font-size:22px;}.exp-media-frame{min-height:280px;}.exp-arrow{width:32px;height:32px;}.exp-dots{top:14px;}}
 
   /* TUTOR SECTION */
   .tutor-sec{background:var(--white);min-height:100vh;display:flex;align-items:center;padding:90px 60px 80px;scroll-margin-top:80px;position:relative;overflow:hidden;}
@@ -773,7 +793,9 @@
       <div class="t-card au d1"
            data-quote="Placeholder — add your first testimonial here. What changed for this student? Keep it specific and results-focused."
            data-author="Parent Name"
-           data-detail="Year — · Grade — to Grade —">
+           data-detail="Year — · Grade — to Grade —"
+           data-photo="testimonial-1-photo.jpg"
+           data-video="testimonial-1-video.mp4">
         <div class="t-dark">
           <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
           <p class="t-quote">"Placeholder — add your first testimonial here. What changed for this student? Keep it specific and results-focused."</p>
@@ -791,7 +813,9 @@
       <div class="t-card au d2"
            data-quote="Placeholder — add a second testimonial here. A different angle — perhaps about confidence, consistency, or the programme structure."
            data-author="Parent Name"
-           data-detail="Year — · Grade — to Grade —">
+           data-detail="Year — · Grade — to Grade —"
+           data-photo="testimonial-2-photo.jpg"
+           data-video="testimonial-2-video.mp4">
         <div class="t-dark">
           <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
           <p class="t-quote">"Placeholder — add a second testimonial here. A different angle — perhaps about confidence, consistency, or the programme structure."</p>
@@ -809,7 +833,9 @@
       <div class="t-card au d3"
            data-quote="Placeholder — add a third testimonial here. Consider including a student voice rather than just a parent perspective."
            data-author="Student Name"
-           data-detail="Year — · Grade — to Grade —">
+           data-detail="Year — · Grade — to Grade —"
+           data-photo="testimonial-3-photo.jpg"
+           data-video="testimonial-3-video.mp4">
         <div class="t-dark">
           <div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div>
           <p class="t-quote">"Placeholder — add a third testimonial here. Consider including a student voice rather than just a parent perspective."</p>
@@ -1590,21 +1616,57 @@
 <div class="exp-backdrop" id="expBackdrop"></div>
 <div class="exp-wrap" id="expWrap">
   <div class="exp-panel" id="expPanel">
-    <div class="exp-header">
-      <div class="exp-header-deco">"</div>
-      <div class="exp-header-stars">
-        <div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div>
-      </div>
+    <div class="exp-dots" id="expDots">
+      <button class="exp-dot active" data-slide="0" aria-label="Quote"></button>
+      <button class="exp-dot" data-slide="1" aria-label="Photo"></button>
+      <button class="exp-dot" data-slide="2" aria-label="Video"></button>
     </div>
-    <div class="exp-body">
-      <p class="exp-quote-text" id="expQuoteText"></p>
-      <div class="exp-divider"></div>
-      <div class="exp-author-name" id="expAuthorName"></div>
-      <div class="exp-author-detail" id="expAuthorDetail"></div>
-    </div>
+    <button class="exp-arrow exp-arrow-prev" id="expPrev" aria-label="Previous">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="exp-arrow exp-arrow-next" id="expNext" aria-label="Next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <button class="exp-close" id="expClose" aria-label="Close">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
     </button>
+
+    <div class="exp-slide exp-slide-quote active" data-slide="0">
+      <div class="exp-header">
+        <div class="exp-header-deco">"</div>
+        <div class="exp-header-stars">
+          <div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div><div class="exp-header-star"></div>
+        </div>
+      </div>
+      <div class="exp-body">
+        <p class="exp-quote-text" id="expQuoteText"></p>
+        <div class="exp-divider"></div>
+        <div class="exp-author-name" id="expAuthorName"></div>
+        <div class="exp-author-detail" id="expAuthorDetail"></div>
+      </div>
+    </div>
+
+    <div class="exp-slide" data-slide="1">
+      <div class="exp-media-frame" id="expPhotoFrame">
+        <img class="exp-photo" id="expPhoto" alt="">
+        <div class="exp-media-placeholder" id="expPhotoPlaceholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span class="exp-media-placeholder-title">Photo Template</span>
+          <p class="exp-media-placeholder-text">Add a photo — the student's work, a result, or a smiling parent/student. Drop a file named <code id="expPhotoName"></code> into the website folder and it'll appear here automatically.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-slide" data-slide="2">
+      <div class="exp-media-frame" id="expVideoFrame">
+        <video class="exp-video" id="expVideo" controls playsinline></video>
+        <div class="exp-media-placeholder" id="expVideoPlaceholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <span class="exp-media-placeholder-title">Video Template</span>
+          <p class="exp-media-placeholder-text">Add a short video testimonial. Drop an mp4 file named <code id="expVideoName"></code> into the website folder and it'll play here automatically.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <script>
@@ -1613,13 +1675,52 @@
   var wrap = document.getElementById('expWrap');
   var panel = document.getElementById('expPanel');
   var closeBtn = document.getElementById('expClose');
+  var prevBtn = document.getElementById('expPrev');
+  var nextBtn = document.getElementById('expNext');
   var quoteEl = document.getElementById('expQuoteText');
   var authorEl = document.getElementById('expAuthorName');
   var detailEl = document.getElementById('expAuthorDetail');
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.exp-slide'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.exp-dot'));
+  var photoImg = document.getElementById('expPhoto');
+  var photoPlaceholder = document.getElementById('expPhotoPlaceholder');
+  var photoNameEl = document.getElementById('expPhotoName');
+  var videoEl = document.getElementById('expVideo');
+  var videoPlaceholder = document.getElementById('expVideoPlaceholder');
+  var videoNameEl = document.getElementById('expVideoName');
+  var current = 0;
+
+  function showSlide(i) {
+    current = (i + slides.length) % slides.length;
+    slides.forEach(function(s, idx) { s.classList.toggle('active', idx === current); });
+    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === current); });
+    if (current !== 2) videoEl.pause();
+  }
+
+  function loadMedia(el, placeholderEl, src) {
+    el.style.display = 'none';
+    placeholderEl.style.display = 'flex';
+    if (!src) return;
+    el.onerror = function() { el.style.display = 'none'; placeholderEl.style.display = 'flex'; };
+    if (el.tagName === 'IMG') {
+      el.onload = function() { el.style.display = 'block'; placeholderEl.style.display = 'none'; };
+      el.src = src;
+    } else {
+      el.onloadeddata = function() { el.style.display = 'block'; placeholderEl.style.display = 'none'; };
+      el.src = src;
+      el.load();
+    }
+  }
+
   function openCard(card) {
     quoteEl.textContent = '“' + card.dataset.quote + '”';
     authorEl.textContent = card.dataset.author;
     detailEl.textContent = card.dataset.detail;
+    photoNameEl.textContent = card.dataset.photo;
+    videoNameEl.textContent = card.dataset.video;
+    loadMedia(photoImg, photoPlaceholder, card.dataset.photo);
+    loadMedia(videoEl, videoPlaceholder, card.dataset.video);
+    showSlide(0);
     backdrop.classList.add('open');
     wrap.classList.add('open');
     requestAnimationFrame(function() { requestAnimationFrame(function() { panel.classList.add('open'); }); });
@@ -1627,6 +1728,7 @@
   }
   function closeCard() {
     panel.classList.remove('open');
+    videoEl.pause();
     setTimeout(function() { backdrop.classList.remove('open'); wrap.classList.remove('open'); document.body.style.overflow = ''; }, 50);
   }
   document.querySelectorAll('.t-card').forEach(function(card) {
@@ -1635,7 +1737,25 @@
   closeBtn.addEventListener('click', closeCard);
   backdrop.addEventListener('click', closeCard);
   wrap.addEventListener('click', closeCard);
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCard(); });
+  prevBtn.addEventListener('click', function(e) { e.stopPropagation(); showSlide(current - 1); });
+  nextBtn.addEventListener('click', function(e) { e.stopPropagation(); showSlide(current + 1); });
+  dots.forEach(function(d) {
+    d.addEventListener('click', function(e) { e.stopPropagation(); showSlide(parseInt(d.dataset.slide, 10)); });
+  });
+  // Click anywhere on the current slide (except the video itself) to cycle forward
+  slides.forEach(function(s) {
+    s.addEventListener('click', function(e) {
+      if (e.target.closest('video')) return;
+      showSlide(current + 1);
+    });
+  });
+  panel.addEventListener('click', function(e) { e.stopPropagation(); });
+  document.addEventListener('keydown', function(e) {
+    if (!wrap.classList.contains('open')) return;
+    if (e.key === 'Escape') closeCard();
+    else if (e.key === 'ArrowRight') showSlide(current + 1);
+    else if (e.key === 'ArrowLeft') showSlide(current - 1);
+  });
 })();
 </script>
 </body>
