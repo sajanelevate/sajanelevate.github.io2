@@ -62,39 +62,32 @@
 
   /* LEGAL HERO */
   .legal-hero{background:var(--charcoal);padding:160px 60px 64px;text-align:center;}
-  .legal-eyebrow{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
-  .legal-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--white);margin-bottom:12px;}
+  .legal-eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .legal-hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.4rem,6vw,3.6rem);color:var(--white);margin-bottom:12px;}
   .legal-updated{font-size:13px;color:rgba(255,255,255,0.45);letter-spacing:0.5px;}
 
-  /* CONTENT */
-  .legal-wrap{max-width:760px;margin:0 auto;padding:64px 24px 40px;}
-  .legal-intro{background:var(--off-white);border:1px solid var(--border);border-radius:4px;padding:26px 30px;margin-bottom:36px;}
-  .legal-intro p{font-size:14.5px;line-height:1.9;color:var(--grey);margin-bottom:12px;}
-  .legal-intro p:last-child{margin-bottom:0;}
-  .legal-contents{margin-bottom:8px;padding:24px 30px;border:1px solid var(--border);border-radius:4px;}
-  .legal-contents p{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-  .legal-contents ol{list-style:none;counter-reset:toc;margin:0;padding:0;columns:2;column-gap:36px;}
-  .legal-contents li{counter-increment:toc;margin-bottom:9px;break-inside:avoid;font-size:13.5px;}
-  .legal-contents li a{color:var(--charcoal);text-decoration:none;transition:color 0.3s;}
-  .legal-contents li a:hover{color:var(--gold);}
-  .legal-contents li a::before{content:counter(toc,decimal-leading-zero);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:11px;margin-right:10px;}
+  /* CONTENT — reads as one flowing article, in the site's own voice */
+  .legal-container{max-width:760px;margin:0 auto;padding:90px 60px 60px;}
+  .legal-intro p{font-size:16px;line-height:1.95;color:var(--grey);margin-bottom:18px;}
+  .legal-intro{margin-bottom:20px;}
 
-  .legal-section{padding:40px 0 4px;border-top:1px solid var(--border);}
-  .legal-section h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;color:var(--charcoal);margin-bottom:16px;display:flex;gap:14px;align-items:baseline;}
-  .legal-section h2 .num{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;color:var(--gold);flex:none;}
-  .legal-section p{font-size:14.5px;line-height:1.9;color:var(--grey);margin-bottom:14px;}
-  .legal-section a{color:var(--gold-dark);text-decoration:underline;text-underline-offset:3px;}
-  .legal-section a:hover{color:var(--gold);}
-  .legal-section strong{color:var(--charcoal);font-weight:600;}
+  .legal-topic{margin-top:58px;}
+  .legal-topic:first-of-type{margin-top:0;}
+  .legal-topic .section-tag{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
+  .legal-topic h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.7rem,3.4vw,2.2rem);line-height:1.15;color:var(--charcoal);margin-bottom:16px;}
+  .legal-topic p{font-size:15px;line-height:1.95;color:var(--grey);margin-bottom:14px;}
+  .legal-topic p:last-child{margin-bottom:0;}
+  .legal-topic a{color:var(--gold-dark);text-decoration:underline;text-underline-offset:3px;}
+  .legal-topic a:hover{color:var(--gold);}
+  .legal-topic strong{color:var(--charcoal);font-weight:600;}
 
-  .legal-table{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:14px;}
-  .legal-table th,.legal-table td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--grey);}
-  .legal-table th{color:var(--gold-dark);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;}
-  .legal-table td strong{color:var(--charcoal);}
+  .legal-list{list-style:none;margin:4px 0 16px;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .legal-list li{font-size:15px;line-height:1.8;color:var(--grey);padding-left:22px;position:relative;}
+  .legal-list li::before{content:'◆';position:absolute;left:0;top:3px;color:var(--gold);font-size:9px;}
+  .legal-list li strong{color:var(--charcoal);}
 
-  .legal-footer-note{margin-top:48px;padding:26px 0 0;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:12.5px;}
-  .legal-footer-note a{color:var(--gold-dark);text-decoration:none;margin:0 8px;}
-  .legal-footer-note a:hover{color:var(--gold);}
+  .legal-close-rule{margin:64px 0 32px;}
+  .legal-footer-note{text-align:center;color:var(--text-muted);font-size:12.5px;}
 
   /* FOOTER (matches site-wide footer) */
   footer{background:var(--black);padding:60px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,169,81,0.2);}
@@ -141,15 +134,7 @@
   }
   @media(max-width:768px){
     .legal-hero{padding:120px 24px 44px;}
-    .legal-wrap{padding:44px 20px 24px;}
-    .legal-intro,.legal-contents{padding:18px;}
-    .legal-contents ol{columns:1;}
-    .legal-section h2{flex-direction:column;gap:4px;}
-    .legal-table,.legal-table tbody,.legal-table tr,.legal-table td,.legal-table th{display:block;}
-    .legal-table thead{display:none;}
-    .legal-table td{border:none;padding:3px 0;}
-    .legal-table tr{border-bottom:1px solid var(--border);padding:12px 0;}
-    .legal-table td:first-child{color:var(--charcoal);font-weight:600;}
+    .legal-container{padding:56px 24px 40px;}
     footer{flex-direction:column;gap:24px;padding:40px 24px;text-align:center;}
     .footer-links{flex-wrap:wrap;justify-content:center;gap:14px;}
     .footer-logo{justify-content:center;}
@@ -202,143 +187,129 @@
 
 <div class="gold-rule"></div>
 
-<main class="legal-wrap">
+<main class="legal-container">
 
   <div class="legal-intro">
     <p>This policy explains what personal information Elevate Maths Ltd collects through elevatemaths.co.uk and through the tutoring we provide, why we hold it, how long we keep it, and what you can ask us to do with it.</p>
     <p>Because we teach students under 18, some of what we hold relates to children. It is given to us by a parent or guardian, and we keep it to the minimum the service needs.</p>
   </div>
 
-  <nav class="legal-contents" aria-label="Contents">
-    <p>Contents</p>
-    <ol>
-      <li><a href="#s01">Who we are</a></li>
-      <li><a href="#s02">Information you give us</a></li>
-      <li><a href="#s03">Information collected automatically</a></li>
-      <li><a href="#s04">Why we use it</a></li>
-      <li><a href="#s05">Cookies</a></li>
-      <li><a href="#s06">Students under 18</a></li>
-      <li><a href="#s07">Testimonials and images</a></li>
-      <li><a href="#s08">Who else sees it</a></li>
-      <li><a href="#s09">How long we keep it</a></li>
-      <li><a href="#s10">Safeguarding and security</a></li>
-      <li><a href="#s11">Marketing</a></li>
-      <li><a href="#s12">Links to other sites</a></li>
-      <li><a href="#s13">Your rights</a></li>
-      <li><a href="#s14">Complaints</a></li>
-      <li><a href="#s15">Changes and contact</a></li>
-    </ol>
-  </nav>
-
-  <section class="legal-section" id="s01">
-    <h2><span class="num">01</span> Who we are</h2>
+  <section class="legal-topic" id="who-we-are">
+    <span class="section-tag">01</span>
+    <h2>Who we are</h2>
     <p>Elevate Maths Ltd is the data controller for the information described here, which means we decide what is collected and what happens to it. All tutoring is delivered personally by Sajan Shah.</p>
-    <table class="legal-table">
-      <tr><td><strong>Registered in</strong></td><td>England and Wales, company number [COMPANY NUMBER]</td></tr>
-      <tr><td><strong>Registered office</strong></td><td>[REGISTERED OFFICE ADDRESS]</td></tr>
-      <tr><td><strong>Contact</strong></td><td><a href="mailto:sajan@elevatemaths.co.uk">sajan@elevatemaths.co.uk</a></td></tr>
-    </table>
+    <p>We are registered in England and Wales, company number <strong>[COMPANY NUMBER]</strong>, with a registered office at <strong>[REGISTERED OFFICE ADDRESS]</strong>. You can contact us at <a href="mailto:sajan@elevatemaths.co.uk">sajan@elevatemaths.co.uk</a>.</p>
   </section>
 
-  <section class="legal-section" id="s02">
-    <h2><span class="num">02</span> Information you give us</h2>
+  <section class="legal-topic" id="information-you-give-us">
+    <span class="section-tag">02</span>
+    <h2>Information you give us</h2>
     <p>When you submit an enquiry we collect your name, email address, phone number and relationship to the student, along with the student's name, current year group and current maths grade, who recommended us if you tell us, and anything you add in the notes.</p>
     <p>If your child joins a cohort we go on to hold billing details, attendance, homework and assessment results, progress report content, and our correspondence with you.</p>
     <p>We do not ask for health, ethnicity, religious or similar sensitive information. Please share a learning need only where it genuinely affects how your child should be taught.</p>
   </section>
 
-  <section class="legal-section" id="s03">
-    <h2><span class="num">03</span> Information collected automatically</h2>
+  <section class="legal-topic" id="information-collected-automatically">
+    <span class="section-tag">03</span>
+    <h2>Information collected automatically</h2>
     <p>Our host records standard technical information when a page is served, including IP address, browser and device type, the pages viewed and the time of the visit. We use this to keep the site working and secure, and we do not attempt to identify individual visitors from it.</p>
   </section>
 
-  <section class="legal-section" id="s04">
-    <h2><span class="num">04</span> Why we use it</h2>
-    <table class="legal-table">
-      <thead><tr><th>Purpose</th><th>Lawful basis</th></tr></thead>
-      <tbody>
-        <tr><td>Answering your enquiry and arranging a Discovery Session</td><td>Steps taken at your request before a contract</td></tr>
-        <tr><td>Teaching your child and reporting on progress</td><td>Performance of our contract with you</td></tr>
-        <tr><td>Invoicing and keeping accounting records</td><td>Legal obligation, and our contract</td></tr>
-        <tr><td>Holding a student's details within a parent's enquiry</td><td>Our legitimate interest in judging whether the programme fits, weighed against the student's privacy</td></tr>
-        <tr><td>Publishing testimonials, photographs or video</td><td>Consent, given separately in writing</td></tr>
-        <tr><td>Keeping the site secure and working</td><td>Our legitimate interest in running a safe site</td></tr>
-      </tbody>
-    </table>
+  <section class="legal-topic" id="why-we-use-it">
+    <span class="section-tag">04</span>
+    <h2>Why we use it</h2>
+    <ul class="legal-list">
+      <li><strong>Answering your enquiry and arranging a Discovery Session</strong> — steps taken at your request before a contract.</li>
+      <li><strong>Teaching your child and reporting on progress</strong> — performance of our contract with you.</li>
+      <li><strong>Invoicing and keeping accounting records</strong> — legal obligation, and our contract.</li>
+      <li><strong>Holding a student's details within a parent's enquiry</strong> — our legitimate interest in judging whether the programme fits, weighed against the student's privacy.</li>
+      <li><strong>Publishing testimonials, photographs or video</strong> — consent, given separately in writing.</li>
+      <li><strong>Keeping the site secure and working</strong> — our legitimate interest in running a safe site.</li>
+    </ul>
     <p>Where we rely on consent you may withdraw it at any time, and we will act on that without asking you to justify it.</p>
   </section>
 
-  <section class="legal-section" id="s05">
-    <h2><span class="num">05</span> Cookies</h2>
+  <section class="legal-topic" id="cookies">
+    <span class="section-tag">05</span>
+    <h2>Cookies</h2>
     <p>Some cookies are necessary for the site to function. Others run only if you agree to them. You choose when you first arrive and you can change your mind at any time using <a href="javascript:void(0)" id="cookie-settings-link">cookie settings</a>, or through your browser. Some features may not work correctly if cookies are blocked entirely.</p>
   </section>
 
-  <section class="legal-section" id="s06">
-    <h2><span class="num">06</span> Students under 18</h2>
+  <section class="legal-topic" id="students-under-18">
+    <span class="section-tag">06</span>
+    <h2>Students under 18</h2>
     <p>Our service is bought by parents and guardians. The enquiry form is intended to be completed by an adult, and we ask that students do not submit it themselves. If we learn that a student has given us their details without a parent's involvement, we will delete them.</p>
     <p>A parent or guardian may ask at any time to see what we hold about their child, to correct it, or to have it deleted. Where the student is old enough to form their own view, we will take that into account as well.</p>
   </section>
 
-  <section class="legal-section" id="s07">
-    <h2><span class="num">07</span> Testimonials and images</h2>
+  <section class="legal-topic" id="testimonials-and-images">
+    <span class="section-tag">07</span>
+    <h2>Testimonials and images</h2>
     <p>We sometimes publish a student's first name, the grade achieved, the years we worked together, and a photograph or short video.</p>
     <p>We do this only with written permission. Where the student is under 18 that permission comes from a parent or guardian, and we ask the student too. Permission for a written quote is requested separately from permission for a photograph or video, and agreeing to one is never treated as agreeing to the other.</p>
     <p>Email us to have a testimonial, image or video removed and we will take it off the live site. Copies may remain in search engine caches or web archives for a time afterwards, which is outside our control.</p>
   </section>
 
-  <section class="legal-section" id="s08">
-    <h2><span class="num">08</span> Who else sees it</h2>
+  <section class="legal-topic" id="who-else-sees-it">
+    <span class="section-tag">08</span>
+    <h2>Who else sees it</h2>
     <p>We do not sell or rent personal data, and we do not share it for anyone else's marketing.</p>
     <p>A small number of providers process data on our behalf, under contract and only on our instructions: EmailJS delivers enquiry form submissions, GitHub Pages hosts the site, Cookiebot records cookie choices, and our email provider handles correspondence. Some are based outside the UK, including in the United States, and those transfers rely on safeguards recognised under UK law such as Standard Contractual Clauses with the UK Addendum.</p>
     <p>We may also disclose information where the law requires it, or where there is a safeguarding concern about a child's welfare.</p>
   </section>
 
-  <section class="legal-section" id="s09">
-    <h2><span class="num">09</span> How long we keep it</h2>
-    <table class="legal-table">
-      <thead><tr><th>Record</th><th>Kept for</th></tr></thead>
-      <tbody>
-        <tr><td>Enquiries that do not lead to enrolment</td><td>2 years from your last contact</td></tr>
-        <tr><td>Student and teaching records</td><td>3 years after the student leaves the programme</td></tr>
-        <tr><td>Invoices and accounting records</td><td>6 years, as UK tax law requires</td></tr>
-        <tr><td>Published testimonials and images</td><td>Until permission is withdrawn</td></tr>
-      </tbody>
-    </table>
+  <section class="legal-topic" id="how-long-we-keep-it">
+    <span class="section-tag">09</span>
+    <h2>How long we keep it</h2>
+    <ul class="legal-list">
+      <li><strong>Enquiries that do not lead to enrolment</strong> — kept 2 years from your last contact.</li>
+      <li><strong>Student and teaching records</strong> — kept 3 years after the student leaves the programme.</li>
+      <li><strong>Invoices and accounting records</strong> — kept 6 years, as UK tax law requires.</li>
+      <li><strong>Published testimonials and images</strong> — kept until permission is withdrawn.</li>
+    </ul>
   </section>
 
-  <section class="legal-section" id="s10">
-    <h2><span class="num">10</span> Safeguarding and security</h2>
+  <section class="legal-topic" id="safeguarding-and-security">
+    <span class="section-tag">10</span>
+    <h2>Safeguarding and security</h2>
     <p>Sajan Shah holds an enhanced DBS check, including a check against the children's barred list. The certificate is available to view on request.</p>
     <p>Student records are held in access-controlled storage reachable only by Sajan Shah, and enquiries are transmitted over an encrypted connection. No transmission over the internet can be guaranteed completely secure, but we keep the amount of information we hold as small as the service allows.</p>
   </section>
 
-  <section class="legal-section" id="s11">
-    <h2><span class="num">11</span> Marketing</h2>
+  <section class="legal-topic" id="marketing">
+    <span class="section-tag">11</span>
+    <h2>Marketing</h2>
     <p>We will contact you about your enquiry and about the cohort your child is enrolled in. We will only send wider updates about future intakes if you have agreed to receive them, and every such message includes a way to stop. You can opt out at any time by replying or emailing us.</p>
   </section>
 
-  <section class="legal-section" id="s12">
-    <h2><span class="num">12</span> Links to other sites</h2>
+  <section class="legal-topic" id="links-to-other-sites">
+    <span class="section-tag">12</span>
+    <h2>Links to other sites</h2>
     <p>This site may link to pages we do not control. We are not responsible for how those sites handle personal data, and you should read their own privacy notices.</p>
   </section>
 
-  <section class="legal-section" id="s13">
-    <h2><span class="num">13</span> Your rights</h2>
+  <section class="legal-topic" id="your-rights">
+    <span class="section-tag">13</span>
+    <h2>Your rights</h2>
     <p>Under UK data protection law you can ask us to give you a copy of what we hold about you or your child, correct anything inaccurate, delete data where we no longer need it, restrict or stop our use of it, provide it in a portable format, or withdraw permission you gave earlier.</p>
     <p>Email <a href="mailto:sajan@elevatemaths.co.uk">sajan@elevatemaths.co.uk</a>. We will respond within one month and there is no charge. We may need to confirm who you are before acting on a request.</p>
   </section>
 
-  <section class="legal-section" id="s14">
-    <h2><span class="num">14</span> Complaints</h2>
+  <section class="legal-topic" id="complaints">
+    <span class="section-tag">14</span>
+    <h2>Complaints</h2>
     <p>If you are unhappy with how we have handled your information, please tell us. Email <a href="mailto:sajan@elevatemaths.co.uk">sajan@elevatemaths.co.uk</a> and we will look into it and respond directly.</p>
     <p>You also have the right to raise a concern with the Information Commissioner's Office.</p>
   </section>
 
-  <section class="legal-section" id="s15">
-    <h2><span class="num">15</span> Changes and contact</h2>
+  <section class="legal-topic" id="changes-and-contact">
+    <span class="section-tag">15</span>
+    <h2>Changes and contact</h2>
     <p>If we change how we use personal data we will update this page and the date at the top. Where a change is significant we will contact current families directly rather than relying on you to check.</p>
     <p>Questions about this policy: <a href="mailto:sajan@elevatemaths.co.uk">sajan@elevatemaths.co.uk</a></p>
   </section>
+
+  <div class="gold-rule legal-close-rule"></div>
 
   <div class="legal-footer-note">
     <p>Elevate Maths Ltd · Registered in England and Wales · Company number [COMPANY NUMBER]</p>
