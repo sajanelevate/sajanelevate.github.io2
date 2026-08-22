@@ -647,24 +647,18 @@
   .syllabus-list .d6{transition-delay:0.43s;}
   .syllabus-list .d7{transition-delay:0.50s;}
   .syllabus{background:var(--white);padding:100px 60px 180px;min-height:100vh;position:relative;overflow:hidden;}
-  .syllabus .container{max-width:1235px;margin:0 auto;position:relative;}
+  .syllabus .container{max-width:1235px;margin:0 auto;}
   .syllabus .section-title{color:var(--charcoal);}
   .syllabus .section-subtitle{color:var(--grey);margin-bottom:0;}
-  .syllabus-heading{padding-right:490px;}
-  .syllabus-top-img{position:absolute;top:0;right:0;width:450px;}
-  .syllabus-top-img img{display:block;width:100%;height:600px;object-fit:cover;border-radius:4px;}
-  .syllabus-list{margin-top:48px;max-width:680px;}
-  .syllabus-row{padding:24px 0;border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:center;}
+  .syllabus-heading{text-align:center;}
+  .syllabus-heading .section-subtitle{margin-left:auto;margin-right:auto;}
+  .syllabus-list{margin:48px auto 0;max-width:680px;}
+  .syllabus-row{padding:24px 0;border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:center;justify-content:center;}
   .syllabus-row:first-child{border-top:1px solid var(--border);}
   .syllabus-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
   .syllabus-row-label{font-size:13px;font-weight:600;letter-spacing:2px;color:var(--gold);text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
   .syllabus-row-label::after{content:' —';}
   .syllabus-row-name{font-size:18px;font-weight:600;letter-spacing:1px;color:var(--charcoal);text-transform:uppercase;}
-  @media(max-width:960px){
-    .syllabus-heading{padding-right:0;}
-    .syllabus-top-img{position:static;width:100%;max-width:340px;margin:0 auto 32px;}
-    .syllabus-top-img img{height:auto;aspect-ratio:16/9;}
-  }
   @media(max-width:768px){
     .syllabus{padding:60px 24px!important;}
     .syllabus .section-title{font-size:32px!important;}
@@ -1009,9 +1003,6 @@
 <!-- SYLLABUS -->
 <section class="syllabus" id="syllabus">
   <div class="container">
-    <div class="syllabus-top-img au">
-      <img src="happy-mountain.jpg" alt="Elevate Maths" loading="lazy">
-    </div>
     <div class="au syllabus-heading">
       <span class="section-tag">What is Covered</span>
       <h2 class="section-title">The <em>Syllabus.</em></h2>
