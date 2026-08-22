@@ -285,6 +285,7 @@
     .enquiry{padding:60px 24px!important;}
     .enquiry-inner{max-width:100%!important;}
     .enquiry .section-title{font-size:32px!important;}
+    .enquiry .section-subtitle{font-size:13px;}
     .form-grid{grid-template-columns:1fr!important;gap:10px!important;}
     .form-full{grid-column:1!important;}
     #enquiry-submit{width:100%;padding:16px 24px!important;}
@@ -829,44 +830,90 @@
     }
   })();
 
-  // Enquiry form validation + submission
+  // ── ENQUIRY FORM VALIDATION ──────────────────────────────────────────────
   (function(){
     var form = document.getElementById('enquiry-form');
     if (!form) return;
-    function err(field, msg) { field.classList.add('has-error'); field.querySelector('.field-error').textContent = msg; return false; }
-    function ok(field) { field.classList.remove('has-error'); field.querySelector('.field-error').textContent = ''; return true; }
+
+    function err(field, msg) {
+      field.classList.add('has-error');
+      field.querySelector('.field-error').textContent = msg;
+      return false;
+    }
+    function ok(field) {
+      field.classList.remove('has-error');
+      field.querySelector('.field-error').textContent = '';
+      return true;
+    }
     function fieldOf(el) { return el.closest('.form-field'); }
+
     function validate() {
       var pass = true;
+
+      // Parent name
       var pn = document.getElementById('f-parent-name');
       pass = (pn.value.trim().length >= 2 ? ok(fieldOf(pn)) : err(fieldOf(pn), 'Please enter a first name of at least 2 characters.')) && pass;
+
+      // Parent surname
       var ps = document.getElementById('f-parent-surname');
       pass = (ps.value.trim().length >= 2 ? ok(fieldOf(ps)) : err(fieldOf(ps), 'Please enter a surname of at least 2 characters.')) && pass;
+
+      // Phone
       var ph = document.getElementById('f-phone');
       var ac = document.getElementById('f-area-code').value;
       var digits = ph.value.trim().replace(/[\s\-\(\)\.]/g, '');
-      var phoneOk = ac === '+44' ? (/^0[127]\d{9}$/.test(digits) || /^[127]\d{9}$/.test(digits)) : /^\d{7,15}$/.test(digits);
+      var phoneOk;
+      if (ac === '+44') {
+        // Accept 07xxxxxxxxx / 01xxxxxxxxx (11 digits) or without leading 0 (10 digits)
+        phoneOk = /^0[127]\d{9}$/.test(digits) || /^[127]\d{9}$/.test(digits);
+      } else {
+        phoneOk = /^\d{7,15}$/.test(digits);
+      }
       pass = (phoneOk ? ok(fieldOf(ph)) : err(fieldOf(ph), ac === '+44' ? 'Please enter a valid UK number (e.g. 07123 456789).' : 'Please enter a valid phone number.')) && pass;
+
+      // Email
       var em = document.getElementById('f-email');
-      pass = (/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(em.value.trim()) ? ok(fieldOf(em)) : err(fieldOf(em), 'Please enter a valid email address (e.g. name@example.com).')) && pass;
+      var emailOk = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(em.value.trim());
+      pass = (emailOk ? ok(fieldOf(em)) : err(fieldOf(em), 'Please enter a valid email address (e.g. name@example.com).')) && pass;
+
+      // Student name
       var sn = document.getElementById('f-student-name');
       pass = (sn.value.trim().length >= 2 ? ok(fieldOf(sn)) : err(fieldOf(sn), 'Please enter a first name of at least 2 characters.')) && pass;
+
+      // Student surname
       var ss = document.getElementById('f-student-surname');
       pass = (ss.value.trim().length >= 2 ? ok(fieldOf(ss)) : err(fieldOf(ss), 'Please enter a surname of at least 2 characters.')) && pass;
+
+      // Relation
       var rel = document.getElementById('f-relation');
       pass = (rel.value ? ok(fieldOf(rel)) : err(fieldOf(rel), 'Please select your relation to the student.')) && pass;
+
+      // Year group
       var yg = document.getElementById('f-year-group');
       pass = (yg.value ? ok(fieldOf(yg)) : err(fieldOf(yg), 'Please select a year group.')) && pass;
+
+      // Current grade
       var cg = document.getElementById('f-current-grade');
       pass = (cg.value ? ok(fieldOf(cg)) : err(fieldOf(cg), 'Please select the student\'s current grade.')) && pass;
+
+
+
+      // Message — no restrictions
+
       return pass;
     }
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       document.getElementById('form-send-error').style.display = 'none';
-      if (!validate()) { var firstErr = form.querySelector('.has-error'); if (firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'}); return; }
+      if (!validate()) {
+        var firstErr = form.querySelector('.has-error');
+        if (firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
       var btn = document.getElementById('enquiry-submit');
-      btn.disabled = true; btn.textContent = 'Sending...';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
       var params = {
         parent_first_name: document.getElementById('f-parent-name').value.trim(),
         parent_surname:     document.getElementById('f-parent-surname').value.trim(),
@@ -884,14 +931,30 @@
         .then(function() {
           document.getElementById('ty-page').classList.add('ty-active');
           document.body.style.overflow = 'hidden';
-          btn.disabled = false; btn.textContent = 'Submit Enquiry';
+          btn.disabled = false;
+          btn.textContent = 'Submit Enquiry';
         }, function() {
           document.getElementById('form-send-error').style.display = 'block';
-          btn.disabled = false; btn.textContent = 'Submit Enquiry';
+          btn.disabled = false;
+          btn.textContent = 'Submit Enquiry';
         });
     });
-    form.addEventListener('input', function(e) { var f = e.target.closest('.form-field'); if (f && f.classList.contains('has-error')) { f.classList.remove('has-error'); f.querySelector('.field-error').textContent = ''; } });
-    form.addEventListener('change', function(e) { var f = e.target.closest('.form-field'); if (f && f.classList.contains('has-error')) { f.classList.remove('has-error'); f.querySelector('.field-error').textContent = ''; } });
+
+    // Clear error on input
+    form.addEventListener('input', function(e) {
+      var f = e.target.closest('.form-field');
+      if (f && f.classList.contains('has-error')) {
+        f.classList.remove('has-error');
+        f.querySelector('.field-error').textContent = '';
+      }
+    });
+    form.addEventListener('change', function(e) {
+      var f = e.target.closest('.form-field');
+      if (f && f.classList.contains('has-error')) {
+        f.classList.remove('has-error');
+        f.querySelector('.field-error').textContent = '';
+      }
+    });
   })();
 
   // Thank-you page sparkles
