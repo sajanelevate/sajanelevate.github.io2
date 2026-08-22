@@ -650,17 +650,17 @@
   .syllabus .container{max-width:1235px;margin:0 auto;}
   .syllabus .section-title{color:var(--charcoal);}
   .syllabus .section-subtitle{color:var(--grey);margin-bottom:0;}
-  .syllabus-header{display:flex;justify-content:space-between;align-items:flex-start;gap:60px;}
-  .syllabus-header-img{flex-shrink:0;width:315px;}
+  .syllabus-grid{display:grid;grid-template-columns:1fr 315px;gap:60px;align-items:start;}
+  .syllabus-header-img{width:100%;}
   .syllabus-header-img img{display:block;width:100%;height:294px;object-fit:cover;border-radius:4px;}
-  .syllabus-list{max-width:680px;margin:48px 0 0;}
+  .syllabus-list{margin-top:24px;}
   .syllabus-row{padding:24px 0;border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:center;}
   .syllabus-row:first-child{border-top:1px solid var(--border);}
   .syllabus-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
   .syllabus-row-label{font-size:13px;font-weight:600;letter-spacing:2px;color:var(--gold);text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
   .syllabus-row-label::after{content:' —';}
   .syllabus-row-name{font-size:18px;font-weight:600;letter-spacing:1px;color:var(--charcoal);text-transform:uppercase;}
-  @media(max-width:960px){.syllabus-header{flex-direction:column;align-items:center;text-align:center;gap:32px;}.syllabus-header-img{width:100%;max-width:340px;}.syllabus-header-img img{height:auto;aspect-ratio:16/9;}}
+  @media(max-width:960px){.syllabus-grid{grid-template-columns:1fr;gap:32px;}.syllabus-header-img{max-width:340px;margin:0 auto;}.syllabus-header-img img{height:auto;aspect-ratio:16/9;}}
   @media(max-width:768px){
     .syllabus{padding:60px 24px!important;}
     .syllabus .section-title{font-size:32px!important;}
@@ -1005,24 +1005,26 @@
 <!-- SYLLABUS -->
 <section class="syllabus" id="syllabus">
   <div class="container">
-    <div class="syllabus-header">
-      <div class="au">
-        <span class="section-tag">What is Covered</span>
-        <h2 class="section-title">The <em>Syllabus.</em></h2>
-        <p class="section-subtitle">I cover every section of the GCSE Mathematics syllabus in full — so students arrive at their exam completely prepared, with no nasty surprises.</p>
+    <div class="syllabus-grid">
+      <div class="syllabus-left">
+        <div class="au">
+          <span class="section-tag">What is Covered</span>
+          <h2 class="section-title">The <em>Syllabus.</em></h2>
+          <p class="section-subtitle">I cover every section of the GCSE Mathematics syllabus in full — so students arrive at their exam completely prepared, with no nasty surprises.</p>
+        </div>
+        <div class="syllabus-list">
+          <div class="syllabus-row au d1"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 1</span><span class="syllabus-row-name">Number</span></div>
+          <div class="syllabus-row au d2"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 2</span><span class="syllabus-row-name">Algebra</span></div>
+          <div class="syllabus-row au d3"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 3</span><span class="syllabus-row-name">Graphs</span></div>
+          <div class="syllabus-row au d4"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 4</span><span class="syllabus-row-name">Ratio, Proportion and Rates of Change</span></div>
+          <div class="syllabus-row au d5"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 5</span><span class="syllabus-row-name">Geometry and Measures</span></div>
+          <div class="syllabus-row au d6"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 6</span><span class="syllabus-row-name">Pythagoras and Trigonometry</span></div>
+          <div class="syllabus-row au d7"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 7</span><span class="syllabus-row-name">Probability and Statistics</span></div>
+        </div>
       </div>
       <div class="syllabus-header-img au">
         <img src="happy-mountain.jpg" alt="Elevate Maths" loading="lazy">
       </div>
-    </div>
-    <div class="syllabus-list">
-      <div class="syllabus-row au d1"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 1</span><span class="syllabus-row-name">Number</span></div>
-      <div class="syllabus-row au d2"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 2</span><span class="syllabus-row-name">Algebra</span></div>
-      <div class="syllabus-row au d3"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 3</span><span class="syllabus-row-name">Graphs</span></div>
-      <div class="syllabus-row au d4"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 4</span><span class="syllabus-row-name">Ratio, Proportion and Rates of Change</span></div>
-      <div class="syllabus-row au d5"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 5</span><span class="syllabus-row-name">Geometry and Measures</span></div>
-      <div class="syllabus-row au d6"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 6</span><span class="syllabus-row-name">Pythagoras and Trigonometry</span></div>
-      <div class="syllabus-row au d7"><div class="syllabus-dot"></div><span class="syllabus-row-label">Section 7</span><span class="syllabus-row-name">Probability and Statistics</span></div>
     </div>
   </div>
 </section>
