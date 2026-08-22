@@ -175,7 +175,7 @@
   /* CTA SECTION */
   .enquiry{background:var(--charcoal);min-height:100vh;display:flex;align-items:center;padding:53px 45px;position:relative;overflow:hidden;}
   .enquiry-inner{max-width:600px;margin:0 auto;text-align:center;}
-  .enquiry .section-title{color:var(--white);font-size:39px;}
+  .enquiry .section-title{color:var(--white);font-size:52px;}
   .enquiry .section-subtitle{color:rgba(255,255,255,0.5);margin:0 auto 39px;}
   .enquiry .section-tag{font-size:11px;letter-spacing:4px;}
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;text-align:left;}
@@ -310,7 +310,7 @@
   .important-dates{background:var(--white);min-height:100vh;display:flex;align-items:center;padding:60px 45px;position:relative;overflow:hidden;}
   .important-dates .container{text-align:center;}
   .important-dates .section-title{font-size:56px;margin-bottom:0;}
-  .important-dates .section-tag{display:inline-block;}
+  .important-dates .section-tag{display:inline-block;font-size:15px;}
   .important-dates .section-tag::after{content:'';display:block;height:1px;background:var(--gold);width:220px;margin:10px auto 0;}
   .dates-grid{display:flex;flex-direction:column;align-items:center;gap:52px;margin-top:48px;}
   .enrolment-block{display:flex;flex-direction:column;align-items:center;width:100%;}
@@ -565,8 +565,8 @@
         <h3>January Cohort Registration Closes</h3>
         <div class="countdown-meta">30 November 2026</div>
         <div class="countdown-units">
-          <div class="countdown-unit"><span class="countdown-num" id="cd-days">000</span><span class="countdown-lbl">Days</span></div>
-          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-lbl">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-days">0</span><span class="countdown-lbl">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-num" id="cd-hours">0</span><span class="countdown-lbl">Hours</span></div>
           <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-lbl">Mins</span></div>
           <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-lbl">Secs</span></div>
         </div>
@@ -798,8 +798,8 @@
       if(!next){
         if(h3)h3.textContent='All Registrations Closed';
         if(meta)meta.textContent='';
-        document.getElementById('cd-days').textContent='000';
-        document.getElementById('cd-hours').textContent='00';
+        document.getElementById('cd-days').textContent='0';
+        document.getElementById('cd-hours').textContent='0';
         document.getElementById('cd-mins').textContent='00';
         document.getElementById('cd-secs').textContent='00';
         return;
@@ -807,8 +807,8 @@
       if(h3)h3.textContent=next.label;
       if(meta)meta.textContent=next.sub;
       var diff=next.date-now;
-      document.getElementById('cd-days').textContent=pad(Math.floor(diff/86400000),3);
-      document.getElementById('cd-hours').textContent=pad(Math.floor(diff%86400000/3600000));
+      document.getElementById('cd-days').textContent=String(Math.floor(diff/86400000));
+      document.getElementById('cd-hours').textContent=String(Math.floor(diff%86400000/3600000));
       document.getElementById('cd-mins').textContent=pad(Math.floor(diff%3600000/60000));
       document.getElementById('cd-secs').textContent=pad(Math.floor(diff%60000/1000));
     }
