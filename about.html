@@ -36,6 +36,10 @@
 
   /* SCROLL BAR */
   .scroll-bar{position:fixed;top:0;left:0;height:6px;background:var(--gold);z-index:2000;width:0;transition:width 0.1s linear;}
+  ::-webkit-scrollbar{width:6px;}
+  ::-webkit-scrollbar-track{background:var(--black);}
+  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:0;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--gold-light);}
 
   /* BACK TOP */
   .back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;background:var(--gold);color:white;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity 0.3s,transform 0.3s;z-index:500;}
