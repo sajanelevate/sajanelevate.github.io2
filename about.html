@@ -221,6 +221,33 @@
     .how-blk .bn{font-size:50px;margin-bottom:20px;padding-bottom:16px;}
   }
 
+  /* FAQ (white) */
+  .faq-white{background:var(--white);min-height:130vh;display:flex;align-items:center;padding:100px 60px;position:relative;overflow:hidden;}
+  .faq-white .container{max-width:820px;margin:0 auto;width:100%;position:relative;z-index:1;}
+  .faq-white .section-tag{color:var(--gold-dark);}
+  .faq-white .section-title{color:var(--charcoal);display:inline-block;max-width:100%;}
+  .faq-heading{text-align:center;}
+  .faq-title-bar{width:300px;height:9px;margin:20px auto 0;}
+  .faq-title-bar svg{display:block;width:100%;height:100%;}
+  .faq-list{margin:48px auto 0;max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-item:first-child{border-top:1px solid var(--border);}
+  .faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;cursor:pointer;text-align:left;font-family:'Montserrat',sans-serif;}
+  .faq-q-text{font-size:16px;font-weight:600;letter-spacing:0.2px;color:var(--charcoal);transition:color 0.3s;}
+  .faq-item:hover .faq-q-text{color:var(--gold-dark);}
+  .faq-plus{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:300;line-height:1;color:var(--gold-dark);flex-shrink:0;width:30px;height:30px;border:1px solid var(--gold-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1),background 0.3s,color 0.3s;}
+  .faq-item.open .faq-plus{transform:rotate(135deg);background:var(--gold-dark);color:var(--white);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.16,1,0.3,1);}
+  .faq-a p{font-size:14px;line-height:1.85;color:var(--grey);padding:0 0 28px;margin:0;max-width:640px;}
+  .faq-cta{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:27.5px;line-height:1.65;color:var(--charcoal);text-align:center;max-width:620px;margin:64px auto 0;padding-top:40px;border-top:1px solid var(--border);position:relative;z-index:1;}
+  @media(max-width:768px){
+    .faq-white{padding:60px 24px!important;}
+    .faq-white .section-title{font-size:32px!important;}
+    .faq-title-bar{width:200px;}
+    .faq-q-text{font-size:14px;}
+    .faq-cta{font-size:22.5px;margin-top:44px;padding-top:32px;}
+  }
+
   /* HOW / STEPS */
   .how{background:var(--white);min-height:100vh;display:flex;align-items:flex-start;padding:100px 60px;position:relative;}
   .how .container{max-width:1500px;}
@@ -745,6 +772,68 @@
 
 <div class="gold-rule"></div>
 
+<!-- FAQ -->
+<section class="faq-white" id="faq">
+  <div class="container">
+    <div class="au faq-heading">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Frequently Asked <em>Questions.</em></h2>
+      <div class="faq-title-bar">
+        <svg viewBox="0 0 240 9" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="faqBarGradAbout" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#B68F2E" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#B68F2E" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#B68F2E" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,4.5 Q120,0 240,4.5 Q120,9 0,4.5 Z" fill="url(#faqBarGradAbout)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item au d1">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What is a Cohort?</span>
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a"><p>A cohort is your child's class — a fixed group of students who start the programme together and work through it together, in the same way a form class stays together through a school year. Every cohort is capped at eight students, grouped by year group and by the same ability level. Eight is a deliberate number. Small enough that nobody is hidden, large enough that nobody is alone.</p></div>
+      </div>
+      <div class="faq-item au d2">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What if my child's school uses a different exam board?</span>
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a"><p>It isn't a problem. I teach the full Higher tier content, and at Higher level the differences between exam boards are minimal — the mathematics itself is set nationally, and every board examines essentially the same material.</p></div>
+      </div>
+      <div class="faq-item au d3">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">How much does it cost?</span>
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a"><p>There are a number of payment plans with no hidden costs. All fees will be discussed on your call so we can find out what works best for you.</p></div>
+      </div>
+      <div class="faq-item au d4">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What happens if my child misses a session?</span>
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a"><p>Every session is recorded and will be accessible. Students can rewatch the session back in full and catch up properly rather than arriving at the next class a step behind.</p><p>Homework and resources for that week are still issued as normal, and I follow up on them as I would for any other student. I also keep an attendance register for every session, and attendance is reported to you quarterly — so if a pattern starts to form, you'll hear about it sooner rather than later.</p></div>
+      </div>
+      <div class="faq-item au d5">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Are you DBS checked?</span>
+          <span class="faq-plus">+</span>
+        </button>
+        <div class="faq-a"><p>Yes. I hold a current Enhanced DBS check with Children's Barred List, which is the highest level of check available and the appropriate one for anyone teaching children. The certificate is available on request.</p></div>
+      </div>
+    </div>
+    <p class="au faq-cta">Still have a question? The quickest way to get an answer is a short call — no obligation, and I'll tell you honestly if the programme isn't the right fit for your child.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
 <!-- HOW WE TEACH -->
 <section class="how-we-teach" id="how-we-teach">
   <div id="hwtpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
@@ -926,6 +1015,35 @@
     nl.classList.toggle('mob-open');
     hb.textContent = nl.classList.contains('mob-open') ? '✕' : '☰';
   }
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    var ans = item.querySelector('.faq-a');
+    var isOpen = item.classList.contains('open');
+    item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(function(openItem) {
+      if (openItem === item) return;
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-a').style.maxHeight = null;
+      openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (isOpen) {
+      ans.style.maxHeight = null;
+      item.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+  function sizeFaqBar() {
+    var title = document.querySelector('.faq-white .section-title');
+    var bar = document.querySelector('.faq-title-bar');
+    var wrap = document.querySelector('.faq-white .container');
+    if (!title || !bar) return;
+    var w = title.offsetWidth + 80;
+    if (wrap) w = Math.min(w, wrap.clientWidth);
+    bar.style.width = w + 'px';
+  }
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('#nl a').forEach(function(a) {
       a.addEventListener('click', function() {
@@ -933,7 +1051,10 @@
         document.getElementById('nav-hamburger').textContent = '☰';
       });
     });
+    sizeFaqBar();
   });
+  window.addEventListener('load', sizeFaqBar);
+  window.addEventListener('resize', sizeFaqBar);
 
   // Scroll events
   window.addEventListener('scroll', function() {
