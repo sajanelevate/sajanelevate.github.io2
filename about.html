@@ -185,8 +185,16 @@
   .how-week .section-subtitle:last-of-type{margin-bottom:0;}
   .how-week h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.5px;text-transform:uppercase;color:var(--charcoal);margin:30px 0 8px;}
   .how-week h4:first-of-type{margin-top:0;}
+  .how-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0 8px;align-items:stretch;}
+  .how-blk{background:var(--off-white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:22px 20px;display:flex;flex-direction:column;}
+  .how-blk .bn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;color:var(--gold-dark);margin-bottom:8px;}
+  .how-blk h4{margin:0 0 3px!important;font-size:15px!important;text-transform:none!important;letter-spacing:0!important;}
+  .how-blk .bt{margin:0 0 13px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);}
+  .how-blk p{font-size:13.5px;line-height:1.8;color:var(--grey);margin:0 0 12px;}
+  .how-blk .bf{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:13px;font-style:italic;color:var(--gold-dark);}
   @media(max-width:768px){
     .how-week{padding:60px 24px!important;}
+    .how-blocks{grid-template-columns:1fr;}
   }
 
   /* HOW / STEPS */
@@ -653,6 +661,40 @@
 
       <h4>The live lesson</h4>
       <p class="section-subtitle">One taught lesson a week with your child's cohort. New material, worked examples, and questions attempted with me there.</p>
+
+      <h4>The Resources</h4>
+      <p class="section-subtitle">Teaching is only part of it. What a student does in the six days between lessons is what decides the grade, and most of them have no idea where to start. These are the tools that fix that.</p>
+
+      <div class="how-blocks">
+        <div class="how-blk">
+          <div class="bn">01</div>
+          <h4>The Progress Tracker</h4>
+          <p class="bt">The central hub of independent study</p>
+          <p>A spreadsheet holding every chapter of the course, designed personally by me. Formulas calculate when each topic needs revisiting, so there's no guesswork — it tells your child what to work on next, every week, right up to the exam.</p>
+          <p class="bf">I'll show you the tracker on our call.</p>
+        </div>
+
+        <div class="how-blk">
+          <div class="bn">02</div>
+          <h4>Detailed Notes</h4>
+          <p class="bt">The full version, handwritten</p>
+          <p>A complete set of handwritten notes for each chapter, with worked examples covering each form the question takes.</p>
+          <p class="bf">The place to start again from scratch.</p>
+        </div>
+
+        <div class="how-blk">
+          <div class="bn">03</div>
+          <h4>Cheat Sheets</h4>
+          <p class="bt">One page per chapter</p>
+          <p>The method, the formulae and the mistakes that cost marks — designed to be glanced at rather than read.</p>
+          <p>A quick reminder on a chapter your child has <em>already learned</em>, not for learning it from scratch.</p>
+          <p class="bf">The ten minutes before a lesson, the night before a test, the morning of the exam.</p>
+        </div>
+      </div>
+
+      <h4>I also teach them how to revise</h4>
+      <p class="section-subtitle">This sounds obvious and it isn't. Most students have never actually been taught what revision <em>is</em>. They read through notes, highlight a page, feel like they've worked, and retain almost nothing — because none of that is revision.</p>
+      <p class="section-subtitle">So I teach it properly, with explanations and worked examples of what effective revision looks like in maths specifically. The tracker is the tool they use to put it into practice.</p>
 
       <h4>The Open Study Session</h4>
       <p class="section-subtitle">A second lesson each week, free, and optional — though I'd recommend it. Students can bring questions, work through homework with me on hand, or simply use it as a quiet hour where someone is available if they get stuck.</p>
