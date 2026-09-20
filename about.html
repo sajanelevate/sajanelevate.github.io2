@@ -196,16 +196,26 @@
   .how-resources .section-subtitle{color:rgba(255,255,255,0.55);max-width:100%;margin-bottom:13px;}
   .how-resources .section-subtitle:last-of-type{margin-bottom:0;}
   .how-resources h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.5px;text-transform:uppercase;color:var(--white);margin:30px 0 8px;}
-  .how-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0 8px;align-items:stretch;position:relative;z-index:1;}
-  .how-blk{background:var(--off-white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:22px 20px;display:flex;flex-direction:column;}
-  .how-blk .bn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;color:var(--gold-dark);margin-bottom:8px;}
-  .how-blk h4{margin:0 0 3px!important;font-size:15px!important;text-transform:none!important;letter-spacing:0!important;color:var(--charcoal)!important;}
-  .how-blk .bt{margin:0 0 13px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);}
-  .how-blk p{font-size:13.5px;line-height:1.8;color:var(--grey);margin:0 0 12px;}
-  .how-blk .bf{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:13px;font-style:italic;color:var(--gold-dark);}
+  .how-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:16px 0 8px;align-items:stretch;position:relative;z-index:1;}
+  .how-blk{background:transparent;padding:48px 36px;position:relative;transition:background 0.4s,transform 0.4s,border-color 0.4s,box-shadow 0.4s;overflow:hidden;border:1px solid rgba(227,189,70,0.3);display:flex;flex-direction:column;}
+  .how-blk::before{content:'';position:absolute;bottom:0;left:0;width:0;height:9px;background:var(--gold);transition:width 0.4s;}
+  .how-blk:hover{background:var(--white);transform:translateY(-6px);border-color:var(--gold);}
+  .how-blk:hover::before{width:100%;}
+  .how-blk .bn{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;color:rgba(255,255,255,0.25);line-height:1;margin-bottom:24px;display:block;transition:color 0.4s,border-color 0.4s;align-self:stretch;padding-bottom:32px;border-bottom:1px solid rgba(227,189,70,0.45);}
+  .how-blk:hover .bn{color:var(--gold-dark);border-bottom-color:var(--gold);}
+  .how-blk h4{margin:0 0 12px!important;font-size:13px!important;font-weight:700;letter-spacing:1.5px;text-transform:uppercase!important;color:var(--white)!important;transition:color 0.4s;}
+  .how-blk:hover h4{color:var(--charcoal)!important;}
+  .how-blk .bt{margin:0 0 13px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:color 0.4s;}
+  .how-blk:hover .bt{color:var(--grey);}
+  .how-blk p{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.5);margin:0 0 12px;transition:color 0.4s;}
+  .how-blk:hover p{color:var(--grey);}
+  .how-blk .bf{margin-top:auto;padding-top:12px;border-top:1px solid rgba(227,189,70,0.25);font-size:13px;font-style:italic;color:var(--gold);transition:color 0.4s,border-color 0.4s;}
+  .how-blk:hover .bf{color:var(--gold-dark);border-top-color:var(--border);}
   @media(max-width:768px){
     .how-resources{padding:60px 24px!important;}
     .how-blocks{grid-template-columns:1fr;}
+    .how-blk{padding:28px 32px 32px;}
+    .how-blk .bn{font-size:50px;margin-bottom:20px;padding-bottom:16px;}
   }
 
   /* HOW / STEPS */
@@ -698,7 +708,7 @@
   <div id="hrpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
   <div class="container">
     <div class="au">
-      <h2 class="section-title">The Resources</h2>
+      <h2 class="section-title">The <span style="color:var(--gold);">Resources</span></h2>
       <p class="section-subtitle">Teaching is only part of it. What a student does in the six days between lessons is what decides the grade, and most of them have no idea where to start. These are the tools that fix that.</p>
 
       <div class="how-blocks">
