@@ -590,7 +590,7 @@
   html{scrollbar-color:var(--gold) var(--black);scrollbar-width:thin;}
   ::-webkit-scrollbar{width:6px;}
   ::-webkit-scrollbar-track{background:var(--black);}
-  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:0;}
+  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
   ::-webkit-scrollbar-thumb:hover{background:var(--gold-light);}
   .exp-panel.open{opacity:1;transform:none;}
   .exp-header{background:var(--charcoal);padding:52px 56px 40px;position:relative;overflow:hidden;}
@@ -696,74 +696,6 @@
     .faq-cta{font-size:22.5px;margin-top:44px;padding-top:32px;}
   }
 
-  /* HOW IT WORKS */
-  #how-it-works{background:var(--off-white);padding:100px 60px;position:relative;overflow:hidden;scroll-margin-top:80px;}
-  #how-it-works .container{max-width:760px;margin:0 auto;}
-  #how-it-works .how-heading{text-align:center;margin-bottom:36px;}
-  #how-it-works .section-subtitle{margin:0 auto;text-align:center;}
-
-  .how-topic{margin-top:52px;}
-  .how-topic:first-of-type{margin-top:0;}
-  .how-tag{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-  .how-topic h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.5rem,3vw,1.9rem);line-height:1.15;color:var(--charcoal);margin-bottom:14px;}
-  .how-topic h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;letter-spacing:0.5px;text-transform:uppercase;color:var(--charcoal);margin:26px 0 8px;}
-  .how-topic h4:first-of-type{margin-top:22px;}
-  .how-topic p{font-size:14.5px;line-height:1.9;color:var(--grey);margin-bottom:13px;}
-  .how-topic p:last-child{margin-bottom:0;}
-  .how-topic em{font-style:italic;color:var(--charcoal);}
-  .how-topic strong{color:var(--charcoal);font-weight:600;}
-
-  .how-list{list-style:none;margin:4px 0 16px;padding:0;display:flex;flex-direction:column;gap:14px;}
-  .how-list li{font-size:14.5px;line-height:1.8;color:var(--grey);padding-left:22px;position:relative;}
-  .how-list li::before{content:'◆';position:absolute;left:0;top:3px;color:var(--gold);font-size:9px;}
-  .how-list li strong{color:var(--charcoal);}
-
-  .how-note{color:var(--text-muted);font-size:12.5px;line-height:1.8;}
-
-  /* YEAR-GROUP TIMELINE */
-  .how-timeline{border:1px solid var(--border);border-radius:2px;overflow:hidden;margin:18px 0 8px;}
-  .how-tl{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--border);}
-  .how-tl:last-child{border-bottom:none;}
-  .how-tl .yr{background:var(--white);padding:16px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:0.8px;text-transform:uppercase;color:var(--charcoal);display:flex;align-items:center;}
-  .how-tl .d{padding:16px 20px;font-size:14px;line-height:1.8;color:var(--grey);}
-  @media(max-width:600px){
-    .how-tl{grid-template-columns:1fr;}
-    .how-tl .yr{border-bottom:1px solid var(--border);}
-  }
-
-  /* IMPORTANT-DATES GRID */
-  .how-intake{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:2px;overflow:hidden;margin:18px 0 10px;}
-  .how-intake .ih{background:var(--white);padding:12px 16px;font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:9.5px;color:var(--gold-dark);border-bottom:1px solid var(--border);}
-  .how-intake .im,.how-intake .id{padding:15px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;}
-  .how-intake .im{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;color:var(--charcoal);}
-  .how-intake .id{font-size:13.5px;color:var(--grey);}
-  .how-intake>div:nth-last-child(-n+2){border-bottom:none;}
-
-  /* RESOURCE BLOCKS */
-  .how-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0 20px;align-items:stretch;}
-  .how-blk{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--gold);padding:22px 20px;display:flex;flex-direction:column;}
-  .how-blk .bn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;color:var(--gold-dark);margin-bottom:8px;}
-  .how-blk h4{margin:0 0 3px!important;font-size:15px!important;text-transform:none!important;letter-spacing:0!important;}
-  .how-blk .bt{margin:0 0 13px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);}
-  .how-blk p{font-size:13.5px;line-height:1.8;color:var(--grey);margin:0 0 12px;}
-  .how-blk .bf{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:13px;font-style:italic;color:var(--gold-dark);}
-  @media(max-width:760px){.how-blocks{grid-template-columns:1fr;}}
-
-  /* PULL QUOTE — 14-day cancellation notice */
-  .how-pull{background:var(--white);border-left:3px solid var(--gold);border-radius:0 2px 2px 0;padding:20px 24px;margin:30px 0;font-size:14.5px;line-height:1.9;color:var(--grey);}
-  .how-pull strong{color:var(--gold-dark);}
-
-  @media(max-width:768px){
-    #how-it-works{padding:60px 24px!important;}
-    .how-topic{margin-top:40px;}
-    .how-blocks{gap:12px;}
-  }
-  @media(max-width:480px){
-    .how-intake .ih{font-size:8.5px;padding:10px 12px;}
-    .how-intake .im,.how-intake .id{padding:12px;}
-    .how-intake .im{font-size:16px;}
-    .how-intake .id{font-size:12px;}
-  }
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><script>emailjs.init('5mSNXor63QZUC2e_W');</script>
@@ -804,9 +736,9 @@
         <li><a href="#programme" onclick="go(event,'programme')">The Programme</a></li>
         <li><a href="#syllabus" onclick="go(event,'syllabus')">Syllabus</a></li>
         <li><a href="#faq" onclick="go(event,'faq')">FAQ</a></li>
-        <li><a href="#how-it-works" onclick="go(event,'how-it-works')">How It Works</a></li>
       </ul>
     </li>
+    <li><a href="how-it-works.html" class="nav-pg">How It Works</a></li>
     <li class="nav-dd">
       <a href="about.html" class="nav-pg" data-dd="dd-more">More Info ▾</a>
       <ul class="dd-menu" id="dd-more">
@@ -1098,6 +1030,9 @@
         </div>
       </div>
     </div>
+    <div style="text-align:center;margin-top:44px;position:relative;z-index:1;">
+      <a href="how-it-works.html" class="btn-primary">How Elevate Maths Works</a>
+    </div>
   </div>
 </section>
 
@@ -1183,166 +1118,6 @@
       </div>
     </div>
     <p class="au faq-cta">Still have a question? The quickest way to get an answer is a short call — no obligation, and I'll tell you honestly if the programme isn't the right fit for your child.</p>
-  </div>
-</section>
-
-<div class="gold-rule"></div>
-
-<!-- HOW IT WORKS -->
-<section id="how-it-works">
-  <div class="container">
-    <div class="au how-heading">
-      <span class="section-tag">Elevate Maths</span>
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle">Everything you need to know before we speak — what the programme is, who it suits, what happens each week, and what to expect if your child joins.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">01</span>
-      <h3>What this actually is</h3>
-      <p>I teach GCSE Maths online, in small groups of a maximum of eight students, to those working towards the Higher tier. Eight is a deliberate number — small enough that nobody is hidden, large enough that nobody is alone.</p>
-      <p>Your child joins a cohort grouped by year and by ability, and works through a structured programme of over 50 chapters with the same group each week. I assess that ability myself in a Discovery Session after a booked call — a short, low-pressure session with your child that shows me how they actually work and their general capabilities.</p>
-      <p>The chapter order has been carefully curated over a decade of teaching. Each one is precisely positioned to ensure the foundations are built from the ground up.</p>
-      <p>It isn't one-to-one tutoring, and it isn't a recorded course. It's a taught programme with a fixed curriculum, weekly homework, and someone following up when it isn't done.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">02</span>
-      <h3>Starting in different year groups</h3>
-      <p>You can start at any point from Year 8 to Year 11 — but the timing makes a difference.</p>
-      <div class="how-timeline">
-        <div class="how-tl"><div class="yr">Year 8–9</div><div class="d">The full programme, properly. Every topic covered in order, with time to revisit anything that hasn't landed. This is where the structure does the most work.</div></div>
-        <div class="how-tl"><div class="yr">Early Year 10</div><div class="d">Still comfortable. We move at a slightly faster pace, but everything gets covered.</div></div>
-        <div class="how-tl"><div class="yr">Late Year 10</div><div class="d">We prioritise. Some topics get less time than I would like, and I choose those based on what your child already has and where the marks are.</div></div>
-        <div class="how-tl"><div class="yr">Year 11</div><div class="d">A different programme. There isn't time to teach everything, so I focus on the topics that will move the grade most and on exam technique.</div></div>
-      </div>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">03</span>
-      <h3>Important dates</h3>
-      <p>There are three intakes a year. Enrolment closes at the <strong>end of the month shown</strong>, which gives a clear month before the first lesson — time for the Discovery Session, the engagement letter, and getting your child set up properly rather than in a rush.</p>
-      <div class="how-intake">
-        <div class="ih">Cohort starts</div><div class="ih">Enrolment closes</div>
-        <div class="im">1st September</div><div class="id">End of July</div>
-        <div class="im">1st January</div><div class="id">End of November</div>
-        <div class="im">1st April</div><div class="id">End of February</div>
-      </div>
-      <p class="how-note">If you've missed a deadline, speak to me anyway — I'd rather have the conversation than have you wait four months by default.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">04</span>
-      <h3>What a week looks like</h3>
-
-      <h4>The live lesson</h4>
-      <p>One taught lesson a week with your child's cohort. New material, worked examples, and questions attempted with me there.</p>
-
-      <h4>The Open Study Session</h4>
-      <p>A second lesson each week, free, and optional — though I'd recommend it. Students can bring questions, work through homework with me on hand, or simply use it as a quiet hour where someone is available if they get stuck.</p>
-
-      <h4>Homework</h4>
-      <p>Set weekly and linked to what we covered, then broken down into a small, manageable number of questions spread across four or five days rather than done in one sitting.</p>
-      <p>Homework is sent back to me within two or three days rather than all at once, so I can check it <em>through</em> the week rather than only on the deadline.</p>
-      <p>There are two reasons for that. Firstly, if something has gone wrong, I catch it before the next lesson rather than after. Secondly, it stops work being crammed into the night before — which is the single biggest reason maths tutoring fails to move a grade.</p>
-
-      <h4>Between lessons</h4>
-      <p>Students can message me during the week. If they're stuck, they shouldn't sit on it until the next lesson — a week of confusion is a week of lost practice.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">05</span>
-      <h3>The resources</h3>
-      <p>Teaching is only part of it. What a student does in the six days between lessons is what decides the grade, and most of them have no idea where to start. These are the tools that fix that.</p>
-
-      <div class="how-blocks">
-        <div class="how-blk">
-          <div class="bn">01</div>
-          <h4>The Progress Tracker</h4>
-          <p class="bt">The central hub of independent study</p>
-          <p>A spreadsheet holding every chapter of the course, designed personally by me. Formulas calculate when each topic needs revisiting, so there's no guesswork — it tells your child what to work on next, every week, right up to the exam.</p>
-          <p class="bf">I'll show you the tracker on our call.</p>
-        </div>
-
-        <div class="how-blk">
-          <div class="bn">02</div>
-          <h4>Detailed Notes</h4>
-          <p class="bt">The full version, handwritten</p>
-          <p>A complete set of handwritten notes for each chapter, with worked examples covering each form the question takes.</p>
-          <p class="bf">The place to start again from scratch.</p>
-        </div>
-
-        <div class="how-blk">
-          <div class="bn">03</div>
-          <h4>Cheat Sheets</h4>
-          <p class="bt">One page per chapter</p>
-          <p>The method, the formulae and the mistakes that cost marks — designed to be glanced at rather than read.</p>
-          <p>A quick reminder on a chapter your child has <em>already learned</em>, not for learning it from scratch.</p>
-          <p class="bf">The ten minutes before a lesson, the night before a test, the morning of the exam.</p>
-        </div>
-      </div>
-
-      <h4>I also teach them how to revise</h4>
-      <p>This sounds obvious and it isn't. Most students have never actually been taught what revision <em>is</em>. They read through notes, highlight a page, feel like they've worked, and retain almost nothing — because none of that is revision.</p>
-      <p>So I teach it properly, with explanations and worked examples of what effective revision looks like in maths specifically. The tracker is the tool they use to put it into practice.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">06</span>
-      <h3>If your child misses a lesson</h3>
-      <p>Every lesson is recorded and added to their archive the same week. They can watch it back in full and catch up properly rather than arriving at the next lesson a step behind.</p>
-      <p>The recordings stay available from the day they join right through to the end of their exams. So a topic covered in Year 9 is still there to revisit in the week before the paper.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">07</span>
-      <h3>The 40-lesson guarantee</h3>
-      <p>I guarantee a minimum of 40 live lessons per academic year. In practice this can be more.</p>
-      <p>If I deliver fewer than 40 in a year, you don't lose them. I credit the shortfall against your next invoice on a pro-rata basis. You pay for what you receive.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">08</span>
-      <h3>Fees</h3>
-      <p>Fees start from approximately <strong>£40 per lesson</strong>, depending on the payment plan you choose.</p>
-      <p>This covers everything.</p>
-      <p>We'll talk through the payment plans on our call, before the Discovery Session with your child, so we can settle on the one that works best for your family.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">09</span>
-      <h3>Exam boards</h3>
-      <p>All boards are welcome, and it makes very little difference. At Higher tier the content is set nationally.</p>
-      <p>What does differ is how questions are worded and how papers are structured. So in the run-up to the exams, every student practises questions from <em>their own</em> board, so nothing on the day looks unfamiliar.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">10</span>
-      <h3>How you'll know it's working</h3>
-      <p>You receive a written progress report every quarter, covering attendance, homework, and where your child is against the topics we've covered.</p>
-      <p>If something starts going wrong, you won't wait three months to hear about it. I'll contact you when it happens. You can also contact me at any point — you do not need to wait for a report or a scheduled call.</p>
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">11</span>
-      <h3>Who this isn't for</h3>
-      <p>I'd rather tell you now than take your money and disappoint you.</p>
-      <ul class="how-list">
-        <li><strong>Students working towards Foundation tier.</strong> Everything I teach is pitched at Higher, aiming for Grades 7 to 9. A student who isn't there yet would find the room discouraging rather than motivating.</li>
-        <li><strong>Students who need intensive one-to-one support.</strong> A group of eight works brilliantly for students who are capable and need structure and push. It's the wrong setting for someone who needs constant individual attention.</li>
-      </ul>
-      <p>If your child isn't right for the programme, I'll say so on our call and point you towards something that would suit them better. I don't take students I don't believe will benefit.</p>
-    </div>
-
-    <div class="how-pull">
-      <strong>You have 14 days to change your mind.</strong> Because we arrange everything remotely, you have a statutory right to cancel within 14 days of signing and receive a full refund, for any reason. Confirmed in writing.
-    </div>
-
-    <div class="how-topic">
-      <span class="how-tag">12</span>
-      <h3>Safeguarding</h3>
-      <p>I hold an Enhanced DBS check with the Children's Barred List, which is the highest level available and the appropriate one for anyone teaching children. The certificate is available on request.</p>
-    </div>
   </div>
 </section>
 
@@ -1440,7 +1215,7 @@
     <li><a href="#programme" onclick="go(event,'programme')">The Programme</a></li>
     <li><a href="#syllabus" onclick="go(event,'syllabus')">Syllabus</a></li>
     <li><a href="#faq" onclick="go(event,'faq')">FAQ</a></li>
-    <li><a href="#how-it-works" onclick="go(event,'how-it-works')">How It Works</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
     <li><a href="about.html#mission">About</a></li>
     <li><a href="about.html#how-we-teach">Teaching Style</a></li>
     <li><a href="about.html#important-dates">Important Dates</a></li>
@@ -1703,7 +1478,7 @@
     nav.style.boxShadow=y>50?'0 4px 30px rgba(0,0,0,0.1)':'none';
     lastY=y;
     // active nav — highlight whichever section covers the most viewport
-    const secs=['hero','testimonials','tutor','how','programme','syllabus','faq','how-it-works','enquiry'];
+    const secs=['hero','testimonials','tutor','how','programme','syllabus','faq','enquiry'];
     const navH=nav.offsetHeight, vpH=window.innerHeight;
     let cur='',maxVis=0;
     secs.forEach(id=>{
