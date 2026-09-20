@@ -147,6 +147,37 @@
   .hwt-p{font-size:14px;line-height:1.95;color:rgba(255,255,255,0.5);}
   .hwt-emphasis{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);font-style:italic;border-left:2px solid var(--gold);padding-left:20px;margin:8px 0;}
 
+  /* HOW IT WORKS DETAIL — year groups & important dates */
+  .how-detail{background:var(--charcoal);padding:100px 60px;position:relative;overflow:hidden;}
+  .how-detail .container{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+  .how-detail .section-title{color:var(--white);}
+  .how-detail .section-subtitle{color:rgba(255,255,255,0.55);max-width:100%;}
+  .how-detail-topic+.how-detail-topic{margin-top:70px;}
+
+  .how-timeline{border:1px solid rgba(227,189,70,0.25);border-radius:2px;overflow:hidden;margin:20px 0 8px;}
+  .how-tl{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid rgba(227,189,70,0.15);}
+  .how-tl:last-child{border-bottom:none;}
+  .how-tl .yr{background:rgba(255,255,255,0.04);padding:16px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:0.8px;text-transform:uppercase;color:var(--white);display:flex;align-items:center;}
+  .how-tl .d{padding:16px 20px;font-size:14px;line-height:1.8;color:rgba(255,255,255,0.55);}
+  @media(max-width:600px){
+    .how-tl{grid-template-columns:1fr;}
+    .how-tl .yr{border-bottom:1px solid rgba(227,189,70,0.15);}
+  }
+
+  .how-intake{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(227,189,70,0.25);border-radius:2px;overflow:hidden;margin:20px 0 10px;}
+  .how-intake .ih{background:rgba(255,255,255,0.04);padding:12px 16px;font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:9.5px;color:var(--gold);border-bottom:1px solid rgba(227,189,70,0.15);}
+  .how-intake .im,.how-intake .id{padding:15px 16px;border-bottom:1px solid rgba(227,189,70,0.15);display:flex;align-items:center;}
+  .how-intake .im{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;color:var(--gold);}
+  .how-intake .id{font-size:13.5px;color:rgba(255,255,255,0.55);}
+  .how-intake>div:nth-last-child(-n+2){border-bottom:none;}
+
+  .how-note{color:rgba(255,255,255,0.35);font-size:12.5px;line-height:1.8;}
+
+  @media(max-width:768px){
+    .how-detail{padding:60px 24px!important;}
+    .how-detail-topic+.how-detail-topic{margin-top:48px;}
+  }
+
   /* HOW / STEPS */
   .how{background:var(--white);min-height:100vh;display:flex;align-items:flex-start;padding:100px 60px;position:relative;}
   .how .container{max-width:1500px;}
@@ -570,6 +601,41 @@
 
 <div class="gold-rule"></div>
 
+<!-- HOW IT WORKS DETAIL -->
+<section class="how-detail" id="how-detail">
+  <div id="hdpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+  <div class="container">
+
+    <div class="how-detail-topic au">
+      <span class="section-tag">02</span>
+      <h2 class="section-title">Starting in different year groups</h2>
+      <p class="section-subtitle">You can start at any point from Year 8 to Year 11 — but the timing makes a difference.</p>
+      <div class="how-timeline">
+        <div class="how-tl"><div class="yr">Year 8–9</div><div class="d">The full programme, properly. Every topic covered in order, with time to revisit anything that hasn't landed. This is where the structure does the most work.</div></div>
+        <div class="how-tl"><div class="yr">Early Year 10</div><div class="d">Still comfortable. We move at a slightly faster pace, but everything gets covered.</div></div>
+        <div class="how-tl"><div class="yr">Late Year 10</div><div class="d">We prioritise. Some topics get less time than I would like, and I choose those based on what your child already has and where the marks are.</div></div>
+        <div class="how-tl"><div class="yr">Year 11</div><div class="d">A different programme. There isn't time to teach everything, so I focus on the topics that will move the grade most and on exam technique.</div></div>
+      </div>
+    </div>
+
+    <div class="how-detail-topic au">
+      <span class="section-tag">03</span>
+      <h2 class="section-title">Important dates</h2>
+      <p class="section-subtitle">There are three intakes a year. Enrolment closes at the <strong>end of the month shown</strong>, which gives a clear month before the first lesson — time for the Discovery Session, the engagement letter, and getting your child set up properly rather than in a rush.</p>
+      <div class="how-intake">
+        <div class="ih">Cohort starts</div><div class="ih">Enrolment closes</div>
+        <div class="im">1st September</div><div class="id">End of July</div>
+        <div class="im">1st January</div><div class="id">End of November</div>
+        <div class="im">1st April</div><div class="id">End of February</div>
+      </div>
+      <p class="how-note">If you've missed a deadline, speak to me anyway — I'd rather have the conversation than have you wait four months by default.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
 <!-- HOW WE TEACH -->
 <section class="how-we-teach" id="how-we-teach">
   <div id="hwtpts" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
@@ -827,6 +893,20 @@
       d.className = 'hp';
       const sz = Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
       d.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (5 + Math.random() * 90) + '%;--dx:' + (Math.random() - .5) * 100 + 'px;animation-duration:' + (5 + Math.random() * 12) + 's;animation-delay:' + Math.random() * 10 + 's;width:' + sz + 'px;height:' + sz + 'px;';
+      c.appendChild(d);
+    }
+  })();
+
+  // How It Works Detail particles — same as Programme section on the home page
+  (function() {
+    const c = document.getElementById('hdpts');
+    if (!c) return;
+    for (let i = 0; i < 100; i++) {
+      const d = document.createElement('div');
+      d.className = 'hp';
+      const sz = Math.random() < 0.25 ? 3 : Math.random() < 0.55 ? 2 : 1;
+      const bright = Math.random() < 0.12;
+      d.style.cssText = 'left:' + Math.random() * 100 + '%;top:' + (5 + Math.random() * 90) + '%;--dx:' + (Math.random() - .5) * 100 + 'px;animation-duration:' + (5 + Math.random() * 12) + 's;animation-delay:' + Math.random() * 10 + 's;width:' + sz + 'px;height:' + sz + 'px;' + (bright ? 'background:#fff;' : '');
       c.appendChild(d);
     }
   })();
