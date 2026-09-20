@@ -127,8 +127,8 @@
   /* MISSION */
   .mission{background:var(--off-white);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 60px;}
   .mission .container{max-width:1200px;}
-  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-  .mission-right{display:flex;flex-direction:column;gap:18px;justify-content:flex-start;}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch;}
+  .mission-right{display:flex;flex-direction:column;gap:18px;justify-content:flex-end;}
   .mission-point{display:flex;gap:24px;align-items:flex-start;transition:transform 0.3s;}
   .mission-point:hover{transform:translateX(6px);}
   .mission-icon{width:39px;height:39px;background:#e8e8e8;border:1px solid #b8b8b8;color:var(--charcoal);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;transition:background 0.3s,border-color 0.3s,color 0.3s,transform 0.3s;}
@@ -302,7 +302,8 @@
     .btn-primary,.btn-secondary{width:100%;text-align:center;box-sizing:border-box;}
     .mission{padding:60px 24px!important;}
     .mission .container{max-width:100%;}
-    .mission-grid{grid-template-columns:1fr!important;gap:32px;}
+    .mission-grid{grid-template-columns:1fr!important;gap:32px;align-items:start!important;}
+    .mission-right{justify-content:flex-start!important;}
     .mission .section-title{font-size:32px!important;}
     .mission .section-subtitle{font-size:13px;line-height:1.7;}
     .how-we-teach{padding:60px 24px!important;}
