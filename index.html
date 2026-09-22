@@ -1205,6 +1205,8 @@
   window.addEventListener('load', function() {
     fireHeroAnimations();
     setTimeout(fireCounters, 300);
+    var id = location.hash.slice(1);
+    if (id && id !== 'hero') centerOn(id, false);
   });
 
   // Splash particles
@@ -1306,13 +1308,24 @@
       });
     });
   }
+  function centerOn(id, smooth) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var target = el.getBoundingClientRect().top + window.scrollY + el.offsetHeight/2 - window.innerHeight/2;
+    target = Math.max(0, Math.min(target, document.body.scrollHeight - window.innerHeight));
+    window.scrollTo({top: target, behavior: smooth === false ? 'auto' : 'smooth'});
+  }
   function go(e, id) {
     e.preventDefault();
     var el = document.getElementById(id);
     if (!el) return;
-    var h = document.getElementById('nav').offsetHeight;
-    window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - h, behavior:'smooth'});
-    if (id === 'hero') { setTimeout(fireHeroAnimations, 320); }
+    if (id === 'hero') {
+      var h = document.getElementById('nav').offsetHeight;
+      window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - h, behavior:'smooth'});
+      setTimeout(fireHeroAnimations, 320);
+      return;
+    }
+    centerOn(id);
   }
 
   // Scroll events

@@ -899,6 +899,13 @@
     nl.classList.toggle('mob-open');
     hb.textContent = nl.classList.contains('mob-open') ? '✕' : '☰';
   }
+  function centerOn(id, smooth) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var target = el.getBoundingClientRect().top + window.scrollY + el.offsetHeight/2 - window.innerHeight/2;
+    target = Math.max(0, Math.min(target, document.body.scrollHeight - window.innerHeight));
+    window.scrollTo({top: target, behavior: smooth === false ? 'auto' : 'smooth'});
+  }
   function toggleFaq(btn) {
     var item = btn.closest('.faq-item');
     var ans = item.querySelector('.faq-a');
@@ -935,7 +942,20 @@
         document.getElementById('nav-hamburger').textContent = '☰';
       });
     });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      var id = a.getAttribute('href').slice(1);
+      if (!id || id === 'hero') return;
+      a.addEventListener('click', function(e) {
+        if (!document.getElementById(id)) return;
+        e.preventDefault();
+        centerOn(id);
+      });
+    });
     sizeFaqBar();
+  });
+  window.addEventListener('load', function() {
+    var id = location.hash.slice(1);
+    if (id && id !== 'hero') centerOn(id, false);
   });
   window.addEventListener('load', sizeFaqBar);
   window.addEventListener('resize', sizeFaqBar);
