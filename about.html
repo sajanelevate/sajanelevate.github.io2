@@ -953,6 +953,12 @@
     sizeFaqBar();
   });
   window.addEventListener('load', function() {
+    var navEntries = performance.getEntriesByType('navigation');
+    var isReload = navEntries.length ? navEntries[0].type === 'reload' : false;
+    if (isReload) {
+      window.scrollTo({top: 0, behavior: 'auto'});
+      return;
+    }
     var id = location.hash.slice(1);
     if (id && id !== 'hero') centerOn(id, false);
   });
